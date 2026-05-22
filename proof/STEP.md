@@ -1,18 +1,18 @@
-# Step 05: Adopt Reviewed Component Map
+# Step 06: Agent Slice And Designer Closeout
 
-> Promote a reviewed Storybook mapping into the canonical component_map source.
+> Close the proof with the artifacts designers and agents actually read.
 
-This checkpoint records the reviewed adoption write receipt and then applies the accepted ActionToolbar narrow-viewport mapping to the canonical component_map in this proof workspace. The extracted workspace stays review evidence; the canonical Topogram source is the component map under topo/component-maps.
+This checkpoint adds the final screen slice, widget slice, work-map report, designer checklist, and proof learning note. It is the main checkpoint for a front-end lead evaluating whether Topogram gives enough context to map and maintain a real component system.
 
 What to inspect:
 
-- proof/artifacts/step-05-adopt-write.json: reviewed adoption write receipt and guardrail context.
-- topo/component-maps/component-map-acme-ops-widgets.tg: canonical mapping with command_toolbar_web_narrow.
-- proof/artifacts/step-05-ui-design-coverage.md: matrix after the mapping is accepted.
-- proof/artifacts/step-05-widget-slice.json: agent packet for the adopted widget mapping.
+- proof/artifacts/step-06-designer-review-checklist.md: accepted, deferred, unsupported, and missing rows.
+- proof/artifacts/step-06-screen-slice.md: what an agent sees for the intake screen.
+- proof/artifacts/step-06-widget-slice.md: what an agent sees for the adopted ActionToolbar mapping.
+- proof/artifacts/step-06-work-map.md: readable map across screen, layout, region, widget binding, widget, and component map.
+- proof/artifacts/step-06-proof-learning.md: what this proof promoted back into product docs/backlog.
 
 Proof:
 
-- topogram check validates the canonical component map.
-- ui-design-coverage, ui-realization-report, work-map, and widget slice all show the adopted ActionToolbar component ref.
-- The proof records that Storybook extraction proposes evidence and the project-owned component_map remains the source of truth.
+- npm run verify checks path hygiene, artifact completeness, component tests, Topogram validation, and clean worktree state.
+- The checklist names review decisions instead of hiding contract-only or unsupported rows.

@@ -1,0 +1,5519 @@
+{
+  "agent_guidance": {
+    "completion_command": "topogram sdlc prep commit . --json",
+    "mode": "implementation",
+    "next_commands": [
+      "topogram query slice ./topo --mode implementation --surface proj_web --screen intake_queue --detail compact --json",
+      "topogram query single-agent-plan ./topo --mode implementation --surface proj_web --screen intake_queue --json",
+      "topogram query sdlc-proof-gaps ./topo --json",
+      "topogram check . --json",
+      "topogram sdlc check . --strict",
+      "topogram sdlc prep commit . --json"
+    ],
+    "next_queries": [
+      "topogram query slice ./topo --mode implementation --surface proj_web --screen intake_queue --detail compact --json",
+      "topogram query single-agent-plan ./topo --mode implementation --surface proj_web --screen intake_queue --json"
+    ],
+    "proof_commands": [
+      "topogram check . --json",
+      "topogram sdlc check . --strict",
+      "topogram sdlc prep commit . --json"
+    ],
+    "read_first": [
+      "focus",
+      "summary",
+      "agent_guidance",
+      "review_boundary",
+      "ownership_boundary",
+      "write_scope",
+      "ui_agent_packet"
+    ],
+    "read_order": [
+      "focus",
+      "summary",
+      "agent_guidance",
+      "review_boundary",
+      "ownership_boundary",
+      "write_scope",
+      "ui_agent_packet"
+    ],
+    "required_commands": [
+      "topogram query sdlc-proof-gaps ./topo --json",
+      "topogram check . --json",
+      "topogram sdlc check . --strict",
+      "topogram sdlc prep commit . --json"
+    ],
+    "warnings": [],
+    "write_scope_summary": "Edit the canonical Topogram source and project-owned files only; generated-owned outputs should be regenerated."
+  },
+  "depends_on": {
+    "capabilities": [
+      "cap_acknowledge_alert",
+      "cap_list_intake"
+    ],
+    "shapes": [
+      "shape_alert_banner",
+      "shape_intake_filter",
+      "shape_intake_row"
+    ],
+    "surfaces": [
+      "proj_web"
+    ],
+    "verifications": [],
+    "widgets": [
+      "widget_alert_banner",
+      "widget_command_toolbar",
+      "widget_filter_panel",
+      "widget_intake_grid"
+    ]
+  },
+  "detail_level": "compact",
+  "focus": {
+    "id": "intake_queue",
+    "kind": "screen",
+    "projectionId": "proj_web"
+  },
+  "ownership_boundary": {
+    "canonical_topogram": {
+      "agent_mode": "propose_review_adopt",
+      "owner": "human"
+    },
+    "generated_artifacts": {
+      "agent_mode": "regenerate_or_compare",
+      "owner": "engine"
+    },
+    "maintained_code": {
+      "agent_mode": "bounded_edit_only",
+      "owner": "human"
+    },
+    "proposal_surfaces": {
+      "agent_mode": "stage_map_customize_reject",
+      "owner": "human"
+    }
+  },
+  "related": {},
+  "related_summary": {
+    "capabilities": {
+      "count": 2,
+      "ids": [
+        "cap_acknowledge_alert",
+        "cap_list_intake"
+      ]
+    },
+    "shapes": {
+      "count": 3,
+      "ids": [
+        "shape_alert_banner",
+        "shape_intake_filter",
+        "shape_intake_row"
+      ]
+    },
+    "surfaces": {
+      "count": 1,
+      "ids": [
+        "proj_web"
+      ]
+    },
+    "widgets": {
+      "count": 4,
+      "ids": [
+        "widget_alert_banner",
+        "widget_command_toolbar",
+        "widget_filter_panel",
+        "widget_intake_grid"
+      ]
+    }
+  },
+  "review_boundary": {
+    "automation_class": "review_required",
+    "reasons": [
+      "ui_screen_surface"
+    ]
+  },
+  "slice_manifest": {
+    "detail_level": "compact",
+    "note": "Read must_read sections first; use reference sections only as needed; run proof commands before completing work.",
+    "proof_sections": [
+      "verification_targets"
+    ],
+    "read_order": [
+      "focus",
+      "summary",
+      "agent_guidance",
+      "review_boundary",
+      "ownership_boundary",
+      "write_scope",
+      "ui_agent_packet"
+    ],
+    "sections": [
+      {
+        "field": "focus",
+        "id": "focus",
+        "item_count": 3,
+        "reason": "The selected graph surface this packet is scoped to.",
+        "tier": "must_read",
+        "title": "Focus"
+      },
+      {
+        "field": "summary",
+        "id": "summary",
+        "item_count": 4,
+        "reason": "The shortest human-readable description of the selected work or surface.",
+        "tier": "must_read",
+        "title": "Summary"
+      },
+      {
+        "field": "agent_guidance",
+        "id": "agent_guidance",
+        "item_count": 10,
+        "reason": "Mode, read order, follow-up queries, and required proof commands.",
+        "tier": "must_read",
+        "title": "Agent Guidance"
+      },
+      {
+        "field": "review_boundary",
+        "id": "review_boundary",
+        "item_count": 2,
+        "reason": "Automation and human-review expectations for this scope.",
+        "tier": "must_read",
+        "title": "Review Boundary"
+      },
+      {
+        "field": "ownership_boundary",
+        "id": "ownership_boundary",
+        "item_count": 4,
+        "reason": "Generated, maintained, and human-owned boundaries that constrain edits.",
+        "tier": "must_read",
+        "title": "Ownership Boundary"
+      },
+      {
+        "field": "write_scope",
+        "id": "write_scope",
+        "item_count": 4,
+        "reason": "Files and surfaces that are safe, risky, or out of bounds to edit.",
+        "tier": "must_read",
+        "title": "Write Scope"
+      },
+      {
+        "field": "ui_agent_packet",
+        "id": "ui_agent_packet",
+        "item_count": 21,
+        "reason": "Screen, layout, region, widget, accessibility, i18n, design-token, and UI proof context for UI slices.",
+        "tier": "must_read",
+        "title": "UI Agent Packet"
+      },
+      {
+        "field": "depends_on",
+        "id": "depends_on",
+        "item_count": 5,
+        "reason": "IDs that define the semantic closure without embedding every full record.",
+        "tier": "reference",
+        "title": "Depends On"
+      },
+      {
+        "field": "related_summary",
+        "id": "related_summary",
+        "item_count": 4,
+        "reason": "Compact counts and IDs for related records omitted from compact detail.",
+        "tier": "reference",
+        "title": "Related Summary"
+      },
+      {
+        "field": "verification_targets",
+        "id": "verification_targets",
+        "item_count": 4,
+        "reason": "Smallest verification set recommended for this change.",
+        "tier": "proof",
+        "title": "Verification Targets"
+      }
+    ]
+  },
+  "standing_rules": [],
+  "summary": {
+    "description": "UI screen 'intake_queue' in surface 'proj_web'.",
+    "id": "intake_queue",
+    "kind": "list",
+    "name": "Intake Queue"
+  },
+  "type": "context_slice",
+  "ui_agent_packet": {
+    "accessibility": {
+      "authoredObligations": [
+        {
+          "focus": "visible",
+          "keyboard": "standard",
+          "live": "off",
+          "nameFrom": {
+            "source": "message",
+            "value": "msg_intake_title"
+          },
+          "role": "main",
+          "targetId": "intake_queue",
+          "targetKind": "screen"
+        },
+        {
+          "focus": "roving_tabindex",
+          "keyboard": "data_grid",
+          "live": "off",
+          "nameFrom": {
+            "source": "message",
+            "value": "msg_grid_label"
+          },
+          "role": "grid",
+          "targetId": "widget_intake_grid",
+          "targetKind": "widget"
+        },
+        {
+          "focus": "visible",
+          "keyboard": "standard",
+          "live": "polite",
+          "nameFrom": {
+            "source": "message",
+            "value": "msg_alert_label"
+          },
+          "role": "status",
+          "targetId": "widget_alert_banner",
+          "targetKind": "widget"
+        }
+      ],
+      "currentSignals": {
+        "authoredContract": {
+          "obligations": [
+            {
+              "focus": "visible",
+              "keyboard": "standard",
+              "live": "off",
+              "nameFrom": {
+                "source": "message",
+                "value": "msg_intake_title"
+              },
+              "role": "main",
+              "targetId": "intake_queue",
+              "targetKind": "screen"
+            },
+            {
+              "focus": "roving_tabindex",
+              "keyboard": "data_grid",
+              "live": "off",
+              "nameFrom": {
+                "source": "message",
+                "value": "msg_grid_label"
+              },
+              "role": "grid",
+              "targetId": "widget_intake_grid",
+              "targetKind": "widget"
+            },
+            {
+              "focus": "visible",
+              "keyboard": "standard",
+              "live": "polite",
+              "nameFrom": {
+                "source": "message",
+                "value": "msg_alert_label"
+              },
+              "role": "status",
+              "targetId": "widget_alert_banner",
+              "targetKind": "widget"
+            }
+          ],
+          "totalObligations": 3
+        },
+        "designTokens": {}
+      },
+      "decisions": [
+        {
+          "found": false,
+          "id": "decision_aria_attributes_are_implementation_evidence",
+          "kind": null,
+          "name": "decision_aria_attributes_are_implementation_evidence",
+          "status": null
+        }
+      ],
+      "diagnostics": [],
+      "obligations": [
+        "Prefer semantic role, accessible-name source, keyboard model, focus behavior, live-region need, and proof command over raw aria-* snapshots.",
+        "Treat raw aria-* attributes as generated or maintained implementation evidence, not the contract source."
+      ],
+      "proofCommands": [
+        "topogram widget check --json",
+        "topogram widget behavior --json",
+        "topogram emit ui-realization-report --surface proj_web --json"
+      ],
+      "requirements": [
+        {
+          "found": false,
+          "id": "req_aria_accessibility_contract_v1",
+          "kind": null,
+          "name": "req_aria_accessibility_contract_v1",
+          "status": null
+        }
+      ],
+      "scope": {
+        "projectionId": "proj_web",
+        "screenId": "intake_queue",
+        "widgetId": null
+      },
+      "source": "semantic_ui accessibility block, design-token evidence, terms, decisions, and requirements",
+      "status": "authored_contract",
+      "terms": [
+        {
+          "found": false,
+          "id": "term_accessibility_obligation",
+          "kind": null,
+          "name": "term_accessibility_obligation",
+          "status": null
+        },
+        {
+          "found": false,
+          "id": "term_accessible_name",
+          "kind": null,
+          "name": "term_accessible_name",
+          "status": null
+        },
+        {
+          "found": false,
+          "id": "term_semantic_role",
+          "kind": null,
+          "name": "term_semantic_role",
+          "status": null
+        },
+        {
+          "found": false,
+          "id": "term_keyboard_interaction",
+          "kind": null,
+          "name": "term_keyboard_interaction",
+          "status": null
+        },
+        {
+          "found": false,
+          "id": "term_live_region",
+          "kind": null,
+          "name": "term_live_region",
+          "status": null
+        }
+      ]
+    },
+    "agent_readiness": {
+      "change_targets": [
+        {
+          "id": "intake_queue",
+          "kind": "screen",
+          "reason": "Focused UI work-map node."
+        },
+        {
+          "id": "intake_filters",
+          "kind": "widget_binding",
+          "reason": "Widget binding is the work leaf where data, action, region, and design obligations meet.",
+          "region": "filters",
+          "widget": "widget_filter_panel"
+        },
+        {
+          "id": "intake_commands",
+          "kind": "widget_binding",
+          "reason": "Widget binding is the work leaf where data, action, region, and design obligations meet.",
+          "region": "commands",
+          "widget": "widget_command_toolbar"
+        },
+        {
+          "id": "intake_results_grid",
+          "kind": "widget_binding",
+          "reason": "Widget binding is the work leaf where data, action, region, and design obligations meet.",
+          "region": "results",
+          "widget": "widget_intake_grid"
+        },
+        {
+          "id": "intake_alerts",
+          "kind": "widget_binding",
+          "reason": "Widget binding is the work leaf where data, action, region, and design obligations meet.",
+          "region": "alerts",
+          "widget": "widget_alert_banner"
+        }
+      ],
+      "human_review_needed": [
+        "Widget 'widget_alert_banner' has no android design realization in 'design_acme_ops'.",
+        "Widget 'widget_alert_banner' has no ios design realization in 'design_acme_ops'.",
+        "Realization 'alert_banner_web' does not declare 'loading' state coverage.",
+        "Realization 'alert_banner_web' does not declare 'error' state coverage.",
+        "Widget 'widget_command_toolbar' has no android design realization in 'design_acme_ops'.",
+        "Widget 'widget_command_toolbar' has no ios design realization in 'design_acme_ops'.",
+        "Realization 'command_toolbar_web' is 'contract_only'.",
+        "Behavior 'bulk_action' is 'contract_only'.",
+        "Widget 'widget_command_toolbar' has no authored accessibility obligation.",
+        "Widget 'widget_command_toolbar' has no authored accessibility obligation.",
+        "Widget 'widget_command_toolbar' has no authored message key.",
+        "Widget 'widget_command_toolbar' has no authored message key.",
+        "Realization 'command_toolbar_web_narrow' does not declare 'empty' state coverage.",
+        "Realization 'command_toolbar_web_narrow' does not declare 'error' state coverage.",
+        "Realization 'command_toolbar_web' does not declare 'empty' state coverage.",
+        "Realization 'command_toolbar_web' does not declare 'error' state coverage.",
+        "Widget 'widget_filter_panel' has no android design realization in 'design_acme_ops'.",
+        "Widget 'widget_filter_panel' has no ios design realization in 'design_acme_ops'.",
+        "Widget 'widget_filter_panel' has no authored accessibility obligation.",
+        "Widget 'widget_filter_panel' has no authored message key.",
+        "Realization 'filter_panel_web' does not declare 'loading' state coverage.",
+        "Realization 'filter_panel_web' does not declare 'error' state coverage.",
+        "Realization 'intake_grid_android' is 'unsupported'.",
+        "Behavior 'filtering' is 'unsupported'.",
+        "Behavior 'sorting' is 'unsupported'.",
+        "Realization 'intake_grid_android' does not declare 'empty' state coverage.",
+        "Realization 'intake_grid_android' does not declare 'error' state coverage.",
+        "Realization 'intake_grid_ios' does not declare 'empty' state coverage.",
+        "Realization 'intake_grid_ios' does not declare 'error' state coverage.",
+        "Realization 'intake_grid_web_narrow' is 'contract_only'.",
+        "Behavior 'filtering' is 'contract_only'.",
+        "Behavior 'sorting' is 'contract_only'.",
+        "Realization 'intake_grid_web_narrow' does not declare 'error' state coverage."
+      ],
+      "missing_context": [],
+      "proof_commands": [
+        "topogram query ui-design-coverage ./topo --surface proj_web --json",
+        "topogram query ui-design-coverage ./topo --surface proj_web --format markdown",
+        "topogram emit ui-realization-report ./topo --surface proj_web --json",
+        "topogram check",
+        "topogram widget check --surface proj_web",
+        "topogram widget behavior --surface proj_web",
+        "topogram emit ui-realization-report --surface proj_web --json"
+      ],
+      "ready_to_edit": true,
+      "status": "ready_with_review"
+    },
+    "behaviorRealizations": [
+      {
+        "actions": [],
+        "dataDependencies": [
+          {
+            "prop": "rows",
+            "source": {
+              "id": "cap_list_intake",
+              "kind": "capability"
+            }
+          }
+        ],
+        "directives": {},
+        "effects": [],
+        "emits": [],
+        "kind": "selection",
+        "source": "shorthand",
+        "state": null,
+        "status": "declared"
+      },
+      {
+        "actions": [],
+        "dataDependencies": [
+          {
+            "prop": "rows",
+            "source": {
+              "id": "cap_list_intake",
+              "kind": "capability"
+            }
+          }
+        ],
+        "directives": {},
+        "effects": [],
+        "emits": [],
+        "kind": "sorting",
+        "source": "shorthand",
+        "state": null,
+        "status": "declared"
+      },
+      {
+        "actions": [],
+        "dataDependencies": [
+          {
+            "prop": "rows",
+            "source": {
+              "id": "cap_list_intake",
+              "kind": "capability"
+            }
+          }
+        ],
+        "directives": {},
+        "effects": [],
+        "emits": [],
+        "kind": "filtering",
+        "source": "shorthand",
+        "state": null,
+        "status": "declared"
+      }
+    ],
+    "designLanguages": {
+      "contracts": [
+        {
+          "behaviorSupport": [
+            {
+              "behavior": "selection",
+              "componentMap": {
+                "id": "component_map_acme_ops_widgets",
+                "name": "Acme Operations Component Map"
+              },
+              "density": "compact",
+              "loc": {
+                "end": {
+                  "column": 4,
+                  "line": 21,
+                  "offset": 647
+                },
+                "file": "topo/component-maps/component-map-acme-ops-widgets.tg",
+                "start": {
+                  "column": 3,
+                  "line": 7,
+                  "offset": 236
+                }
+              },
+              "localeContexts": [
+                "default_locale"
+              ],
+              "platform": "web",
+              "roleContexts": [
+                "operator"
+              ],
+              "stateCoverage": [
+                "loading",
+                "empty",
+                "error"
+              ],
+              "status": "rendered",
+              "themeContexts": [
+                "light",
+                "dark"
+              ],
+              "type": "component_mapping_behavior_support",
+              "viewport": "wide",
+              "widget": {
+                "id": "widget_intake_grid",
+                "kind": "widget",
+                "target": {
+                  "id": "widget_intake_grid",
+                  "kind": "widget"
+                }
+              }
+            },
+            {
+              "behavior": "sorting",
+              "componentMap": {
+                "id": "component_map_acme_ops_widgets",
+                "name": "Acme Operations Component Map"
+              },
+              "density": "compact",
+              "loc": {
+                "end": {
+                  "column": 4,
+                  "line": 21,
+                  "offset": 647
+                },
+                "file": "topo/component-maps/component-map-acme-ops-widgets.tg",
+                "start": {
+                  "column": 3,
+                  "line": 7,
+                  "offset": 236
+                }
+              },
+              "localeContexts": [
+                "default_locale"
+              ],
+              "platform": "web",
+              "roleContexts": [
+                "operator"
+              ],
+              "stateCoverage": [
+                "loading",
+                "empty",
+                "error"
+              ],
+              "status": "rendered",
+              "themeContexts": [
+                "light",
+                "dark"
+              ],
+              "type": "component_mapping_behavior_support",
+              "viewport": "wide",
+              "widget": {
+                "id": "widget_intake_grid",
+                "kind": "widget",
+                "target": {
+                  "id": "widget_intake_grid",
+                  "kind": "widget"
+                }
+              }
+            },
+            {
+              "behavior": "filtering",
+              "componentMap": {
+                "id": "component_map_acme_ops_widgets",
+                "name": "Acme Operations Component Map"
+              },
+              "density": "compact",
+              "loc": {
+                "end": {
+                  "column": 4,
+                  "line": 21,
+                  "offset": 647
+                },
+                "file": "topo/component-maps/component-map-acme-ops-widgets.tg",
+                "start": {
+                  "column": 3,
+                  "line": 7,
+                  "offset": 236
+                }
+              },
+              "localeContexts": [
+                "default_locale"
+              ],
+              "platform": "web",
+              "roleContexts": [
+                "operator"
+              ],
+              "stateCoverage": [
+                "loading",
+                "empty",
+                "error"
+              ],
+              "status": "rendered",
+              "themeContexts": [
+                "light",
+                "dark"
+              ],
+              "type": "component_mapping_behavior_support",
+              "viewport": "wide",
+              "widget": {
+                "id": "widget_intake_grid",
+                "kind": "widget",
+                "target": {
+                  "id": "widget_intake_grid",
+                  "kind": "widget"
+                }
+              }
+            },
+            {
+              "behavior": "selection",
+              "componentMap": {
+                "id": "component_map_acme_ops_widgets",
+                "name": "Acme Operations Component Map"
+              },
+              "density": "comfortable",
+              "loc": {
+                "end": {
+                  "column": 4,
+                  "line": 39,
+                  "offset": 1170
+                },
+                "file": "topo/component-maps/component-map-acme-ops-widgets.tg",
+                "start": {
+                  "column": 3,
+                  "line": 23,
+                  "offset": 651
+                }
+              },
+              "localeContexts": [
+                "default_locale"
+              ],
+              "platform": "web",
+              "roleContexts": [
+                "operator"
+              ],
+              "stateCoverage": [
+                "loading",
+                "empty"
+              ],
+              "status": "rendered",
+              "themeContexts": [
+                "light"
+              ],
+              "type": "component_mapping_behavior_support",
+              "viewport": "narrow",
+              "widget": {
+                "id": "widget_intake_grid",
+                "kind": "widget",
+                "target": {
+                  "id": "widget_intake_grid",
+                  "kind": "widget"
+                }
+              }
+            },
+            {
+              "behavior": "sorting",
+              "componentMap": {
+                "id": "component_map_acme_ops_widgets",
+                "name": "Acme Operations Component Map"
+              },
+              "density": "comfortable",
+              "loc": {
+                "end": {
+                  "column": 4,
+                  "line": 39,
+                  "offset": 1170
+                },
+                "file": "topo/component-maps/component-map-acme-ops-widgets.tg",
+                "start": {
+                  "column": 3,
+                  "line": 23,
+                  "offset": 651
+                }
+              },
+              "localeContexts": [
+                "default_locale"
+              ],
+              "platform": "web",
+              "roleContexts": [
+                "operator"
+              ],
+              "stateCoverage": [
+                "loading",
+                "empty"
+              ],
+              "status": "contract_only",
+              "themeContexts": [
+                "light"
+              ],
+              "type": "component_mapping_behavior_support",
+              "viewport": "narrow",
+              "widget": {
+                "id": "widget_intake_grid",
+                "kind": "widget",
+                "target": {
+                  "id": "widget_intake_grid",
+                  "kind": "widget"
+                }
+              }
+            },
+            {
+              "behavior": "filtering",
+              "componentMap": {
+                "id": "component_map_acme_ops_widgets",
+                "name": "Acme Operations Component Map"
+              },
+              "density": "comfortable",
+              "loc": {
+                "end": {
+                  "column": 4,
+                  "line": 39,
+                  "offset": 1170
+                },
+                "file": "topo/component-maps/component-map-acme-ops-widgets.tg",
+                "start": {
+                  "column": 3,
+                  "line": 23,
+                  "offset": 651
+                }
+              },
+              "localeContexts": [
+                "default_locale"
+              ],
+              "platform": "web",
+              "roleContexts": [
+                "operator"
+              ],
+              "stateCoverage": [
+                "loading",
+                "empty"
+              ],
+              "status": "contract_only",
+              "themeContexts": [
+                "light"
+              ],
+              "type": "component_mapping_behavior_support",
+              "viewport": "narrow",
+              "widget": {
+                "id": "widget_intake_grid",
+                "kind": "widget",
+                "target": {
+                  "id": "widget_intake_grid",
+                  "kind": "widget"
+                }
+              }
+            },
+            {
+              "behavior": "filtering",
+              "componentMap": {
+                "id": "component_map_acme_ops_widgets",
+                "name": "Acme Operations Component Map"
+              },
+              "density": "compact",
+              "loc": {
+                "end": {
+                  "column": 4,
+                  "line": 86,
+                  "offset": 2394
+                },
+                "file": "topo/component-maps/component-map-acme-ops-widgets.tg",
+                "start": {
+                  "column": 3,
+                  "line": 75,
+                  "offset": 2120
+                }
+              },
+              "localeContexts": [],
+              "platform": "web",
+              "roleContexts": [],
+              "stateCoverage": [
+                "empty"
+              ],
+              "status": "rendered",
+              "themeContexts": [],
+              "type": "component_mapping_behavior_support",
+              "viewport": "wide",
+              "widget": {
+                "id": "widget_filter_panel",
+                "kind": "widget",
+                "target": {
+                  "id": "widget_filter_panel",
+                  "kind": "widget"
+                }
+              }
+            },
+            {
+              "behavior": "bulk_action",
+              "componentMap": {
+                "id": "component_map_acme_ops_widgets",
+                "name": "Acme Operations Component Map"
+              },
+              "density": "compact",
+              "loc": {
+                "end": {
+                  "column": 4,
+                  "line": 100,
+                  "offset": 2788
+                },
+                "file": "topo/component-maps/component-map-acme-ops-widgets.tg",
+                "start": {
+                  "column": 3,
+                  "line": 88,
+                  "offset": 2398
+                }
+              },
+              "localeContexts": [],
+              "platform": "web",
+              "roleContexts": [],
+              "stateCoverage": [
+                "loading"
+              ],
+              "status": "contract_only",
+              "themeContexts": [],
+              "type": "component_mapping_behavior_support",
+              "viewport": "wide",
+              "widget": {
+                "id": "widget_command_toolbar",
+                "kind": "widget",
+                "target": {
+                  "id": "widget_command_toolbar",
+                  "kind": "widget"
+                }
+              }
+            },
+            {
+              "behavior": "bulk_action",
+              "componentMap": {
+                "id": "component_map_acme_ops_widgets",
+                "name": "Acme Operations Component Map"
+              },
+              "density": "compact",
+              "loc": {
+                "end": {
+                  "column": 4,
+                  "line": 114,
+                  "offset": 3169
+                },
+                "file": "topo/component-maps/component-map-acme-ops-widgets.tg",
+                "start": {
+                  "column": 3,
+                  "line": 102,
+                  "offset": 2792
+                }
+              },
+              "localeContexts": [],
+              "platform": "web",
+              "roleContexts": [],
+              "stateCoverage": [
+                "loading"
+              ],
+              "status": "rendered",
+              "themeContexts": [],
+              "type": "component_mapping_behavior_support",
+              "viewport": "narrow",
+              "widget": {
+                "id": "widget_command_toolbar",
+                "kind": "widget",
+                "target": {
+                  "id": "widget_command_toolbar",
+                  "kind": "widget"
+                }
+              }
+            }
+          ],
+          "componentMaps": [
+            {
+              "id": "component_map_acme_ops_widgets",
+              "name": "Acme Operations Component Map",
+              "status": "active",
+              "widgetMappings": [
+                {
+                  "behaviorsContractOnly": [],
+                  "behaviorsImplementationOwned": [],
+                  "behaviorsRendered": [
+                    "selection",
+                    "sorting",
+                    "filtering"
+                  ],
+                  "behaviorsUnsupported": [],
+                  "componentRef": "acme.dataGrid",
+                  "density": "compact",
+                  "id": "intake_grid_web_wide",
+                  "loc": {
+                    "end": {
+                      "column": 4,
+                      "line": 21,
+                      "offset": 647
+                    },
+                    "file": "topo/component-maps/component-map-acme-ops-widgets.tg",
+                    "start": {
+                      "column": 3,
+                      "line": 7,
+                      "offset": 236
+                    }
+                  },
+                  "localeContexts": [
+                    "default_locale"
+                  ],
+                  "pattern": "data_grid_view",
+                  "platform": "web",
+                  "reviewNotes": null,
+                  "roleContexts": [
+                    "operator"
+                  ],
+                  "stateCoverage": [
+                    "loading",
+                    "empty",
+                    "error"
+                  ],
+                  "status": "rendered",
+                  "styleRefs": [],
+                  "themeContexts": [
+                    "light",
+                    "dark"
+                  ],
+                  "type": "widget_mapping",
+                  "viewport": "wide",
+                  "widget": {
+                    "id": "widget_intake_grid",
+                    "kind": "widget",
+                    "target": {
+                      "id": "widget_intake_grid",
+                      "kind": "widget"
+                    }
+                  }
+                },
+                {
+                  "behaviorsContractOnly": [
+                    "sorting",
+                    "filtering"
+                  ],
+                  "behaviorsImplementationOwned": [],
+                  "behaviorsRendered": [
+                    "selection"
+                  ],
+                  "behaviorsUnsupported": [],
+                  "componentRef": "acme.cardList",
+                  "density": "comfortable",
+                  "id": "intake_grid_web_narrow",
+                  "loc": {
+                    "end": {
+                      "column": 4,
+                      "line": 39,
+                      "offset": 1170
+                    },
+                    "file": "topo/component-maps/component-map-acme-ops-widgets.tg",
+                    "start": {
+                      "column": 3,
+                      "line": 23,
+                      "offset": 651
+                    }
+                  },
+                  "localeContexts": [
+                    "default_locale"
+                  ],
+                  "pattern": "resource_cards",
+                  "platform": "web",
+                  "reviewNotes": "Narrow web uses cards and still needs error-state coverage.",
+                  "roleContexts": [
+                    "operator"
+                  ],
+                  "stateCoverage": [
+                    "loading",
+                    "empty"
+                  ],
+                  "status": "contract_only",
+                  "styleRefs": [],
+                  "themeContexts": [
+                    "light"
+                  ],
+                  "type": "widget_mapping",
+                  "viewport": "narrow",
+                  "widget": {
+                    "id": "widget_intake_grid",
+                    "kind": "widget",
+                    "target": {
+                      "id": "widget_intake_grid",
+                      "kind": "widget"
+                    }
+                  }
+                },
+                {
+                  "behaviorsContractOnly": [],
+                  "behaviorsImplementationOwned": [],
+                  "behaviorsRendered": [
+                    "filtering"
+                  ],
+                  "behaviorsUnsupported": [],
+                  "componentRef": "acme.filterPanel",
+                  "density": "compact",
+                  "id": "filter_panel_web",
+                  "loc": {
+                    "end": {
+                      "column": 4,
+                      "line": 86,
+                      "offset": 2394
+                    },
+                    "file": "topo/component-maps/component-map-acme-ops-widgets.tg",
+                    "start": {
+                      "column": 3,
+                      "line": 75,
+                      "offset": 2120
+                    }
+                  },
+                  "localeContexts": [],
+                  "pattern": "filter_panel",
+                  "platform": "web",
+                  "reviewNotes": null,
+                  "roleContexts": [],
+                  "stateCoverage": [
+                    "empty"
+                  ],
+                  "status": "rendered",
+                  "styleRefs": [],
+                  "themeContexts": [],
+                  "type": "widget_mapping",
+                  "viewport": "wide",
+                  "widget": {
+                    "id": "widget_filter_panel",
+                    "kind": "widget",
+                    "target": {
+                      "id": "widget_filter_panel",
+                      "kind": "widget"
+                    }
+                  }
+                },
+                {
+                  "behaviorsContractOnly": [
+                    "bulk_action"
+                  ],
+                  "behaviorsImplementationOwned": [],
+                  "behaviorsRendered": [],
+                  "behaviorsUnsupported": [],
+                  "componentRef": "acme.actionToolbar",
+                  "density": "compact",
+                  "id": "command_toolbar_web",
+                  "loc": {
+                    "end": {
+                      "column": 4,
+                      "line": 100,
+                      "offset": 2788
+                    },
+                    "file": "topo/component-maps/component-map-acme-ops-widgets.tg",
+                    "start": {
+                      "column": 3,
+                      "line": 88,
+                      "offset": 2398
+                    }
+                  },
+                  "localeContexts": [],
+                  "pattern": "action_bar",
+                  "platform": "web",
+                  "reviewNotes": "Bulk action support remains contract-only until implementation proof exists.",
+                  "roleContexts": [],
+                  "stateCoverage": [
+                    "loading"
+                  ],
+                  "status": "contract_only",
+                  "styleRefs": [],
+                  "themeContexts": [],
+                  "type": "widget_mapping",
+                  "viewport": "wide",
+                  "widget": {
+                    "id": "widget_command_toolbar",
+                    "kind": "widget",
+                    "target": {
+                      "id": "widget_command_toolbar",
+                      "kind": "widget"
+                    }
+                  }
+                },
+                {
+                  "behaviorsContractOnly": [],
+                  "behaviorsImplementationOwned": [],
+                  "behaviorsRendered": [
+                    "bulk_action"
+                  ],
+                  "behaviorsUnsupported": [],
+                  "componentRef": "acme.actionToolbar",
+                  "density": "compact",
+                  "id": "command_toolbar_web_narrow",
+                  "loc": {
+                    "end": {
+                      "column": 4,
+                      "line": 114,
+                      "offset": 3169
+                    },
+                    "file": "topo/component-maps/component-map-acme-ops-widgets.tg",
+                    "start": {
+                      "column": 3,
+                      "line": 102,
+                      "offset": 2792
+                    }
+                  },
+                  "localeContexts": [],
+                  "pattern": "action_bar",
+                  "platform": "web",
+                  "reviewNotes": "Accepted from explicit Storybook metadata after designer review.",
+                  "roleContexts": [],
+                  "stateCoverage": [
+                    "loading"
+                  ],
+                  "status": "rendered",
+                  "styleRefs": [],
+                  "themeContexts": [],
+                  "type": "widget_mapping",
+                  "viewport": "narrow",
+                  "widget": {
+                    "id": "widget_command_toolbar",
+                    "kind": "widget",
+                    "target": {
+                      "id": "widget_command_toolbar",
+                      "kind": "widget"
+                    }
+                  }
+                },
+                {
+                  "behaviorsContractOnly": [],
+                  "behaviorsImplementationOwned": [],
+                  "behaviorsRendered": [],
+                  "behaviorsUnsupported": [],
+                  "componentRef": "acme.alertBanner",
+                  "density": "comfortable",
+                  "id": "alert_banner_web",
+                  "loc": {
+                    "end": {
+                      "column": 4,
+                      "line": 127,
+                      "offset": 3501
+                    },
+                    "file": "topo/component-maps/component-map-acme-ops-widgets.tg",
+                    "start": {
+                      "column": 3,
+                      "line": 116,
+                      "offset": 3173
+                    }
+                  },
+                  "localeContexts": [],
+                  "pattern": "empty_state_panel",
+                  "platform": "web",
+                  "reviewNotes": "Alert banner is missing iOS and Android mappings on purpose.",
+                  "roleContexts": [],
+                  "stateCoverage": [
+                    "empty"
+                  ],
+                  "status": "rendered",
+                  "styleRefs": [],
+                  "themeContexts": [],
+                  "type": "widget_mapping",
+                  "viewport": "wide",
+                  "widget": {
+                    "id": "widget_alert_banner",
+                    "kind": "widget",
+                    "target": {
+                      "id": "widget_alert_banner",
+                      "kind": "widget"
+                    }
+                  }
+                }
+              ]
+            }
+          ],
+          "components": [
+            {
+              "componentMap": {
+                "id": "component_map_acme_ops_widgets",
+                "name": "Acme Operations Component Map"
+              },
+              "density": "compact",
+              "id": "intake_grid_web_wide",
+              "loc": {
+                "end": {
+                  "column": 4,
+                  "line": 21,
+                  "offset": 647
+                },
+                "file": "topo/component-maps/component-map-acme-ops-widgets.tg",
+                "start": {
+                  "column": 3,
+                  "line": 7,
+                  "offset": 236
+                }
+              },
+              "localeContexts": [
+                "default_locale"
+              ],
+              "pattern": "data_grid_view",
+              "platform": "web",
+              "realizes": {
+                "id": "widget_intake_grid",
+                "kind": "widget",
+                "target": {
+                  "id": "widget_intake_grid",
+                  "kind": "widget"
+                }
+              },
+              "ref": "acme.dataGrid",
+              "reviewNotes": null,
+              "roleContexts": [
+                "operator"
+              ],
+              "stateCoverage": [
+                "loading",
+                "empty",
+                "error"
+              ],
+              "status": "rendered",
+              "styleRefs": [],
+              "themeContexts": [
+                "light",
+                "dark"
+              ],
+              "type": "component_mapping_component",
+              "viewport": "wide"
+            },
+            {
+              "componentMap": {
+                "id": "component_map_acme_ops_widgets",
+                "name": "Acme Operations Component Map"
+              },
+              "density": "comfortable",
+              "id": "intake_grid_web_narrow",
+              "loc": {
+                "end": {
+                  "column": 4,
+                  "line": 39,
+                  "offset": 1170
+                },
+                "file": "topo/component-maps/component-map-acme-ops-widgets.tg",
+                "start": {
+                  "column": 3,
+                  "line": 23,
+                  "offset": 651
+                }
+              },
+              "localeContexts": [
+                "default_locale"
+              ],
+              "pattern": "resource_cards",
+              "platform": "web",
+              "realizes": {
+                "id": "widget_intake_grid",
+                "kind": "widget",
+                "target": {
+                  "id": "widget_intake_grid",
+                  "kind": "widget"
+                }
+              },
+              "ref": "acme.cardList",
+              "reviewNotes": "Narrow web uses cards and still needs error-state coverage.",
+              "roleContexts": [
+                "operator"
+              ],
+              "stateCoverage": [
+                "loading",
+                "empty"
+              ],
+              "status": "contract_only",
+              "styleRefs": [],
+              "themeContexts": [
+                "light"
+              ],
+              "type": "component_mapping_component",
+              "viewport": "narrow"
+            },
+            {
+              "componentMap": {
+                "id": "component_map_acme_ops_widgets",
+                "name": "Acme Operations Component Map"
+              },
+              "density": "compact",
+              "id": "filter_panel_web",
+              "loc": {
+                "end": {
+                  "column": 4,
+                  "line": 86,
+                  "offset": 2394
+                },
+                "file": "topo/component-maps/component-map-acme-ops-widgets.tg",
+                "start": {
+                  "column": 3,
+                  "line": 75,
+                  "offset": 2120
+                }
+              },
+              "localeContexts": [],
+              "pattern": "filter_panel",
+              "platform": "web",
+              "realizes": {
+                "id": "widget_filter_panel",
+                "kind": "widget",
+                "target": {
+                  "id": "widget_filter_panel",
+                  "kind": "widget"
+                }
+              },
+              "ref": "acme.filterPanel",
+              "reviewNotes": null,
+              "roleContexts": [],
+              "stateCoverage": [
+                "empty"
+              ],
+              "status": "rendered",
+              "styleRefs": [],
+              "themeContexts": [],
+              "type": "component_mapping_component",
+              "viewport": "wide"
+            },
+            {
+              "componentMap": {
+                "id": "component_map_acme_ops_widgets",
+                "name": "Acme Operations Component Map"
+              },
+              "density": "compact",
+              "id": "command_toolbar_web",
+              "loc": {
+                "end": {
+                  "column": 4,
+                  "line": 100,
+                  "offset": 2788
+                },
+                "file": "topo/component-maps/component-map-acme-ops-widgets.tg",
+                "start": {
+                  "column": 3,
+                  "line": 88,
+                  "offset": 2398
+                }
+              },
+              "localeContexts": [],
+              "pattern": "action_bar",
+              "platform": "web",
+              "realizes": {
+                "id": "widget_command_toolbar",
+                "kind": "widget",
+                "target": {
+                  "id": "widget_command_toolbar",
+                  "kind": "widget"
+                }
+              },
+              "ref": "acme.actionToolbar",
+              "reviewNotes": "Bulk action support remains contract-only until implementation proof exists.",
+              "roleContexts": [],
+              "stateCoverage": [
+                "loading"
+              ],
+              "status": "contract_only",
+              "styleRefs": [],
+              "themeContexts": [],
+              "type": "component_mapping_component",
+              "viewport": "wide"
+            },
+            {
+              "componentMap": {
+                "id": "component_map_acme_ops_widgets",
+                "name": "Acme Operations Component Map"
+              },
+              "density": "compact",
+              "id": "command_toolbar_web_narrow",
+              "loc": {
+                "end": {
+                  "column": 4,
+                  "line": 114,
+                  "offset": 3169
+                },
+                "file": "topo/component-maps/component-map-acme-ops-widgets.tg",
+                "start": {
+                  "column": 3,
+                  "line": 102,
+                  "offset": 2792
+                }
+              },
+              "localeContexts": [],
+              "pattern": "action_bar",
+              "platform": "web",
+              "realizes": {
+                "id": "widget_command_toolbar",
+                "kind": "widget",
+                "target": {
+                  "id": "widget_command_toolbar",
+                  "kind": "widget"
+                }
+              },
+              "ref": "acme.actionToolbar",
+              "reviewNotes": "Accepted from explicit Storybook metadata after designer review.",
+              "roleContexts": [],
+              "stateCoverage": [
+                "loading"
+              ],
+              "status": "rendered",
+              "styleRefs": [],
+              "themeContexts": [],
+              "type": "component_mapping_component",
+              "viewport": "narrow"
+            },
+            {
+              "componentMap": {
+                "id": "component_map_acme_ops_widgets",
+                "name": "Acme Operations Component Map"
+              },
+              "density": "comfortable",
+              "id": "alert_banner_web",
+              "loc": {
+                "end": {
+                  "column": 4,
+                  "line": 127,
+                  "offset": 3501
+                },
+                "file": "topo/component-maps/component-map-acme-ops-widgets.tg",
+                "start": {
+                  "column": 3,
+                  "line": 116,
+                  "offset": 3173
+                }
+              },
+              "localeContexts": [],
+              "pattern": "empty_state_panel",
+              "platform": "web",
+              "realizes": {
+                "id": "widget_alert_banner",
+                "kind": "widget",
+                "target": {
+                  "id": "widget_alert_banner",
+                  "kind": "widget"
+                }
+              },
+              "ref": "acme.alertBanner",
+              "reviewNotes": "Alert banner is missing iOS and Android mappings on purpose.",
+              "roleContexts": [],
+              "stateCoverage": [
+                "empty"
+              ],
+              "status": "rendered",
+              "styleRefs": [],
+              "themeContexts": [],
+              "type": "component_mapping_component",
+              "viewport": "wide"
+            }
+          ],
+          "id": "design_acme_ops",
+          "library": "acme_ops",
+          "name": "Acme Operations Design Language",
+          "packageName": "@acme/ops-ui",
+          "platforms": [
+            "web",
+            "ios",
+            "android"
+          ],
+          "status": "active",
+          "styleIntent": [],
+          "surfaces": [
+            "proj_web"
+          ],
+          "tokenMappings": [
+            {
+              "loc": {
+                "end": {
+                  "column": 58,
+                  "line": 9,
+                  "offset": 327
+                },
+                "file": "topo/design-languages/design-acme-ops.tg",
+                "start": {
+                  "column": 5,
+                  "line": 9,
+                  "offset": 274
+                }
+              },
+              "platform": null,
+              "raw": [
+                "color_role",
+                "surface",
+                "token",
+                "acme.color.surface.default"
+              ],
+              "role": "surface",
+              "roleKind": "color_role",
+              "token": "acme.color.surface.default",
+              "type": "design_language_token_mapping"
+            },
+            {
+              "loc": {
+                "end": {
+                  "column": 57,
+                  "line": 10,
+                  "offset": 384
+                },
+                "file": "topo/design-languages/design-acme-ops.tg",
+                "start": {
+                  "column": 5,
+                  "line": 10,
+                  "offset": 332
+                }
+              },
+              "platform": null,
+              "raw": [
+                "color_role",
+                "danger",
+                "token",
+                "acme.color.status.critical"
+              ],
+              "role": "danger",
+              "roleKind": "color_role",
+              "token": "acme.color.status.critical",
+              "type": "design_language_token_mapping"
+            },
+            {
+              "loc": {
+                "end": {
+                  "column": 48,
+                  "line": 11,
+                  "offset": 432
+                },
+                "file": "topo/design-languages/design-acme-ops.tg",
+                "start": {
+                  "column": 5,
+                  "line": 11,
+                  "offset": 389
+                }
+              },
+              "platform": null,
+              "raw": [
+                "typography_role",
+                "body",
+                "token",
+                "acme.type.body"
+              ],
+              "role": "body",
+              "roleKind": "typography_role",
+              "token": "acme.type.body",
+              "type": "design_language_token_mapping"
+            },
+            {
+              "loc": {
+                "end": {
+                  "column": 54,
+                  "line": 12,
+                  "offset": 486
+                },
+                "file": "topo/design-languages/design-acme-ops.tg",
+                "start": {
+                  "column": 5,
+                  "line": 12,
+                  "offset": 437
+                }
+              },
+              "platform": null,
+              "raw": [
+                "typography_role",
+                "heading",
+                "token",
+                "acme.type.heading"
+              ],
+              "role": "heading",
+              "roleKind": "typography_role",
+              "token": "acme.type.heading",
+              "type": "design_language_token_mapping"
+            }
+          ]
+        }
+      ],
+      "diagnostics": [],
+      "proofCommands": [
+        "topogram emit ui-realization-report --surface proj_web --json"
+      ],
+      "scope": {
+        "projectionId": "proj_web",
+        "screenId": "intake_queue",
+        "widgetId": null
+      },
+      "source": "design_language records own design-system scope and token mappings; component_map records map semantic widgets to platform component refs and behavior support.",
+      "status": "mapped"
+    },
+    "designReview": {
+      "diagnostics": [
+        "Widget 'widget_alert_banner' has no android design realization in 'design_acme_ops'.",
+        "Widget 'widget_alert_banner' has no ios design realization in 'design_acme_ops'.",
+        "Realization 'alert_banner_web' does not declare 'loading' state coverage.",
+        "Realization 'alert_banner_web' does not declare 'error' state coverage.",
+        "Widget 'widget_command_toolbar' has no android design realization in 'design_acme_ops'.",
+        "Widget 'widget_command_toolbar' has no ios design realization in 'design_acme_ops'.",
+        "Realization 'command_toolbar_web' is 'contract_only'.",
+        "Behavior 'bulk_action' is 'contract_only'.",
+        "Widget 'widget_command_toolbar' has no authored accessibility obligation.",
+        "Widget 'widget_command_toolbar' has no authored accessibility obligation.",
+        "Widget 'widget_command_toolbar' has no authored message key.",
+        "Widget 'widget_command_toolbar' has no authored message key.",
+        "Realization 'command_toolbar_web_narrow' does not declare 'empty' state coverage.",
+        "Realization 'command_toolbar_web_narrow' does not declare 'error' state coverage.",
+        "Realization 'command_toolbar_web' does not declare 'empty' state coverage.",
+        "Realization 'command_toolbar_web' does not declare 'error' state coverage.",
+        "Widget 'widget_filter_panel' has no android design realization in 'design_acme_ops'.",
+        "Widget 'widget_filter_panel' has no ios design realization in 'design_acme_ops'.",
+        "Widget 'widget_filter_panel' has no authored accessibility obligation.",
+        "Widget 'widget_filter_panel' has no authored message key.",
+        "Realization 'filter_panel_web' does not declare 'loading' state coverage.",
+        "Realization 'filter_panel_web' does not declare 'error' state coverage.",
+        "Realization 'intake_grid_android' is 'unsupported'.",
+        "Behavior 'filtering' is 'unsupported'.",
+        "Behavior 'sorting' is 'unsupported'.",
+        "Realization 'intake_grid_android' does not declare 'empty' state coverage.",
+        "Realization 'intake_grid_android' does not declare 'error' state coverage.",
+        "Realization 'intake_grid_ios' does not declare 'empty' state coverage.",
+        "Realization 'intake_grid_ios' does not declare 'error' state coverage.",
+        "Realization 'intake_grid_web_narrow' is 'contract_only'.",
+        "Behavior 'filtering' is 'contract_only'.",
+        "Behavior 'sorting' is 'contract_only'.",
+        "Realization 'intake_grid_web_narrow' does not declare 'error' state coverage."
+      ],
+      "gaps": {
+        "behavior_review_items": 5,
+        "missing_accessibility": 3,
+        "missing_i18n": 3,
+        "missing_platforms": 6,
+        "missing_states": 13,
+        "missing_style_evidence": 0,
+        "missing_token_mappings": 0
+      },
+      "matrix": {
+        "review_rows": [
+          {
+            "code": "design_missing_platform",
+            "message": "Widget 'widget_alert_banner' has no android design realization in 'design_acme_ops'.",
+            "platform": "android",
+            "widget": "widget_alert_banner"
+          },
+          {
+            "code": "design_missing_platform",
+            "message": "Widget 'widget_alert_banner' has no ios design realization in 'design_acme_ops'.",
+            "platform": "ios",
+            "widget": "widget_alert_banner"
+          },
+          {
+            "code": "design_missing_state",
+            "component_ref": "acme.alertBanner",
+            "message": "Realization 'alert_banner_web' does not declare 'loading' state coverage.",
+            "platform": "web",
+            "status": "missing_state",
+            "viewport": "wide",
+            "widget": "widget_alert_banner"
+          },
+          {
+            "code": "design_missing_state",
+            "component_ref": "acme.alertBanner",
+            "message": "Realization 'alert_banner_web' does not declare 'error' state coverage.",
+            "platform": "web",
+            "status": "missing_state",
+            "viewport": "wide",
+            "widget": "widget_alert_banner"
+          },
+          {
+            "code": "design_missing_platform",
+            "message": "Widget 'widget_command_toolbar' has no android design realization in 'design_acme_ops'.",
+            "platform": "android",
+            "widget": "widget_command_toolbar"
+          },
+          {
+            "code": "design_missing_platform",
+            "message": "Widget 'widget_command_toolbar' has no ios design realization in 'design_acme_ops'.",
+            "platform": "ios",
+            "widget": "widget_command_toolbar"
+          },
+          {
+            "code": "component_mapping_status_review",
+            "component_ref": "acme.actionToolbar",
+            "message": "Realization 'command_toolbar_web' is 'contract_only'.",
+            "platform": "web",
+            "status": "contract_only",
+            "viewport": "wide",
+            "widget": "widget_command_toolbar"
+          },
+          {
+            "code": "design_behavior_review_required",
+            "component_ref": "acme.actionToolbar",
+            "message": "Behavior 'bulk_action' is 'contract_only'.",
+            "platform": "web",
+            "status": "contract_only",
+            "viewport": "wide",
+            "widget": "widget_command_toolbar"
+          },
+          {
+            "code": "design_missing_accessibility",
+            "component_ref": "acme.actionToolbar",
+            "message": "Widget 'widget_command_toolbar' has no authored accessibility obligation.",
+            "platform": "web",
+            "status": "missing_accessibility",
+            "viewport": "narrow",
+            "widget": "widget_command_toolbar"
+          },
+          {
+            "code": "design_missing_accessibility",
+            "component_ref": "acme.actionToolbar",
+            "message": "Widget 'widget_command_toolbar' has no authored accessibility obligation.",
+            "platform": "web",
+            "status": "missing_accessibility",
+            "viewport": "wide",
+            "widget": "widget_command_toolbar"
+          },
+          {
+            "code": "design_missing_i18n",
+            "component_ref": "acme.actionToolbar",
+            "message": "Widget 'widget_command_toolbar' has no authored message key.",
+            "platform": "web",
+            "status": "missing_i18n",
+            "viewport": "narrow",
+            "widget": "widget_command_toolbar"
+          },
+          {
+            "code": "design_missing_i18n",
+            "component_ref": "acme.actionToolbar",
+            "message": "Widget 'widget_command_toolbar' has no authored message key.",
+            "platform": "web",
+            "status": "missing_i18n",
+            "viewport": "wide",
+            "widget": "widget_command_toolbar"
+          },
+          {
+            "code": "design_missing_state",
+            "component_ref": "acme.actionToolbar",
+            "message": "Realization 'command_toolbar_web_narrow' does not declare 'empty' state coverage.",
+            "platform": "web",
+            "status": "missing_state",
+            "viewport": "narrow",
+            "widget": "widget_command_toolbar"
+          },
+          {
+            "code": "design_missing_state",
+            "component_ref": "acme.actionToolbar",
+            "message": "Realization 'command_toolbar_web_narrow' does not declare 'error' state coverage.",
+            "platform": "web",
+            "status": "missing_state",
+            "viewport": "narrow",
+            "widget": "widget_command_toolbar"
+          },
+          {
+            "code": "design_missing_state",
+            "component_ref": "acme.actionToolbar",
+            "message": "Realization 'command_toolbar_web' does not declare 'empty' state coverage.",
+            "platform": "web",
+            "status": "missing_state",
+            "viewport": "wide",
+            "widget": "widget_command_toolbar"
+          },
+          {
+            "code": "design_missing_state",
+            "component_ref": "acme.actionToolbar",
+            "message": "Realization 'command_toolbar_web' does not declare 'error' state coverage.",
+            "platform": "web",
+            "status": "missing_state",
+            "viewport": "wide",
+            "widget": "widget_command_toolbar"
+          },
+          {
+            "code": "design_missing_platform",
+            "message": "Widget 'widget_filter_panel' has no android design realization in 'design_acme_ops'.",
+            "platform": "android",
+            "widget": "widget_filter_panel"
+          },
+          {
+            "code": "design_missing_platform",
+            "message": "Widget 'widget_filter_panel' has no ios design realization in 'design_acme_ops'.",
+            "platform": "ios",
+            "widget": "widget_filter_panel"
+          },
+          {
+            "code": "design_missing_accessibility",
+            "component_ref": "acme.filterPanel",
+            "message": "Widget 'widget_filter_panel' has no authored accessibility obligation.",
+            "platform": "web",
+            "status": "missing_accessibility",
+            "viewport": "wide",
+            "widget": "widget_filter_panel"
+          },
+          {
+            "code": "design_missing_i18n",
+            "component_ref": "acme.filterPanel",
+            "message": "Widget 'widget_filter_panel' has no authored message key.",
+            "platform": "web",
+            "status": "missing_i18n",
+            "viewport": "wide",
+            "widget": "widget_filter_panel"
+          },
+          {
+            "code": "design_missing_state",
+            "component_ref": "acme.filterPanel",
+            "message": "Realization 'filter_panel_web' does not declare 'loading' state coverage.",
+            "platform": "web",
+            "status": "missing_state",
+            "viewport": "wide",
+            "widget": "widget_filter_panel"
+          },
+          {
+            "code": "design_missing_state",
+            "component_ref": "acme.filterPanel",
+            "message": "Realization 'filter_panel_web' does not declare 'error' state coverage.",
+            "platform": "web",
+            "status": "missing_state",
+            "viewport": "wide",
+            "widget": "widget_filter_panel"
+          },
+          {
+            "code": "component_mapping_status_review",
+            "component_ref": "acme.android.IntakeCards",
+            "message": "Realization 'intake_grid_android' is 'unsupported'.",
+            "platform": "android",
+            "status": "unsupported",
+            "viewport": "any",
+            "widget": "widget_intake_grid"
+          },
+          {
+            "code": "design_behavior_review_required",
+            "component_ref": "acme.android.IntakeCards",
+            "message": "Behavior 'filtering' is 'unsupported'.",
+            "platform": "android",
+            "status": "unsupported",
+            "viewport": "any",
+            "widget": "widget_intake_grid"
+          },
+          {
+            "code": "design_behavior_review_required",
+            "component_ref": "acme.android.IntakeCards",
+            "message": "Behavior 'sorting' is 'unsupported'.",
+            "platform": "android",
+            "status": "unsupported",
+            "viewport": "any",
+            "widget": "widget_intake_grid"
+          },
+          {
+            "code": "design_missing_state",
+            "component_ref": "acme.android.IntakeCards",
+            "message": "Realization 'intake_grid_android' does not declare 'empty' state coverage.",
+            "platform": "android",
+            "status": "missing_state",
+            "viewport": "any",
+            "widget": "widget_intake_grid"
+          },
+          {
+            "code": "design_missing_state",
+            "component_ref": "acme.android.IntakeCards",
+            "message": "Realization 'intake_grid_android' does not declare 'error' state coverage.",
+            "platform": "android",
+            "status": "missing_state",
+            "viewport": "any",
+            "widget": "widget_intake_grid"
+          },
+          {
+            "code": "design_missing_state",
+            "component_ref": "acme.mobile.IntakeList",
+            "message": "Realization 'intake_grid_ios' does not declare 'empty' state coverage.",
+            "platform": "ios",
+            "status": "missing_state",
+            "viewport": "any",
+            "widget": "widget_intake_grid"
+          },
+          {
+            "code": "design_missing_state",
+            "component_ref": "acme.mobile.IntakeList",
+            "message": "Realization 'intake_grid_ios' does not declare 'error' state coverage.",
+            "platform": "ios",
+            "status": "missing_state",
+            "viewport": "any",
+            "widget": "widget_intake_grid"
+          },
+          {
+            "code": "component_mapping_status_review",
+            "component_ref": "acme.cardList",
+            "message": "Realization 'intake_grid_web_narrow' is 'contract_only'.",
+            "platform": "web",
+            "status": "contract_only",
+            "viewport": "narrow",
+            "widget": "widget_intake_grid"
+          },
+          {
+            "code": "design_behavior_review_required",
+            "component_ref": "acme.cardList",
+            "message": "Behavior 'filtering' is 'contract_only'.",
+            "platform": "web",
+            "status": "contract_only",
+            "viewport": "narrow",
+            "widget": "widget_intake_grid"
+          },
+          {
+            "code": "design_behavior_review_required",
+            "component_ref": "acme.cardList",
+            "message": "Behavior 'sorting' is 'contract_only'.",
+            "platform": "web",
+            "status": "contract_only",
+            "viewport": "narrow",
+            "widget": "widget_intake_grid"
+          },
+          {
+            "code": "design_missing_state",
+            "component_ref": "acme.cardList",
+            "message": "Realization 'intake_grid_web_narrow' does not declare 'error' state coverage.",
+            "platform": "web",
+            "status": "missing_state",
+            "viewport": "narrow",
+            "widget": "widget_intake_grid"
+          }
+        ],
+        "rows": [
+          {
+            "accessibility_status": "authored",
+            "behavior_statuses": [],
+            "component_ref": null,
+            "density": "unspecified",
+            "design_style_intent": [],
+            "i18n_status": "authored",
+            "missing_states": [
+              "loading",
+              "empty",
+              "error"
+            ],
+            "pattern": null,
+            "platform": "android",
+            "review_status": "review_required",
+            "state_coverage": [],
+            "status": "missing_platform",
+            "style_refs": [],
+            "style_status": "mapped",
+            "token_status": "mapped",
+            "usage_style_intent": [
+              "status_visible"
+            ],
+            "viewport": "any",
+            "widget": "widget_alert_banner"
+          },
+          {
+            "accessibility_status": "authored",
+            "behavior_statuses": [],
+            "component_ref": null,
+            "density": "unspecified",
+            "design_style_intent": [],
+            "i18n_status": "authored",
+            "missing_states": [
+              "loading",
+              "empty",
+              "error"
+            ],
+            "pattern": null,
+            "platform": "ios",
+            "review_status": "review_required",
+            "state_coverage": [],
+            "status": "missing_platform",
+            "style_refs": [],
+            "style_status": "mapped",
+            "token_status": "mapped",
+            "usage_style_intent": [
+              "status_visible"
+            ],
+            "viewport": "any",
+            "widget": "widget_alert_banner"
+          },
+          {
+            "accessibility_status": "authored",
+            "behavior_statuses": [],
+            "component_ref": "acme.alertBanner",
+            "density": "comfortable",
+            "design_style_intent": [],
+            "i18n_status": "authored",
+            "missing_states": [
+              "loading",
+              "error"
+            ],
+            "pattern": "empty_state_panel",
+            "platform": "web",
+            "review_status": "review_required",
+            "state_coverage": [
+              "empty"
+            ],
+            "status": "rendered",
+            "style_refs": [],
+            "style_status": "mapped",
+            "token_status": "mapped",
+            "usage_style_intent": [
+              "status_visible"
+            ],
+            "viewport": "wide",
+            "widget": "widget_alert_banner"
+          },
+          {
+            "accessibility_status": "missing",
+            "behavior_statuses": [],
+            "component_ref": null,
+            "density": "unspecified",
+            "design_style_intent": [],
+            "i18n_status": "missing",
+            "missing_states": [
+              "loading",
+              "empty",
+              "error"
+            ],
+            "pattern": null,
+            "platform": "android",
+            "review_status": "review_required",
+            "state_coverage": [],
+            "status": "missing_platform",
+            "style_refs": [],
+            "style_status": "mapped",
+            "token_status": "mapped",
+            "usage_style_intent": [
+              "compact",
+              "actionable"
+            ],
+            "viewport": "any",
+            "widget": "widget_command_toolbar"
+          },
+          {
+            "accessibility_status": "missing",
+            "behavior_statuses": [],
+            "component_ref": null,
+            "density": "unspecified",
+            "design_style_intent": [],
+            "i18n_status": "missing",
+            "missing_states": [
+              "loading",
+              "empty",
+              "error"
+            ],
+            "pattern": null,
+            "platform": "ios",
+            "review_status": "review_required",
+            "state_coverage": [],
+            "status": "missing_platform",
+            "style_refs": [],
+            "style_status": "mapped",
+            "token_status": "mapped",
+            "usage_style_intent": [
+              "compact",
+              "actionable"
+            ],
+            "viewport": "any",
+            "widget": "widget_command_toolbar"
+          },
+          {
+            "accessibility_status": "missing",
+            "behavior_statuses": [
+              {
+                "behavior": "bulk_action",
+                "status": "rendered"
+              }
+            ],
+            "component_ref": "acme.actionToolbar",
+            "density": "compact",
+            "design_style_intent": [],
+            "i18n_status": "missing",
+            "missing_states": [
+              "empty",
+              "error"
+            ],
+            "pattern": "action_bar",
+            "platform": "web",
+            "review_status": "review_required",
+            "state_coverage": [
+              "loading"
+            ],
+            "status": "rendered",
+            "style_refs": [],
+            "style_status": "mapped",
+            "token_status": "mapped",
+            "usage_style_intent": [
+              "compact",
+              "actionable"
+            ],
+            "viewport": "narrow",
+            "widget": "widget_command_toolbar"
+          },
+          {
+            "accessibility_status": "missing",
+            "behavior_statuses": [
+              {
+                "behavior": "bulk_action",
+                "status": "contract_only"
+              }
+            ],
+            "component_ref": "acme.actionToolbar",
+            "density": "compact",
+            "design_style_intent": [],
+            "i18n_status": "missing",
+            "missing_states": [
+              "empty",
+              "error"
+            ],
+            "pattern": "action_bar",
+            "platform": "web",
+            "review_status": "review_required",
+            "state_coverage": [
+              "loading"
+            ],
+            "status": "contract_only",
+            "style_refs": [],
+            "style_status": "mapped",
+            "token_status": "mapped",
+            "usage_style_intent": [
+              "compact",
+              "actionable"
+            ],
+            "viewport": "wide",
+            "widget": "widget_command_toolbar"
+          },
+          {
+            "accessibility_status": "missing",
+            "behavior_statuses": [],
+            "component_ref": null,
+            "density": "unspecified",
+            "design_style_intent": [],
+            "i18n_status": "missing",
+            "missing_states": [
+              "loading",
+              "empty",
+              "error"
+            ],
+            "pattern": null,
+            "platform": "android",
+            "review_status": "review_required",
+            "state_coverage": [],
+            "status": "missing_platform",
+            "style_refs": [],
+            "style_status": "mapped",
+            "token_status": "mapped",
+            "usage_style_intent": [
+              "collapsible"
+            ],
+            "viewport": "any",
+            "widget": "widget_filter_panel"
+          },
+          {
+            "accessibility_status": "missing",
+            "behavior_statuses": [],
+            "component_ref": null,
+            "density": "unspecified",
+            "design_style_intent": [],
+            "i18n_status": "missing",
+            "missing_states": [
+              "loading",
+              "empty",
+              "error"
+            ],
+            "pattern": null,
+            "platform": "ios",
+            "review_status": "review_required",
+            "state_coverage": [],
+            "status": "missing_platform",
+            "style_refs": [],
+            "style_status": "mapped",
+            "token_status": "mapped",
+            "usage_style_intent": [
+              "collapsible"
+            ],
+            "viewport": "any",
+            "widget": "widget_filter_panel"
+          },
+          {
+            "accessibility_status": "missing",
+            "behavior_statuses": [
+              {
+                "behavior": "filtering",
+                "status": "rendered"
+              }
+            ],
+            "component_ref": "acme.filterPanel",
+            "density": "compact",
+            "design_style_intent": [],
+            "i18n_status": "missing",
+            "missing_states": [
+              "loading",
+              "error"
+            ],
+            "pattern": "filter_panel",
+            "platform": "web",
+            "review_status": "review_required",
+            "state_coverage": [
+              "empty"
+            ],
+            "status": "rendered",
+            "style_refs": [],
+            "style_status": "mapped",
+            "token_status": "mapped",
+            "usage_style_intent": [
+              "collapsible"
+            ],
+            "viewport": "wide",
+            "widget": "widget_filter_panel"
+          },
+          {
+            "accessibility_status": "authored",
+            "behavior_statuses": [
+              {
+                "behavior": "filtering",
+                "status": "unsupported"
+              },
+              {
+                "behavior": "sorting",
+                "status": "unsupported"
+              }
+            ],
+            "component_ref": "acme.android.IntakeCards",
+            "density": "comfortable",
+            "design_style_intent": [],
+            "i18n_status": "authored",
+            "missing_states": [
+              "empty",
+              "error"
+            ],
+            "pattern": "resource_cards",
+            "platform": "android",
+            "review_status": "review_required",
+            "state_coverage": [
+              "loading"
+            ],
+            "status": "unsupported",
+            "style_refs": [],
+            "style_status": "mapped",
+            "token_status": "mapped",
+            "usage_style_intent": [
+              "scannable",
+              "structured"
+            ],
+            "viewport": "any",
+            "widget": "widget_intake_grid"
+          },
+          {
+            "accessibility_status": "authored",
+            "behavior_statuses": [
+              {
+                "behavior": "filtering",
+                "status": "implementation_owned"
+              },
+              {
+                "behavior": "selection",
+                "status": "rendered"
+              },
+              {
+                "behavior": "sorting",
+                "status": "implementation_owned"
+              }
+            ],
+            "component_ref": "acme.mobile.IntakeList",
+            "density": "comfortable",
+            "design_style_intent": [],
+            "i18n_status": "authored",
+            "missing_states": [
+              "empty",
+              "error"
+            ],
+            "pattern": "resource_cards",
+            "platform": "ios",
+            "review_status": "review_required",
+            "state_coverage": [
+              "loading"
+            ],
+            "status": "implementation_owned",
+            "style_refs": [],
+            "style_status": "mapped",
+            "token_status": "mapped",
+            "usage_style_intent": [
+              "scannable",
+              "structured"
+            ],
+            "viewport": "any",
+            "widget": "widget_intake_grid"
+          },
+          {
+            "accessibility_status": "authored",
+            "behavior_statuses": [
+              {
+                "behavior": "filtering",
+                "status": "contract_only"
+              },
+              {
+                "behavior": "selection",
+                "status": "rendered"
+              },
+              {
+                "behavior": "sorting",
+                "status": "contract_only"
+              }
+            ],
+            "component_ref": "acme.cardList",
+            "density": "comfortable",
+            "design_style_intent": [],
+            "i18n_status": "authored",
+            "missing_states": [
+              "error"
+            ],
+            "pattern": "resource_cards",
+            "platform": "web",
+            "review_status": "review_required",
+            "state_coverage": [
+              "loading",
+              "empty"
+            ],
+            "status": "contract_only",
+            "style_refs": [],
+            "style_status": "mapped",
+            "token_status": "mapped",
+            "usage_style_intent": [
+              "scannable",
+              "structured"
+            ],
+            "viewport": "narrow",
+            "widget": "widget_intake_grid"
+          },
+          {
+            "accessibility_status": "authored",
+            "behavior_statuses": [
+              {
+                "behavior": "filtering",
+                "status": "rendered"
+              },
+              {
+                "behavior": "selection",
+                "status": "rendered"
+              },
+              {
+                "behavior": "sorting",
+                "status": "rendered"
+              }
+            ],
+            "component_ref": "acme.dataGrid",
+            "density": "compact",
+            "design_style_intent": [],
+            "i18n_status": "authored",
+            "missing_states": [],
+            "pattern": "data_grid_view",
+            "platform": "web",
+            "review_status": "mapped",
+            "state_coverage": [
+              "loading",
+              "empty",
+              "error"
+            ],
+            "status": "rendered",
+            "style_refs": [],
+            "style_status": "mapped",
+            "token_status": "mapped",
+            "usage_style_intent": [
+              "scannable",
+              "structured"
+            ],
+            "viewport": "wide",
+            "widget": "widget_intake_grid"
+          }
+        ]
+      },
+      "proofCommands": [
+        "topogram query ui-design-coverage ./topo --surface proj_web --json",
+        "topogram query ui-design-coverage ./topo --surface proj_web --format markdown",
+        "topogram emit ui-realization-report ./topo --surface proj_web --json"
+      ],
+      "scope": {
+        "projectionId": "proj_web",
+        "screenId": "intake_queue",
+        "widgetId": null
+      },
+      "source": "ui-design-coverage design_matrix rows from design_language and component_map records",
+      "status": "review_required"
+    },
+    "designTokens": {
+      "accessibility": {},
+      "actionRoles": {},
+      "colorRoles": {},
+      "density": "comfortable",
+      "radiusScale": "medium",
+      "tone": "operational",
+      "typographyRoles": {}
+    },
+    "displayFields": [
+      {
+        "label": "Title",
+        "name": "title",
+        "required": true,
+        "requiredness": "required",
+        "role": "primary",
+        "sourceName": "title",
+        "type": "string"
+      },
+      {
+        "label": "Status",
+        "name": "status",
+        "required": true,
+        "requiredness": "required",
+        "role": "metadata",
+        "sourceName": "status",
+        "type": "string"
+      },
+      {
+        "label": "Priority",
+        "name": "priority",
+        "required": true,
+        "requiredness": "required",
+        "role": "metadata",
+        "sourceName": "priority",
+        "type": "string"
+      },
+      {
+        "label": "Assignee",
+        "name": "assignee",
+        "required": false,
+        "requiredness": "optional",
+        "role": "metadata",
+        "sourceName": "assignee",
+        "type": "string"
+      },
+      {
+        "label": "Updated At",
+        "name": "updated_at",
+        "required": true,
+        "requiredness": "required",
+        "role": "date",
+        "sourceName": "updated_at",
+        "type": "datetime"
+      }
+    ],
+    "internationalization": {
+      "currentSignals": {
+        "authoredContract": {
+          "messages": [
+            {
+              "actionId": null,
+              "context": "screen_title",
+              "defaultText": "Intake Queue",
+              "id": "msg_intake_title",
+              "key": "intake.title",
+              "screenId": "intake_queue",
+              "terms": [],
+              "variables": [],
+              "widgetId": null
+            },
+            {
+              "actionId": null,
+              "context": "widget_label",
+              "defaultText": "Intake results",
+              "id": "msg_grid_label",
+              "key": "intake.grid.label",
+              "screenId": null,
+              "terms": [],
+              "variables": [],
+              "widgetId": "widget_intake_grid"
+            },
+            {
+              "actionId": null,
+              "context": "widget_label",
+              "defaultText": "Operations alerts",
+              "id": "msg_alert_label",
+              "key": "alerts.label",
+              "screenId": null,
+              "terms": [],
+              "variables": [],
+              "widgetId": "widget_alert_banner"
+            }
+          ],
+          "totalMessages": 3
+        },
+        "localePolicy": {
+          "defaultLocale": "en-US",
+          "direction": "ltr",
+          "fallbackLocale": "en-US",
+          "supportedLocales": [
+            "en-US"
+          ]
+        },
+        "messageKeys": [
+          "intake.title",
+          "intake.grid.label",
+          "alerts.label"
+        ]
+      },
+      "decisions": [
+        {
+          "found": false,
+          "id": "decision_i18n_messages_are_separate_from_glossary_terms",
+          "kind": null,
+          "name": "decision_i18n_messages_are_separate_from_glossary_terms",
+          "status": null
+        }
+      ],
+      "diagnostics": [],
+      "messages": [
+        {
+          "actionId": null,
+          "context": "screen_title",
+          "defaultText": "Intake Queue",
+          "id": "msg_intake_title",
+          "key": "intake.title",
+          "screenId": "intake_queue",
+          "terms": [],
+          "variables": [],
+          "widgetId": null
+        },
+        {
+          "actionId": null,
+          "context": "widget_label",
+          "defaultText": "Intake results",
+          "id": "msg_grid_label",
+          "key": "intake.grid.label",
+          "screenId": null,
+          "terms": [],
+          "variables": [],
+          "widgetId": "widget_intake_grid"
+        },
+        {
+          "actionId": null,
+          "context": "widget_label",
+          "defaultText": "Operations alerts",
+          "id": "msg_alert_label",
+          "key": "alerts.label",
+          "screenId": null,
+          "terms": [],
+          "variables": [],
+          "widgetId": "widget_alert_banner"
+        }
+      ],
+      "obligations": [
+        "Use glossary terms for canonical meaning and message keys for translated wording.",
+        "Keep concrete locale catalogs in generated or maintained app code until a message contract DSL exists."
+      ],
+      "proofCommands": [
+        "topogram emit glossary ./topo --json",
+        "topogram query slice ./topo --screen intake_queue --surface proj_web --json"
+      ],
+      "requirements": [
+        {
+          "found": false,
+          "id": "req_i18n_message_contract_v1",
+          "kind": null,
+          "name": "req_i18n_message_contract_v1",
+          "status": null
+        }
+      ],
+      "scope": {
+        "projectionId": "proj_web",
+        "screenId": "intake_queue",
+        "widgetId": null
+      },
+      "source": "semantic_ui messages block, glossary terms, decisions, and requirements",
+      "status": "authored_contract",
+      "terms": [
+        {
+          "found": false,
+          "id": "term_translatable_message",
+          "kind": null,
+          "name": "term_translatable_message",
+          "status": null
+        },
+        {
+          "found": false,
+          "id": "term_message_key",
+          "kind": null,
+          "name": "term_message_key",
+          "status": null
+        },
+        {
+          "found": false,
+          "id": "term_locale_policy",
+          "kind": null,
+          "name": "term_locale_policy",
+          "status": null
+        },
+        {
+          "found": false,
+          "id": "term_source_text",
+          "kind": null,
+          "name": "term_source_text",
+          "status": null
+        }
+      ]
+    },
+    "ownership": {
+      "concreteSurfaceOwns": [
+        "screen_routes",
+        "surface_hints"
+      ],
+      "designIntent": "semantic_ui",
+      "widgetPlacement": "semantic_ui"
+    },
+    "regions": [
+      {
+        "accessibilityObligations": [
+          "landmark_banner"
+        ],
+        "allowedWidgetPatterns": [],
+        "density": null,
+        "i18nObligations": [
+          "brand_label"
+        ],
+        "kind": "header",
+        "layoutId": "layout_ops_shell",
+        "name": "header",
+        "pattern": "app_header",
+        "placement": "top",
+        "region": "header",
+        "regionContractId": "region_app_header",
+        "slot": false,
+        "slotRole": "page_header",
+        "source": "layout",
+        "state": null,
+        "style": {
+          "effective_intent": [
+            "brand",
+            "persistent"
+          ],
+          "sources": [
+            {
+              "id": "region_app_header",
+              "intent": [
+                "brand",
+                "persistent"
+              ],
+              "scope": "region"
+            }
+          ]
+        },
+        "styleIntent": [
+          "brand",
+          "persistent"
+        ],
+        "title": "App Header",
+        "variant": null,
+        "viewport": "any"
+      },
+      {
+        "accessibilityObligations": [
+          "landmark_navigation",
+          "keyboard_navigation"
+        ],
+        "allowedWidgetPatterns": [],
+        "density": null,
+        "i18nObligations": [],
+        "kind": "navigation",
+        "layoutId": "layout_ops_shell",
+        "name": "nav",
+        "pattern": "primary_navigation",
+        "placement": "shell",
+        "region": "nav",
+        "regionContractId": "region_global_nav",
+        "slot": false,
+        "slotRole": "global_navigation",
+        "source": "layout",
+        "state": null,
+        "style": {
+          "effective_intent": [
+            "persistent"
+          ],
+          "sources": [
+            {
+              "id": "region_global_nav",
+              "intent": [
+                "persistent"
+              ],
+              "scope": "region"
+            }
+          ]
+        },
+        "styleIntent": [
+          "persistent"
+        ],
+        "title": "Global Navigation",
+        "variant": null,
+        "viewport": "any"
+      },
+      {
+        "accessibilityObligations": [
+          "labelled_region",
+          "keyboard_collection_navigation"
+        ],
+        "allowedWidgetPatterns": [
+          "data_grid_view",
+          "resource_cards"
+        ],
+        "density": "compact",
+        "i18nObligations": [
+          "title",
+          "empty_state"
+        ],
+        "kind": "results",
+        "layoutId": "layout_ops_shell",
+        "name": "content",
+        "pattern": "data_grid_view",
+        "placement": "primary",
+        "region": "content",
+        "regionContractId": "region_results",
+        "slot": true,
+        "slotRole": "primary_work_area",
+        "source": "layout",
+        "state": null,
+        "style": {
+          "effective_intent": [
+            "scannable",
+            "structured"
+          ],
+          "sources": [
+            {
+              "id": "region_results",
+              "intent": [
+                "scannable",
+                "structured"
+              ],
+              "scope": "region"
+            }
+          ]
+        },
+        "styleIntent": [
+          "scannable",
+          "structured"
+        ],
+        "title": "Results",
+        "variant": null,
+        "viewport": "any"
+      },
+      {
+        "accessibilityObligations": [],
+        "allowedWidgetPatterns": [
+          "action_bar"
+        ],
+        "density": "compact",
+        "i18nObligations": [],
+        "kind": "toolbar",
+        "layoutId": "layout_intake_workspace",
+        "name": "commands",
+        "pattern": "action_bar",
+        "placement": "secondary",
+        "region": "commands",
+        "regionContractId": "region_command_bar",
+        "slot": false,
+        "slotRole": "command_area",
+        "source": "layout",
+        "state": null,
+        "style": {
+          "effective_intent": [
+            "compact",
+            "actionable"
+          ],
+          "sources": [
+            {
+              "id": "region_command_bar",
+              "intent": [
+                "compact",
+                "actionable"
+              ],
+              "scope": "region"
+            }
+          ]
+        },
+        "styleIntent": [
+          "compact",
+          "actionable"
+        ],
+        "title": "Command Bar",
+        "variant": null,
+        "viewport": "any"
+      },
+      {
+        "accessibilityObligations": [
+          "labelled_region"
+        ],
+        "allowedWidgetPatterns": [
+          "filter_panel"
+        ],
+        "density": "compact",
+        "i18nObligations": [
+          "filter_labels"
+        ],
+        "kind": "filters",
+        "layoutId": "layout_intake_workspace",
+        "name": "filters",
+        "pattern": "filter_panel",
+        "placement": "secondary",
+        "region": "filters",
+        "regionContractId": "region_filter_panel",
+        "slot": false,
+        "slotRole": "filter_area",
+        "source": "layout",
+        "state": null,
+        "style": {
+          "effective_intent": [
+            "collapsible"
+          ],
+          "sources": [
+            {
+              "id": "region_filter_panel",
+              "intent": [
+                "collapsible"
+              ],
+              "scope": "region"
+            }
+          ]
+        },
+        "styleIntent": [
+          "collapsible"
+        ],
+        "title": "Filter Panel",
+        "variant": null,
+        "viewport": "any"
+      },
+      {
+        "accessibilityObligations": [
+          "labelled_region",
+          "keyboard_collection_navigation"
+        ],
+        "allowedWidgetPatterns": [
+          "data_grid_view",
+          "resource_cards"
+        ],
+        "density": "compact",
+        "i18nObligations": [
+          "title",
+          "empty_state"
+        ],
+        "kind": "results",
+        "layoutId": "layout_intake_workspace",
+        "name": "results",
+        "pattern": "data_grid_view",
+        "placement": "primary",
+        "region": "results",
+        "regionContractId": "region_results",
+        "slot": true,
+        "slotRole": "primary_work_area",
+        "source": "layout",
+        "state": null,
+        "style": {
+          "effective_intent": [
+            "scannable",
+            "structured"
+          ],
+          "sources": [
+            {
+              "id": "region_results",
+              "intent": [
+                "scannable",
+                "structured"
+              ],
+              "scope": "region"
+            }
+          ]
+        },
+        "styleIntent": [
+          "scannable",
+          "structured"
+        ],
+        "title": "Results",
+        "variant": null,
+        "viewport": "any"
+      },
+      {
+        "accessibilityObligations": [
+          "live_region"
+        ],
+        "allowedWidgetPatterns": [],
+        "density": null,
+        "i18nObligations": [
+          "alert_message"
+        ],
+        "kind": "content",
+        "layoutId": "layout_intake_workspace",
+        "name": "alerts",
+        "pattern": "empty_state_panel",
+        "placement": "supporting",
+        "region": "alerts",
+        "regionContractId": "region_alerts",
+        "slot": false,
+        "slotRole": "status_feedback",
+        "source": "layout",
+        "state": null,
+        "style": {
+          "effective_intent": [
+            "status_visible"
+          ],
+          "sources": [
+            {
+              "id": "region_alerts",
+              "intent": [
+                "status_visible"
+              ],
+              "scope": "region"
+            }
+          ]
+        },
+        "styleIntent": [
+          "status_visible"
+        ],
+        "title": "Alerts",
+        "variant": null,
+        "viewport": "any"
+      }
+    ],
+    "related": {
+      "capabilities": [
+        "cap_acknowledge_alert",
+        "cap_list_intake"
+      ],
+      "shapes": [
+        "shape_alert_banner",
+        "shape_intake_filter",
+        "shape_intake_row"
+      ],
+      "widgets": [
+        "widget_alert_banner",
+        "widget_command_toolbar",
+        "widget_filter_panel",
+        "widget_intake_grid"
+      ]
+    },
+    "requiredGates": [
+      {
+        "command": "topogram check",
+        "reason": "Validate shared UI ownership, taxonomy, references, and topology."
+      },
+      {
+        "command": "topogram widget check --surface proj_web",
+        "reason": "Validate widget placement, props, events, regions, and patterns."
+      },
+      {
+        "command": "topogram widget behavior --surface proj_web",
+        "reason": "Inspect behavior realizations and partial bindings before code changes."
+      },
+      {
+        "command": "topogram emit ui-realization-report --surface proj_web --json",
+        "reason": "Confirm screens, regions, widgets, display fields, behavior, and design tokens are realizable by the web generator."
+      }
+    ],
+    "route": "/intake",
+    "screen": {
+      "accessibility": [
+        {
+          "focus": "visible",
+          "keyboard": "standard",
+          "live": "off",
+          "nameFrom": {
+            "source": "message",
+            "value": "msg_intake_title"
+          },
+          "role": "main",
+          "targetId": "intake_queue",
+          "targetKind": "screen"
+        },
+        {
+          "focus": "roving_tabindex",
+          "keyboard": "data_grid",
+          "live": "off",
+          "nameFrom": {
+            "source": "message",
+            "value": "msg_grid_label"
+          },
+          "role": "grid",
+          "targetId": "widget_intake_grid",
+          "targetKind": "widget"
+        },
+        {
+          "focus": "visible",
+          "keyboard": "standard",
+          "live": "polite",
+          "nameFrom": {
+            "source": "message",
+            "value": "msg_alert_label"
+          },
+          "role": "status",
+          "targetId": "widget_alert_banner",
+          "targetKind": "widget"
+        }
+      ],
+      "actionSurfaceHints": {
+        "cap_acknowledge_alert": {}
+      },
+      "actions": {
+        "destructive": null,
+        "primary": {
+          "id": "cap_acknowledge_alert",
+          "kind": "capability"
+        },
+        "screen": [],
+        "secondary": null,
+        "terminal": null
+      },
+      "collection": {
+        "filters": [],
+        "groupBy": [],
+        "pagination": null,
+        "refresh": "manual",
+        "search": [],
+        "sort": [],
+        "views": []
+      },
+      "detailCapability": null,
+      "display": {
+        "fields": [
+          {
+            "label": "Title",
+            "name": "title",
+            "required": true,
+            "requiredness": "required",
+            "role": "primary",
+            "sourceName": "title",
+            "type": "string"
+          },
+          {
+            "label": "Status",
+            "name": "status",
+            "required": true,
+            "requiredness": "required",
+            "role": "metadata",
+            "sourceName": "status",
+            "type": "string"
+          },
+          {
+            "label": "Priority",
+            "name": "priority",
+            "required": true,
+            "requiredness": "required",
+            "role": "metadata",
+            "sourceName": "priority",
+            "type": "string"
+          },
+          {
+            "label": "Assignee",
+            "name": "assignee",
+            "required": false,
+            "requiredness": "optional",
+            "role": "metadata",
+            "sourceName": "assignee",
+            "type": "string"
+          },
+          {
+            "label": "Updated At",
+            "name": "updated_at",
+            "required": true,
+            "requiredness": "required",
+            "role": "date",
+            "sourceName": "updated_at",
+            "type": "datetime"
+          }
+        ],
+        "source": {
+          "id": "shape_intake_row",
+          "kind": "shape"
+        }
+      },
+      "displayFields": [
+        {
+          "label": "Title",
+          "name": "title",
+          "required": true,
+          "requiredness": "required",
+          "role": "primary",
+          "sourceName": "title",
+          "type": "string"
+        },
+        {
+          "label": "Status",
+          "name": "status",
+          "required": true,
+          "requiredness": "required",
+          "role": "metadata",
+          "sourceName": "status",
+          "type": "string"
+        },
+        {
+          "label": "Priority",
+          "name": "priority",
+          "required": true,
+          "requiredness": "required",
+          "role": "metadata",
+          "sourceName": "priority",
+          "type": "string"
+        },
+        {
+          "label": "Assignee",
+          "name": "assignee",
+          "required": false,
+          "requiredness": "optional",
+          "role": "metadata",
+          "sourceName": "assignee",
+          "type": "string"
+        },
+        {
+          "label": "Updated At",
+          "name": "updated_at",
+          "required": true,
+          "requiredness": "required",
+          "role": "date",
+          "sourceName": "updated_at",
+          "type": "datetime"
+        }
+      ],
+      "emptyState": {
+        "body": null,
+        "title": "No intake items"
+      },
+      "id": "intake_queue",
+      "inputShape": null,
+      "itemShape": {
+        "id": "shape_intake_row",
+        "kind": "shape"
+      },
+      "kind": "list",
+      "layout": {
+        "appShell": null,
+        "fills": "content",
+        "id": "layout_intake_workspace",
+        "inherited": [
+          {
+            "appShell": null,
+            "fills": null,
+            "id": "layout_ops_shell",
+            "name": "Operations Shell",
+            "pattern": "app_shell",
+            "styleIntent": []
+          },
+          {
+            "appShell": null,
+            "fills": "content",
+            "id": "layout_intake_workspace",
+            "name": "Intake Workspace",
+            "pattern": "collection_workspace",
+            "styleIntent": []
+          }
+        ],
+        "name": "Intake Workspace",
+        "pattern": "collection_workspace",
+        "styleIntent": []
+      },
+      "loadCapability": {
+        "id": "cap_list_intake",
+        "kind": "capability"
+      },
+      "lookups": [],
+      "messages": [
+        {
+          "actionId": null,
+          "context": "screen_title",
+          "defaultText": "Intake Queue",
+          "id": "msg_intake_title",
+          "key": "intake.title",
+          "screenId": "intake_queue",
+          "terms": [],
+          "variables": [],
+          "widgetId": null
+        },
+        {
+          "actionId": null,
+          "context": "widget_label",
+          "defaultText": "Intake results",
+          "id": "msg_grid_label",
+          "key": "intake.grid.label",
+          "screenId": null,
+          "terms": [],
+          "variables": [],
+          "widgetId": "widget_intake_grid"
+        },
+        {
+          "actionId": null,
+          "context": "widget_label",
+          "defaultText": "Operations alerts",
+          "id": "msg_alert_label",
+          "key": "alerts.label",
+          "screenId": null,
+          "terms": [],
+          "variables": [],
+          "widgetId": "widget_alert_banner"
+        }
+      ],
+      "navigation": {
+        "successNavigate": null,
+        "successRefresh": null
+      },
+      "patterns": [
+        "app_header",
+        "primary_navigation",
+        "data_grid_view",
+        "action_bar",
+        "filter_panel",
+        "empty_state_panel",
+        "resource_table"
+      ],
+      "regions": [
+        {
+          "accessibilityObligations": [
+            "landmark_banner"
+          ],
+          "allowedWidgetPatterns": [],
+          "density": null,
+          "i18nObligations": [
+            "brand_label"
+          ],
+          "kind": "header",
+          "layoutId": "layout_ops_shell",
+          "name": "header",
+          "pattern": "app_header",
+          "placement": "top",
+          "region": "header",
+          "regionContractId": "region_app_header",
+          "slot": false,
+          "slotRole": "page_header",
+          "source": "layout",
+          "state": null,
+          "style": {
+            "effective_intent": [
+              "brand",
+              "persistent"
+            ],
+            "sources": [
+              {
+                "id": "region_app_header",
+                "intent": [
+                  "brand",
+                  "persistent"
+                ],
+                "scope": "region"
+              }
+            ]
+          },
+          "styleIntent": [
+            "brand",
+            "persistent"
+          ],
+          "title": "App Header",
+          "variant": null,
+          "viewport": "any"
+        },
+        {
+          "accessibilityObligations": [
+            "landmark_navigation",
+            "keyboard_navigation"
+          ],
+          "allowedWidgetPatterns": [],
+          "density": null,
+          "i18nObligations": [],
+          "kind": "navigation",
+          "layoutId": "layout_ops_shell",
+          "name": "nav",
+          "pattern": "primary_navigation",
+          "placement": "shell",
+          "region": "nav",
+          "regionContractId": "region_global_nav",
+          "slot": false,
+          "slotRole": "global_navigation",
+          "source": "layout",
+          "state": null,
+          "style": {
+            "effective_intent": [
+              "persistent"
+            ],
+            "sources": [
+              {
+                "id": "region_global_nav",
+                "intent": [
+                  "persistent"
+                ],
+                "scope": "region"
+              }
+            ]
+          },
+          "styleIntent": [
+            "persistent"
+          ],
+          "title": "Global Navigation",
+          "variant": null,
+          "viewport": "any"
+        },
+        {
+          "accessibilityObligations": [
+            "labelled_region",
+            "keyboard_collection_navigation"
+          ],
+          "allowedWidgetPatterns": [
+            "data_grid_view",
+            "resource_cards"
+          ],
+          "density": "compact",
+          "i18nObligations": [
+            "title",
+            "empty_state"
+          ],
+          "kind": "results",
+          "layoutId": "layout_ops_shell",
+          "name": "content",
+          "pattern": "data_grid_view",
+          "placement": "primary",
+          "region": "content",
+          "regionContractId": "region_results",
+          "slot": true,
+          "slotRole": "primary_work_area",
+          "source": "layout",
+          "state": null,
+          "style": {
+            "effective_intent": [
+              "scannable",
+              "structured"
+            ],
+            "sources": [
+              {
+                "id": "region_results",
+                "intent": [
+                  "scannable",
+                  "structured"
+                ],
+                "scope": "region"
+              }
+            ]
+          },
+          "styleIntent": [
+            "scannable",
+            "structured"
+          ],
+          "title": "Results",
+          "variant": null,
+          "viewport": "any"
+        },
+        {
+          "accessibilityObligations": [],
+          "allowedWidgetPatterns": [
+            "action_bar"
+          ],
+          "density": "compact",
+          "i18nObligations": [],
+          "kind": "toolbar",
+          "layoutId": "layout_intake_workspace",
+          "name": "commands",
+          "pattern": "action_bar",
+          "placement": "secondary",
+          "region": "commands",
+          "regionContractId": "region_command_bar",
+          "slot": false,
+          "slotRole": "command_area",
+          "source": "layout",
+          "state": null,
+          "style": {
+            "effective_intent": [
+              "compact",
+              "actionable"
+            ],
+            "sources": [
+              {
+                "id": "region_command_bar",
+                "intent": [
+                  "compact",
+                  "actionable"
+                ],
+                "scope": "region"
+              }
+            ]
+          },
+          "styleIntent": [
+            "compact",
+            "actionable"
+          ],
+          "title": "Command Bar",
+          "variant": null,
+          "viewport": "any"
+        },
+        {
+          "accessibilityObligations": [
+            "labelled_region"
+          ],
+          "allowedWidgetPatterns": [
+            "filter_panel"
+          ],
+          "density": "compact",
+          "i18nObligations": [
+            "filter_labels"
+          ],
+          "kind": "filters",
+          "layoutId": "layout_intake_workspace",
+          "name": "filters",
+          "pattern": "filter_panel",
+          "placement": "secondary",
+          "region": "filters",
+          "regionContractId": "region_filter_panel",
+          "slot": false,
+          "slotRole": "filter_area",
+          "source": "layout",
+          "state": null,
+          "style": {
+            "effective_intent": [
+              "collapsible"
+            ],
+            "sources": [
+              {
+                "id": "region_filter_panel",
+                "intent": [
+                  "collapsible"
+                ],
+                "scope": "region"
+              }
+            ]
+          },
+          "styleIntent": [
+            "collapsible"
+          ],
+          "title": "Filter Panel",
+          "variant": null,
+          "viewport": "any"
+        },
+        {
+          "accessibilityObligations": [
+            "labelled_region",
+            "keyboard_collection_navigation"
+          ],
+          "allowedWidgetPatterns": [
+            "data_grid_view",
+            "resource_cards"
+          ],
+          "density": "compact",
+          "i18nObligations": [
+            "title",
+            "empty_state"
+          ],
+          "kind": "results",
+          "layoutId": "layout_intake_workspace",
+          "name": "results",
+          "pattern": "data_grid_view",
+          "placement": "primary",
+          "region": "results",
+          "regionContractId": "region_results",
+          "slot": true,
+          "slotRole": "primary_work_area",
+          "source": "layout",
+          "state": null,
+          "style": {
+            "effective_intent": [
+              "scannable",
+              "structured"
+            ],
+            "sources": [
+              {
+                "id": "region_results",
+                "intent": [
+                  "scannable",
+                  "structured"
+                ],
+                "scope": "region"
+              }
+            ]
+          },
+          "styleIntent": [
+            "scannable",
+            "structured"
+          ],
+          "title": "Results",
+          "variant": null,
+          "viewport": "any"
+        },
+        {
+          "accessibilityObligations": [
+            "live_region"
+          ],
+          "allowedWidgetPatterns": [],
+          "density": null,
+          "i18nObligations": [
+            "alert_message"
+          ],
+          "kind": "content",
+          "layoutId": "layout_intake_workspace",
+          "name": "alerts",
+          "pattern": "empty_state_panel",
+          "placement": "supporting",
+          "region": "alerts",
+          "regionContractId": "region_alerts",
+          "slot": false,
+          "slotRole": "status_feedback",
+          "source": "layout",
+          "state": null,
+          "style": {
+            "effective_intent": [
+              "status_visible"
+            ],
+            "sources": [
+              {
+                "id": "region_alerts",
+                "intent": [
+                  "status_visible"
+                ],
+                "scope": "region"
+              }
+            ]
+          },
+          "styleIntent": [
+            "status_visible"
+          ],
+          "title": "Alerts",
+          "variant": null,
+          "viewport": "any"
+        }
+      ],
+      "route": "/intake",
+      "states": {
+        "empty": "empty_state_panel",
+        "error": "inline",
+        "loading": "skeleton",
+        "notFound": "auto",
+        "success": "auto",
+        "unauthorized": "auto"
+      },
+      "style": {
+        "effective_intent": [],
+        "sources": []
+      },
+      "styleIntent": [],
+      "submitCapability": null,
+      "surfaceHints": {},
+      "title": "Intake Queue",
+      "type": "ui_screen_contract",
+      "viewShape": null,
+      "visibility": [],
+      "widgets": [
+        {
+          "accessibility": [],
+          "behaviorRealizations": [],
+          "bindingId": "intake_filters",
+          "dataBindings": [
+            {
+              "prop": "filters",
+              "source": {
+                "id": "shape_intake_filter",
+                "kind": "shape"
+              },
+              "sourceKind": "shape"
+            }
+          ],
+          "diagnostics": [],
+          "display": {
+            "diagnostics": [],
+            "fields": [
+              {
+                "label": "Status",
+                "name": "status",
+                "required": false,
+                "requiredness": "optional",
+                "role": "metadata",
+                "sourceName": "status",
+                "type": "string"
+              },
+              {
+                "label": "Priority",
+                "name": "priority",
+                "required": false,
+                "requiredness": "optional",
+                "role": "metadata",
+                "sourceName": "priority",
+                "type": "string"
+              },
+              {
+                "label": "Assignee",
+                "name": "assignee",
+                "required": false,
+                "requiredness": "optional",
+                "role": "metadata",
+                "sourceName": "assignee",
+                "type": "string"
+              }
+            ],
+            "prop": "filters",
+            "source": {
+              "id": "shape_intake_filter",
+              "kind": "shape"
+            },
+            "sourceShape": {
+              "id": "shape_intake_filter",
+              "kind": "shape"
+            }
+          },
+          "displayFields": [
+            {
+              "label": "Status",
+              "name": "status",
+              "required": false,
+              "requiredness": "optional",
+              "role": "metadata",
+              "sourceName": "status",
+              "type": "string"
+            },
+            {
+              "label": "Priority",
+              "name": "priority",
+              "required": false,
+              "requiredness": "optional",
+              "role": "metadata",
+              "sourceName": "priority",
+              "type": "string"
+            },
+            {
+              "label": "Assignee",
+              "name": "assignee",
+              "required": false,
+              "requiredness": "optional",
+              "role": "metadata",
+              "sourceName": "assignee",
+              "type": "string"
+            }
+          ],
+          "eventBindings": [],
+          "generatedBindingId": false,
+          "intent": "Filter intake items by status, priority, and assignee.",
+          "layout": {
+            "id": "layout_intake_workspace",
+            "kind": "layout"
+          },
+          "linkedCapabilities": [],
+          "linkedShapes": [
+            "shape_intake_filter"
+          ],
+          "messages": [],
+          "pattern": "filter_panel",
+          "placement": "secondary",
+          "priority": "high",
+          "region": "filters",
+          "regionContractId": "region_filter_panel",
+          "screenId": "intake_queue",
+          "slotRole": "filter_area",
+          "style": {
+            "effective_intent": [
+              "collapsible"
+            ],
+            "sources": [
+              {
+                "id": "region_filter_panel",
+                "intent": [
+                  "collapsible"
+                ],
+                "scope": "region"
+              }
+            ]
+          },
+          "styleIntent": [
+            "collapsible"
+          ],
+          "type": "ui_widget_usage",
+          "widget": {
+            "category": "form",
+            "id": "widget_filter_panel",
+            "name": "Filter Panel",
+            "version": "1.0"
+          }
+        },
+        {
+          "accessibility": [],
+          "behaviorRealizations": [],
+          "bindingId": "intake_commands",
+          "dataBindings": [],
+          "diagnostics": [],
+          "display": {
+            "diagnostics": [],
+            "fields": [
+              {
+                "label": "Title",
+                "name": "title",
+                "required": true,
+                "requiredness": "required",
+                "role": "primary",
+                "sourceName": "title",
+                "type": "string"
+              },
+              {
+                "label": "Status",
+                "name": "status",
+                "required": true,
+                "requiredness": "required",
+                "role": "metadata",
+                "sourceName": "status",
+                "type": "string"
+              },
+              {
+                "label": "Priority",
+                "name": "priority",
+                "required": true,
+                "requiredness": "required",
+                "role": "metadata",
+                "sourceName": "priority",
+                "type": "string"
+              },
+              {
+                "label": "Assignee",
+                "name": "assignee",
+                "required": false,
+                "requiredness": "optional",
+                "role": "metadata",
+                "sourceName": "assignee",
+                "type": "string"
+              },
+              {
+                "label": "Updated At",
+                "name": "updated_at",
+                "required": true,
+                "requiredness": "required",
+                "role": "date",
+                "sourceName": "updated_at",
+                "type": "datetime"
+              }
+            ],
+            "prop": null,
+            "source": {
+              "id": null,
+              "kind": null
+            },
+            "sourceShape": {
+              "id": "shape_intake_row",
+              "kind": "shape"
+            }
+          },
+          "displayFields": [
+            {
+              "label": "Title",
+              "name": "title",
+              "required": true,
+              "requiredness": "required",
+              "role": "primary",
+              "sourceName": "title",
+              "type": "string"
+            },
+            {
+              "label": "Status",
+              "name": "status",
+              "required": true,
+              "requiredness": "required",
+              "role": "metadata",
+              "sourceName": "status",
+              "type": "string"
+            },
+            {
+              "label": "Priority",
+              "name": "priority",
+              "required": true,
+              "requiredness": "required",
+              "role": "metadata",
+              "sourceName": "priority",
+              "type": "string"
+            },
+            {
+              "label": "Assignee",
+              "name": "assignee",
+              "required": false,
+              "requiredness": "optional",
+              "role": "metadata",
+              "sourceName": "assignee",
+              "type": "string"
+            },
+            {
+              "label": "Updated At",
+              "name": "updated_at",
+              "required": true,
+              "requiredness": "required",
+              "role": "date",
+              "sourceName": "updated_at",
+              "type": "datetime"
+            }
+          ],
+          "eventBindings": [
+            {
+              "action": "action",
+              "event": "acknowledge_alert",
+              "target": {
+                "id": "cap_acknowledge_alert",
+                "kind": "capability"
+              }
+            }
+          ],
+          "generatedBindingId": false,
+          "intent": "Expose queue actions and bulk operations.",
+          "layout": {
+            "id": "layout_intake_workspace",
+            "kind": "layout"
+          },
+          "linkedCapabilities": [
+            "cap_acknowledge_alert"
+          ],
+          "linkedShapes": [
+            "shape_intake_row"
+          ],
+          "messages": [],
+          "pattern": "action_bar",
+          "placement": "secondary",
+          "priority": "high",
+          "region": "commands",
+          "regionContractId": "region_command_bar",
+          "screenId": "intake_queue",
+          "slotRole": "command_area",
+          "style": {
+            "effective_intent": [
+              "compact",
+              "actionable"
+            ],
+            "sources": [
+              {
+                "id": "region_command_bar",
+                "intent": [
+                  "compact",
+                  "actionable"
+                ],
+                "scope": "region"
+              }
+            ]
+          },
+          "styleIntent": [
+            "compact",
+            "actionable"
+          ],
+          "type": "ui_widget_usage",
+          "widget": {
+            "category": "navigation",
+            "id": "widget_command_toolbar",
+            "name": "Command Toolbar",
+            "version": "1.0"
+          }
+        },
+        {
+          "accessibility": [
+            {
+              "focus": "roving_tabindex",
+              "keyboard": "data_grid",
+              "live": "off",
+              "nameFrom": {
+                "source": "message",
+                "value": "msg_grid_label"
+              },
+              "role": "grid",
+              "targetId": "widget_intake_grid",
+              "targetKind": "widget"
+            }
+          ],
+          "behaviorRealizations": [
+            {
+              "actions": [],
+              "dataDependencies": [
+                {
+                  "prop": "rows",
+                  "source": {
+                    "id": "cap_list_intake",
+                    "kind": "capability"
+                  }
+                }
+              ],
+              "directives": {},
+              "effects": [],
+              "emits": [],
+              "kind": "selection",
+              "source": "shorthand",
+              "state": null,
+              "status": "declared"
+            },
+            {
+              "actions": [],
+              "dataDependencies": [
+                {
+                  "prop": "rows",
+                  "source": {
+                    "id": "cap_list_intake",
+                    "kind": "capability"
+                  }
+                }
+              ],
+              "directives": {},
+              "effects": [],
+              "emits": [],
+              "kind": "sorting",
+              "source": "shorthand",
+              "state": null,
+              "status": "declared"
+            },
+            {
+              "actions": [],
+              "dataDependencies": [
+                {
+                  "prop": "rows",
+                  "source": {
+                    "id": "cap_list_intake",
+                    "kind": "capability"
+                  }
+                }
+              ],
+              "directives": {},
+              "effects": [],
+              "emits": [],
+              "kind": "filtering",
+              "source": "shorthand",
+              "state": null,
+              "status": "declared"
+            }
+          ],
+          "bindingId": "intake_results_grid",
+          "dataBindings": [
+            {
+              "prop": "rows",
+              "source": {
+                "id": "cap_list_intake",
+                "kind": "capability"
+              },
+              "sourceKind": "capability"
+            }
+          ],
+          "diagnostics": [],
+          "display": {
+            "diagnostics": [],
+            "fields": [
+              {
+                "label": "Title",
+                "name": "title",
+                "required": true,
+                "requiredness": "required",
+                "role": "primary",
+                "sourceName": "title",
+                "type": "string"
+              },
+              {
+                "label": "Status",
+                "name": "status",
+                "required": true,
+                "requiredness": "required",
+                "role": "metadata",
+                "sourceName": "status",
+                "type": "string"
+              },
+              {
+                "label": "Priority",
+                "name": "priority",
+                "required": true,
+                "requiredness": "required",
+                "role": "metadata",
+                "sourceName": "priority",
+                "type": "string"
+              },
+              {
+                "label": "Assignee",
+                "name": "assignee",
+                "required": false,
+                "requiredness": "optional",
+                "role": "metadata",
+                "sourceName": "assignee",
+                "type": "string"
+              },
+              {
+                "label": "Updated At",
+                "name": "updated_at",
+                "required": true,
+                "requiredness": "required",
+                "role": "date",
+                "sourceName": "updated_at",
+                "type": "datetime"
+              }
+            ],
+            "prop": "rows",
+            "source": {
+              "id": "cap_list_intake",
+              "kind": "capability"
+            },
+            "sourceShape": {
+              "id": "shape_intake_row",
+              "kind": "shape"
+            }
+          },
+          "displayFields": [
+            {
+              "label": "Title",
+              "name": "title",
+              "required": true,
+              "requiredness": "required",
+              "role": "primary",
+              "sourceName": "title",
+              "type": "string"
+            },
+            {
+              "label": "Status",
+              "name": "status",
+              "required": true,
+              "requiredness": "required",
+              "role": "metadata",
+              "sourceName": "status",
+              "type": "string"
+            },
+            {
+              "label": "Priority",
+              "name": "priority",
+              "required": true,
+              "requiredness": "required",
+              "role": "metadata",
+              "sourceName": "priority",
+              "type": "string"
+            },
+            {
+              "label": "Assignee",
+              "name": "assignee",
+              "required": false,
+              "requiredness": "optional",
+              "role": "metadata",
+              "sourceName": "assignee",
+              "type": "string"
+            },
+            {
+              "label": "Updated At",
+              "name": "updated_at",
+              "required": true,
+              "requiredness": "required",
+              "role": "date",
+              "sourceName": "updated_at",
+              "type": "datetime"
+            }
+          ],
+          "eventBindings": [
+            {
+              "action": "navigate",
+              "event": "row_select",
+              "target": {
+                "id": "intake_queue",
+                "kind": "screen"
+              }
+            }
+          ],
+          "generatedBindingId": false,
+          "intent": "Review and select intake rows.",
+          "layout": {
+            "id": "layout_intake_workspace",
+            "kind": "layout"
+          },
+          "linkedCapabilities": [
+            "cap_list_intake"
+          ],
+          "linkedShapes": [
+            "shape_intake_row"
+          ],
+          "messages": [
+            {
+              "actionId": null,
+              "context": "widget_label",
+              "defaultText": "Intake results",
+              "id": "msg_grid_label",
+              "key": "intake.grid.label",
+              "screenId": null,
+              "terms": [],
+              "variables": [],
+              "widgetId": "widget_intake_grid"
+            }
+          ],
+          "pattern": "data_grid_view",
+          "placement": "primary",
+          "priority": "high",
+          "region": "results",
+          "regionContractId": "region_results",
+          "screenId": "intake_queue",
+          "slotRole": "primary_work_area",
+          "style": {
+            "effective_intent": [
+              "scannable",
+              "structured"
+            ],
+            "sources": [
+              {
+                "id": "region_results",
+                "intent": [
+                  "scannable",
+                  "structured"
+                ],
+                "scope": "region"
+              }
+            ]
+          },
+          "styleIntent": [
+            "scannable",
+            "structured"
+          ],
+          "type": "ui_widget_usage",
+          "widget": {
+            "category": "collection",
+            "id": "widget_intake_grid",
+            "name": "Intake Grid",
+            "version": "1.0"
+          }
+        },
+        {
+          "accessibility": [
+            {
+              "focus": "visible",
+              "keyboard": "standard",
+              "live": "polite",
+              "nameFrom": {
+                "source": "message",
+                "value": "msg_alert_label"
+              },
+              "role": "status",
+              "targetId": "widget_alert_banner",
+              "targetKind": "widget"
+            }
+          ],
+          "behaviorRealizations": [],
+          "bindingId": "intake_alerts",
+          "dataBindings": [
+            {
+              "prop": "alert",
+              "source": {
+                "id": "shape_alert_banner",
+                "kind": "shape"
+              },
+              "sourceKind": "shape"
+            }
+          ],
+          "diagnostics": [],
+          "display": {
+            "diagnostics": [],
+            "fields": [
+              {
+                "label": "Severity",
+                "name": "severity",
+                "required": true,
+                "requiredness": "required",
+                "role": "metadata",
+                "sourceName": "severity",
+                "type": "string"
+              },
+              {
+                "label": "Message",
+                "name": "message",
+                "required": true,
+                "requiredness": "required",
+                "role": "metadata",
+                "sourceName": "message",
+                "type": "string"
+              },
+              {
+                "label": "Acknowledged",
+                "name": "acknowledged",
+                "required": true,
+                "requiredness": "required",
+                "role": "flag",
+                "sourceName": "acknowledged",
+                "type": "boolean"
+              }
+            ],
+            "prop": "alert",
+            "source": {
+              "id": "shape_alert_banner",
+              "kind": "shape"
+            },
+            "sourceShape": {
+              "id": "shape_alert_banner",
+              "kind": "shape"
+            }
+          },
+          "displayFields": [
+            {
+              "label": "Severity",
+              "name": "severity",
+              "required": true,
+              "requiredness": "required",
+              "role": "metadata",
+              "sourceName": "severity",
+              "type": "string"
+            },
+            {
+              "label": "Message",
+              "name": "message",
+              "required": true,
+              "requiredness": "required",
+              "role": "metadata",
+              "sourceName": "message",
+              "type": "string"
+            },
+            {
+              "label": "Acknowledged",
+              "name": "acknowledged",
+              "required": true,
+              "requiredness": "required",
+              "role": "flag",
+              "sourceName": "acknowledged",
+              "type": "boolean"
+            }
+          ],
+          "eventBindings": [
+            {
+              "action": "action",
+              "event": "acknowledge",
+              "target": {
+                "id": "cap_acknowledge_alert",
+                "kind": "capability"
+              }
+            }
+          ],
+          "generatedBindingId": false,
+          "intent": "Show operational alerts and live review feedback.",
+          "layout": {
+            "id": "layout_intake_workspace",
+            "kind": "layout"
+          },
+          "linkedCapabilities": [
+            "cap_acknowledge_alert"
+          ],
+          "linkedShapes": [
+            "shape_alert_banner"
+          ],
+          "messages": [
+            {
+              "actionId": null,
+              "context": "widget_label",
+              "defaultText": "Operations alerts",
+              "id": "msg_alert_label",
+              "key": "alerts.label",
+              "screenId": null,
+              "terms": [],
+              "variables": [],
+              "widgetId": "widget_alert_banner"
+            }
+          ],
+          "pattern": "empty_state_panel",
+          "placement": "supporting",
+          "priority": "medium",
+          "region": "alerts",
+          "regionContractId": "region_alerts",
+          "screenId": "intake_queue",
+          "slotRole": "status_feedback",
+          "style": {
+            "effective_intent": [
+              "status_visible"
+            ],
+            "sources": [
+              {
+                "id": "region_alerts",
+                "intent": [
+                  "status_visible"
+                ],
+                "scope": "region"
+              }
+            ]
+          },
+          "styleIntent": [
+            "status_visible"
+          ],
+          "type": "ui_widget_usage",
+          "widget": {
+            "category": "feedback",
+            "id": "widget_alert_banner",
+            "name": "Alert Banner",
+            "version": "1.0"
+          }
+        }
+      ]
+    },
+    "surface": {
+      "id": "proj_web",
+      "name": "Operations Web Surface",
+      "type": "web"
+    },
+    "type": "ui_agent_packet",
+    "uiContract": {
+      "id": "proj_semantic_ui",
+      "name": "Operations Semantic UI",
+      "type": "semantic_ui"
+    },
+    "version": 1,
+    "visibilityRules": [],
+    "widgets": [
+      {
+        "behaviorRealizations": [],
+        "bindingId": "intake_filters",
+        "dataBindings": [
+          {
+            "prop": "filters",
+            "source": "shape_intake_filter",
+            "sourceKind": "shape"
+          }
+        ],
+        "display": {
+          "diagnostics": [],
+          "fields": [
+            {
+              "label": "Status",
+              "name": "status",
+              "required": false,
+              "requiredness": "optional",
+              "role": "metadata",
+              "sourceName": "status",
+              "type": "string"
+            },
+            {
+              "label": "Priority",
+              "name": "priority",
+              "required": false,
+              "requiredness": "optional",
+              "role": "metadata",
+              "sourceName": "priority",
+              "type": "string"
+            },
+            {
+              "label": "Assignee",
+              "name": "assignee",
+              "required": false,
+              "requiredness": "optional",
+              "role": "metadata",
+              "sourceName": "assignee",
+              "type": "string"
+            }
+          ],
+          "prop": "filters",
+          "source": {
+            "id": "shape_intake_filter",
+            "kind": "shape"
+          },
+          "sourceShape": {
+            "id": "shape_intake_filter",
+            "kind": "shape"
+          }
+        },
+        "displayFields": [
+          {
+            "label": "Status",
+            "name": "status",
+            "required": false,
+            "requiredness": "optional",
+            "role": "metadata",
+            "sourceName": "status",
+            "type": "string"
+          },
+          {
+            "label": "Priority",
+            "name": "priority",
+            "required": false,
+            "requiredness": "optional",
+            "role": "metadata",
+            "sourceName": "priority",
+            "type": "string"
+          },
+          {
+            "label": "Assignee",
+            "name": "assignee",
+            "required": false,
+            "requiredness": "optional",
+            "role": "metadata",
+            "sourceName": "assignee",
+            "type": "string"
+          }
+        ],
+        "eventBindings": [],
+        "generatedBindingId": false,
+        "intent": "Filter intake items by status, priority, and assignee.",
+        "layout": {
+          "id": "layout_intake_workspace",
+          "kind": "layout"
+        },
+        "linkedCapabilities": [],
+        "linkedShapes": [
+          "shape_intake_filter"
+        ],
+        "priority": "high",
+        "region": "filters",
+        "regionContract": {
+          "accessibilityObligations": [
+            "labelled_region"
+          ],
+          "allowedWidgetPatterns": [
+            "filter_panel"
+          ],
+          "density": "compact",
+          "i18nObligations": [
+            "filter_labels"
+          ],
+          "kind": "filters",
+          "layoutId": "layout_intake_workspace",
+          "name": "filters",
+          "pattern": "filter_panel",
+          "placement": "secondary",
+          "regionContractId": "region_filter_panel",
+          "slotRole": "filter_area",
+          "source": "layout",
+          "state": null,
+          "style": {
+            "effective_intent": [
+              "collapsible"
+            ],
+            "sources": [
+              {
+                "id": "region_filter_panel",
+                "intent": [
+                  "collapsible"
+                ],
+                "scope": "region"
+              }
+            ]
+          },
+          "styleIntent": [
+            "collapsible"
+          ],
+          "title": "Filter Panel",
+          "variant": null
+        },
+        "regionContractId": "region_filter_panel",
+        "route": "/intake",
+        "screen": {
+          "id": "intake_queue",
+          "kind": "list",
+          "layout": {
+            "appShell": null,
+            "fills": "content",
+            "id": "layout_intake_workspace",
+            "inherited": [
+              {
+                "appShell": null,
+                "fills": null,
+                "id": "layout_ops_shell",
+                "name": "Operations Shell",
+                "pattern": "app_shell",
+                "styleIntent": []
+              },
+              {
+                "appShell": null,
+                "fills": "content",
+                "id": "layout_intake_workspace",
+                "name": "Intake Workspace",
+                "pattern": "collection_workspace",
+                "styleIntent": []
+              }
+            ],
+            "name": "Intake Workspace",
+            "pattern": "collection_workspace",
+            "styleIntent": []
+          },
+          "title": "Intake Queue"
+        },
+        "screenId": "intake_queue",
+        "slotRole": "filter_area",
+        "style": {
+          "effective_intent": [
+            "collapsible"
+          ],
+          "sources": [
+            {
+              "id": "region_filter_panel",
+              "intent": [
+                "collapsible"
+              ],
+              "scope": "region"
+            }
+          ]
+        },
+        "styleIntent": [
+          "collapsible"
+        ],
+        "widgetId": "widget_filter_panel"
+      },
+      {
+        "behaviorRealizations": [],
+        "bindingId": "intake_commands",
+        "dataBindings": [],
+        "display": {
+          "diagnostics": [],
+          "fields": [
+            {
+              "label": "Title",
+              "name": "title",
+              "required": true,
+              "requiredness": "required",
+              "role": "primary",
+              "sourceName": "title",
+              "type": "string"
+            },
+            {
+              "label": "Status",
+              "name": "status",
+              "required": true,
+              "requiredness": "required",
+              "role": "metadata",
+              "sourceName": "status",
+              "type": "string"
+            },
+            {
+              "label": "Priority",
+              "name": "priority",
+              "required": true,
+              "requiredness": "required",
+              "role": "metadata",
+              "sourceName": "priority",
+              "type": "string"
+            },
+            {
+              "label": "Assignee",
+              "name": "assignee",
+              "required": false,
+              "requiredness": "optional",
+              "role": "metadata",
+              "sourceName": "assignee",
+              "type": "string"
+            },
+            {
+              "label": "Updated At",
+              "name": "updated_at",
+              "required": true,
+              "requiredness": "required",
+              "role": "date",
+              "sourceName": "updated_at",
+              "type": "datetime"
+            }
+          ],
+          "prop": null,
+          "source": {
+            "id": null,
+            "kind": null
+          },
+          "sourceShape": {
+            "id": "shape_intake_row",
+            "kind": "shape"
+          }
+        },
+        "displayFields": [
+          {
+            "label": "Title",
+            "name": "title",
+            "required": true,
+            "requiredness": "required",
+            "role": "primary",
+            "sourceName": "title",
+            "type": "string"
+          },
+          {
+            "label": "Status",
+            "name": "status",
+            "required": true,
+            "requiredness": "required",
+            "role": "metadata",
+            "sourceName": "status",
+            "type": "string"
+          },
+          {
+            "label": "Priority",
+            "name": "priority",
+            "required": true,
+            "requiredness": "required",
+            "role": "metadata",
+            "sourceName": "priority",
+            "type": "string"
+          },
+          {
+            "label": "Assignee",
+            "name": "assignee",
+            "required": false,
+            "requiredness": "optional",
+            "role": "metadata",
+            "sourceName": "assignee",
+            "type": "string"
+          },
+          {
+            "label": "Updated At",
+            "name": "updated_at",
+            "required": true,
+            "requiredness": "required",
+            "role": "date",
+            "sourceName": "updated_at",
+            "type": "datetime"
+          }
+        ],
+        "eventBindings": [
+          {
+            "action": "action",
+            "event": "acknowledge_alert",
+            "target": "cap_acknowledge_alert"
+          }
+        ],
+        "generatedBindingId": false,
+        "intent": "Expose queue actions and bulk operations.",
+        "layout": {
+          "id": "layout_intake_workspace",
+          "kind": "layout"
+        },
+        "linkedCapabilities": [
+          "cap_acknowledge_alert"
+        ],
+        "linkedShapes": [
+          "shape_intake_row"
+        ],
+        "priority": "high",
+        "region": "commands",
+        "regionContract": {
+          "accessibilityObligations": [],
+          "allowedWidgetPatterns": [
+            "action_bar"
+          ],
+          "density": "compact",
+          "i18nObligations": [],
+          "kind": "toolbar",
+          "layoutId": "layout_intake_workspace",
+          "name": "commands",
+          "pattern": "action_bar",
+          "placement": "secondary",
+          "regionContractId": "region_command_bar",
+          "slotRole": "command_area",
+          "source": "layout",
+          "state": null,
+          "style": {
+            "effective_intent": [
+              "compact",
+              "actionable"
+            ],
+            "sources": [
+              {
+                "id": "region_command_bar",
+                "intent": [
+                  "compact",
+                  "actionable"
+                ],
+                "scope": "region"
+              }
+            ]
+          },
+          "styleIntent": [
+            "compact",
+            "actionable"
+          ],
+          "title": "Command Bar",
+          "variant": null
+        },
+        "regionContractId": "region_command_bar",
+        "route": "/intake",
+        "screen": {
+          "id": "intake_queue",
+          "kind": "list",
+          "layout": {
+            "appShell": null,
+            "fills": "content",
+            "id": "layout_intake_workspace",
+            "inherited": [
+              {
+                "appShell": null,
+                "fills": null,
+                "id": "layout_ops_shell",
+                "name": "Operations Shell",
+                "pattern": "app_shell",
+                "styleIntent": []
+              },
+              {
+                "appShell": null,
+                "fills": "content",
+                "id": "layout_intake_workspace",
+                "name": "Intake Workspace",
+                "pattern": "collection_workspace",
+                "styleIntent": []
+              }
+            ],
+            "name": "Intake Workspace",
+            "pattern": "collection_workspace",
+            "styleIntent": []
+          },
+          "title": "Intake Queue"
+        },
+        "screenId": "intake_queue",
+        "slotRole": "command_area",
+        "style": {
+          "effective_intent": [
+            "compact",
+            "actionable"
+          ],
+          "sources": [
+            {
+              "id": "region_command_bar",
+              "intent": [
+                "compact",
+                "actionable"
+              ],
+              "scope": "region"
+            }
+          ]
+        },
+        "styleIntent": [
+          "compact",
+          "actionable"
+        ],
+        "widgetId": "widget_command_toolbar"
+      },
+      {
+        "behaviorRealizations": [
+          {
+            "actions": [],
+            "dataDependencies": [
+              {
+                "prop": "rows",
+                "source": {
+                  "id": "cap_list_intake",
+                  "kind": "capability"
+                }
+              }
+            ],
+            "directives": {},
+            "effects": [],
+            "emits": [],
+            "kind": "selection",
+            "source": "shorthand",
+            "state": null,
+            "status": "declared"
+          },
+          {
+            "actions": [],
+            "dataDependencies": [
+              {
+                "prop": "rows",
+                "source": {
+                  "id": "cap_list_intake",
+                  "kind": "capability"
+                }
+              }
+            ],
+            "directives": {},
+            "effects": [],
+            "emits": [],
+            "kind": "sorting",
+            "source": "shorthand",
+            "state": null,
+            "status": "declared"
+          },
+          {
+            "actions": [],
+            "dataDependencies": [
+              {
+                "prop": "rows",
+                "source": {
+                  "id": "cap_list_intake",
+                  "kind": "capability"
+                }
+              }
+            ],
+            "directives": {},
+            "effects": [],
+            "emits": [],
+            "kind": "filtering",
+            "source": "shorthand",
+            "state": null,
+            "status": "declared"
+          }
+        ],
+        "bindingId": "intake_results_grid",
+        "dataBindings": [
+          {
+            "prop": "rows",
+            "source": "cap_list_intake",
+            "sourceKind": "capability"
+          }
+        ],
+        "display": {
+          "diagnostics": [],
+          "fields": [
+            {
+              "label": "Title",
+              "name": "title",
+              "required": true,
+              "requiredness": "required",
+              "role": "primary",
+              "sourceName": "title",
+              "type": "string"
+            },
+            {
+              "label": "Status",
+              "name": "status",
+              "required": true,
+              "requiredness": "required",
+              "role": "metadata",
+              "sourceName": "status",
+              "type": "string"
+            },
+            {
+              "label": "Priority",
+              "name": "priority",
+              "required": true,
+              "requiredness": "required",
+              "role": "metadata",
+              "sourceName": "priority",
+              "type": "string"
+            },
+            {
+              "label": "Assignee",
+              "name": "assignee",
+              "required": false,
+              "requiredness": "optional",
+              "role": "metadata",
+              "sourceName": "assignee",
+              "type": "string"
+            },
+            {
+              "label": "Updated At",
+              "name": "updated_at",
+              "required": true,
+              "requiredness": "required",
+              "role": "date",
+              "sourceName": "updated_at",
+              "type": "datetime"
+            }
+          ],
+          "prop": "rows",
+          "source": {
+            "id": "cap_list_intake",
+            "kind": "capability"
+          },
+          "sourceShape": {
+            "id": "shape_intake_row",
+            "kind": "shape"
+          }
+        },
+        "displayFields": [
+          {
+            "label": "Title",
+            "name": "title",
+            "required": true,
+            "requiredness": "required",
+            "role": "primary",
+            "sourceName": "title",
+            "type": "string"
+          },
+          {
+            "label": "Status",
+            "name": "status",
+            "required": true,
+            "requiredness": "required",
+            "role": "metadata",
+            "sourceName": "status",
+            "type": "string"
+          },
+          {
+            "label": "Priority",
+            "name": "priority",
+            "required": true,
+            "requiredness": "required",
+            "role": "metadata",
+            "sourceName": "priority",
+            "type": "string"
+          },
+          {
+            "label": "Assignee",
+            "name": "assignee",
+            "required": false,
+            "requiredness": "optional",
+            "role": "metadata",
+            "sourceName": "assignee",
+            "type": "string"
+          },
+          {
+            "label": "Updated At",
+            "name": "updated_at",
+            "required": true,
+            "requiredness": "required",
+            "role": "date",
+            "sourceName": "updated_at",
+            "type": "datetime"
+          }
+        ],
+        "eventBindings": [
+          {
+            "action": "navigate",
+            "event": "row_select",
+            "target": "intake_queue"
+          }
+        ],
+        "generatedBindingId": false,
+        "intent": "Review and select intake rows.",
+        "layout": {
+          "id": "layout_intake_workspace",
+          "kind": "layout"
+        },
+        "linkedCapabilities": [
+          "cap_list_intake"
+        ],
+        "linkedShapes": [
+          "shape_intake_row"
+        ],
+        "priority": "high",
+        "region": "results",
+        "regionContract": {
+          "accessibilityObligations": [
+            "labelled_region",
+            "keyboard_collection_navigation"
+          ],
+          "allowedWidgetPatterns": [
+            "data_grid_view",
+            "resource_cards"
+          ],
+          "density": "compact",
+          "i18nObligations": [
+            "title",
+            "empty_state"
+          ],
+          "kind": "results",
+          "layoutId": "layout_intake_workspace",
+          "name": "results",
+          "pattern": "data_grid_view",
+          "placement": "primary",
+          "regionContractId": "region_results",
+          "slotRole": "primary_work_area",
+          "source": "layout",
+          "state": null,
+          "style": {
+            "effective_intent": [
+              "scannable",
+              "structured"
+            ],
+            "sources": [
+              {
+                "id": "region_results",
+                "intent": [
+                  "scannable",
+                  "structured"
+                ],
+                "scope": "region"
+              }
+            ]
+          },
+          "styleIntent": [
+            "scannable",
+            "structured"
+          ],
+          "title": "Results",
+          "variant": null
+        },
+        "regionContractId": "region_results",
+        "route": "/intake",
+        "screen": {
+          "id": "intake_queue",
+          "kind": "list",
+          "layout": {
+            "appShell": null,
+            "fills": "content",
+            "id": "layout_intake_workspace",
+            "inherited": [
+              {
+                "appShell": null,
+                "fills": null,
+                "id": "layout_ops_shell",
+                "name": "Operations Shell",
+                "pattern": "app_shell",
+                "styleIntent": []
+              },
+              {
+                "appShell": null,
+                "fills": "content",
+                "id": "layout_intake_workspace",
+                "name": "Intake Workspace",
+                "pattern": "collection_workspace",
+                "styleIntent": []
+              }
+            ],
+            "name": "Intake Workspace",
+            "pattern": "collection_workspace",
+            "styleIntent": []
+          },
+          "title": "Intake Queue"
+        },
+        "screenId": "intake_queue",
+        "slotRole": "primary_work_area",
+        "style": {
+          "effective_intent": [
+            "scannable",
+            "structured"
+          ],
+          "sources": [
+            {
+              "id": "region_results",
+              "intent": [
+                "scannable",
+                "structured"
+              ],
+              "scope": "region"
+            }
+          ]
+        },
+        "styleIntent": [
+          "scannable",
+          "structured"
+        ],
+        "widgetId": "widget_intake_grid"
+      },
+      {
+        "behaviorRealizations": [],
+        "bindingId": "intake_alerts",
+        "dataBindings": [
+          {
+            "prop": "alert",
+            "source": "shape_alert_banner",
+            "sourceKind": "shape"
+          }
+        ],
+        "display": {
+          "diagnostics": [],
+          "fields": [
+            {
+              "label": "Severity",
+              "name": "severity",
+              "required": true,
+              "requiredness": "required",
+              "role": "metadata",
+              "sourceName": "severity",
+              "type": "string"
+            },
+            {
+              "label": "Message",
+              "name": "message",
+              "required": true,
+              "requiredness": "required",
+              "role": "metadata",
+              "sourceName": "message",
+              "type": "string"
+            },
+            {
+              "label": "Acknowledged",
+              "name": "acknowledged",
+              "required": true,
+              "requiredness": "required",
+              "role": "flag",
+              "sourceName": "acknowledged",
+              "type": "boolean"
+            }
+          ],
+          "prop": "alert",
+          "source": {
+            "id": "shape_alert_banner",
+            "kind": "shape"
+          },
+          "sourceShape": {
+            "id": "shape_alert_banner",
+            "kind": "shape"
+          }
+        },
+        "displayFields": [
+          {
+            "label": "Severity",
+            "name": "severity",
+            "required": true,
+            "requiredness": "required",
+            "role": "metadata",
+            "sourceName": "severity",
+            "type": "string"
+          },
+          {
+            "label": "Message",
+            "name": "message",
+            "required": true,
+            "requiredness": "required",
+            "role": "metadata",
+            "sourceName": "message",
+            "type": "string"
+          },
+          {
+            "label": "Acknowledged",
+            "name": "acknowledged",
+            "required": true,
+            "requiredness": "required",
+            "role": "flag",
+            "sourceName": "acknowledged",
+            "type": "boolean"
+          }
+        ],
+        "eventBindings": [
+          {
+            "action": "action",
+            "event": "acknowledge",
+            "target": "cap_acknowledge_alert"
+          }
+        ],
+        "generatedBindingId": false,
+        "intent": "Show operational alerts and live review feedback.",
+        "layout": {
+          "id": "layout_intake_workspace",
+          "kind": "layout"
+        },
+        "linkedCapabilities": [
+          "cap_acknowledge_alert"
+        ],
+        "linkedShapes": [
+          "shape_alert_banner"
+        ],
+        "priority": "medium",
+        "region": "alerts",
+        "regionContract": {
+          "accessibilityObligations": [
+            "live_region"
+          ],
+          "allowedWidgetPatterns": [],
+          "density": null,
+          "i18nObligations": [
+            "alert_message"
+          ],
+          "kind": "content",
+          "layoutId": "layout_intake_workspace",
+          "name": "alerts",
+          "pattern": "empty_state_panel",
+          "placement": "supporting",
+          "regionContractId": "region_alerts",
+          "slotRole": "status_feedback",
+          "source": "layout",
+          "state": null,
+          "style": {
+            "effective_intent": [
+              "status_visible"
+            ],
+            "sources": [
+              {
+                "id": "region_alerts",
+                "intent": [
+                  "status_visible"
+                ],
+                "scope": "region"
+              }
+            ]
+          },
+          "styleIntent": [
+            "status_visible"
+          ],
+          "title": "Alerts",
+          "variant": null
+        },
+        "regionContractId": "region_alerts",
+        "route": "/intake",
+        "screen": {
+          "id": "intake_queue",
+          "kind": "list",
+          "layout": {
+            "appShell": null,
+            "fills": "content",
+            "id": "layout_intake_workspace",
+            "inherited": [
+              {
+                "appShell": null,
+                "fills": null,
+                "id": "layout_ops_shell",
+                "name": "Operations Shell",
+                "pattern": "app_shell",
+                "styleIntent": []
+              },
+              {
+                "appShell": null,
+                "fills": "content",
+                "id": "layout_intake_workspace",
+                "name": "Intake Workspace",
+                "pattern": "collection_workspace",
+                "styleIntent": []
+              }
+            ],
+            "name": "Intake Workspace",
+            "pattern": "collection_workspace",
+            "styleIntent": []
+          },
+          "title": "Intake Queue"
+        },
+        "screenId": "intake_queue",
+        "slotRole": "status_feedback",
+        "style": {
+          "effective_intent": [
+            "status_visible"
+          ],
+          "sources": [
+            {
+              "id": "region_alerts",
+              "intent": [
+                "status_visible"
+              ],
+              "scope": "region"
+            }
+          ]
+        },
+        "styleIntent": [
+          "status_visible"
+        ],
+        "widgetId": "widget_alert_banner"
+      }
+    ],
+    "workMap": {
+      "layout": {
+        "appShell": null,
+        "fills": "content",
+        "id": "layout_intake_workspace",
+        "inherited": [
+          {
+            "appShell": null,
+            "fills": null,
+            "id": "layout_ops_shell",
+            "name": "Operations Shell",
+            "pattern": "app_shell",
+            "styleIntent": []
+          },
+          {
+            "appShell": null,
+            "fills": "content",
+            "id": "layout_intake_workspace",
+            "name": "Intake Workspace",
+            "pattern": "collection_workspace",
+            "styleIntent": []
+          }
+        ],
+        "name": "Intake Workspace",
+        "pattern": "collection_workspace",
+        "styleIntent": []
+      },
+      "order": [
+        "screen",
+        "layout",
+        "region",
+        "widget",
+        "component_mapping",
+        "proof"
+      ],
+      "regions": [
+        {
+          "id": "header",
+          "kind": "header",
+          "layoutId": "layout_ops_shell",
+          "obligations": {
+            "accessibility": [
+              "landmark_banner"
+            ],
+            "allowedWidgetPatterns": [],
+            "internationalization": [
+              "brand_label"
+            ],
+            "styleIntent": [
+              "brand",
+              "persistent"
+            ]
+          },
+          "pattern": "app_header",
+          "placement": "top",
+          "regionContractId": "region_app_header",
+          "slotRole": "page_header",
+          "source": "layout"
+        },
+        {
+          "id": "nav",
+          "kind": "navigation",
+          "layoutId": "layout_ops_shell",
+          "obligations": {
+            "accessibility": [
+              "landmark_navigation",
+              "keyboard_navigation"
+            ],
+            "allowedWidgetPatterns": [],
+            "internationalization": [],
+            "styleIntent": [
+              "persistent"
+            ]
+          },
+          "pattern": "primary_navigation",
+          "placement": "shell",
+          "regionContractId": "region_global_nav",
+          "slotRole": "global_navigation",
+          "source": "layout"
+        },
+        {
+          "id": "content",
+          "kind": "results",
+          "layoutId": "layout_ops_shell",
+          "obligations": {
+            "accessibility": [
+              "labelled_region",
+              "keyboard_collection_navigation"
+            ],
+            "allowedWidgetPatterns": [
+              "data_grid_view",
+              "resource_cards"
+            ],
+            "internationalization": [
+              "title",
+              "empty_state"
+            ],
+            "styleIntent": [
+              "scannable",
+              "structured"
+            ]
+          },
+          "pattern": "data_grid_view",
+          "placement": "primary",
+          "regionContractId": "region_results",
+          "slotRole": "primary_work_area",
+          "source": "layout"
+        },
+        {
+          "id": "commands",
+          "kind": "toolbar",
+          "layoutId": "layout_intake_workspace",
+          "obligations": {
+            "accessibility": [],
+            "allowedWidgetPatterns": [
+              "action_bar"
+            ],
+            "internationalization": [],
+            "styleIntent": [
+              "compact",
+              "actionable"
+            ]
+          },
+          "pattern": "action_bar",
+          "placement": "secondary",
+          "regionContractId": "region_command_bar",
+          "slotRole": "command_area",
+          "source": "layout"
+        },
+        {
+          "id": "filters",
+          "kind": "filters",
+          "layoutId": "layout_intake_workspace",
+          "obligations": {
+            "accessibility": [
+              "labelled_region"
+            ],
+            "allowedWidgetPatterns": [
+              "filter_panel"
+            ],
+            "internationalization": [
+              "filter_labels"
+            ],
+            "styleIntent": [
+              "collapsible"
+            ]
+          },
+          "pattern": "filter_panel",
+          "placement": "secondary",
+          "regionContractId": "region_filter_panel",
+          "slotRole": "filter_area",
+          "source": "layout"
+        },
+        {
+          "id": "results",
+          "kind": "results",
+          "layoutId": "layout_intake_workspace",
+          "obligations": {
+            "accessibility": [
+              "labelled_region",
+              "keyboard_collection_navigation"
+            ],
+            "allowedWidgetPatterns": [
+              "data_grid_view",
+              "resource_cards"
+            ],
+            "internationalization": [
+              "title",
+              "empty_state"
+            ],
+            "styleIntent": [
+              "scannable",
+              "structured"
+            ]
+          },
+          "pattern": "data_grid_view",
+          "placement": "primary",
+          "regionContractId": "region_results",
+          "slotRole": "primary_work_area",
+          "source": "layout"
+        },
+        {
+          "id": "alerts",
+          "kind": "content",
+          "layoutId": "layout_intake_workspace",
+          "obligations": {
+            "accessibility": [
+              "live_region"
+            ],
+            "allowedWidgetPatterns": [],
+            "internationalization": [
+              "alert_message"
+            ],
+            "styleIntent": [
+              "status_visible"
+            ]
+          },
+          "pattern": "empty_state_panel",
+          "placement": "supporting",
+          "regionContractId": "region_alerts",
+          "slotRole": "status_feedback",
+          "source": "layout"
+        }
+      ],
+      "screen": {
+        "id": "intake_queue",
+        "kind": "list",
+        "title": "Intake Queue"
+      },
+      "widgetPlacements": [
+        {
+          "bindingId": "intake_filters",
+          "dataProps": [
+            "filters"
+          ],
+          "events": [],
+          "pattern": "filter_panel",
+          "region": "filters",
+          "slotRole": "filter_area",
+          "widget": "widget_filter_panel"
+        },
+        {
+          "bindingId": "intake_commands",
+          "dataProps": [],
+          "events": [
+            "acknowledge_alert"
+          ],
+          "pattern": "action_bar",
+          "region": "commands",
+          "slotRole": "command_area",
+          "widget": "widget_command_toolbar"
+        },
+        {
+          "bindingId": "intake_results_grid",
+          "dataProps": [
+            "rows"
+          ],
+          "events": [
+            "row_select"
+          ],
+          "pattern": "data_grid_view",
+          "region": "results",
+          "slotRole": "primary_work_area",
+          "widget": "widget_intake_grid"
+        },
+        {
+          "bindingId": "intake_alerts",
+          "dataProps": [
+            "alert"
+          ],
+          "events": [
+            "acknowledge"
+          ],
+          "pattern": "empty_state_panel",
+          "region": "alerts",
+          "slotRole": "status_feedback",
+          "widget": "widget_alert_banner"
+        }
+      ]
+    }
+  },
+  "verification": [],
+  "verification_targets": {
+    "generated_checks": [
+      "compile-check"
+    ],
+    "maintained_app_checks": [],
+    "rationale": "Screen slices should prove UI contract, realization coverage, widget behavior, and generated/maintained app checks for the selected surface.",
+    "verification_ids": []
+  },
+  "version": 1,
+  "write_scope": {
+    "generator_owned": [
+      "artifacts/**",
+      "apps/**"
+    ],
+    "human_owned_review_required": [
+      "examples/maintained/proof-app/**"
+    ],
+    "out_of_bounds": [
+      ".git/**",
+      "node_modules/**"
+    ],
+    "safe_to_edit": [
+      "topo/**",
+      "candidates/**"
+    ]
+  }
+}

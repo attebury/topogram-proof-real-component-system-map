@@ -1,26 +1,25 @@
 {
-  "step": "proof-05-adopt-reviewed-component-map",
+  "step": "proof-06-agent-slice-designer-closeout",
   "cliVersion": "0.3.117",
   "requiredFiles": [
-    "proof/artifacts/step-05-adopt-write.json",
-    "topo/component-maps/component-map-acme-ops-widgets.tg",
-    "proof/artifacts/step-05-ui-design-coverage.md",
-    "proof/artifacts/step-05-ui-design-coverage.json",
-    "proof/artifacts/step-05-ui-realization-report.json",
-    "proof/artifacts/step-05-work-map.md",
-    "proof/artifacts/step-05-widget-slice.json"
+    "proof/artifacts/step-06-designer-review-checklist.md",
+    "proof/artifacts/step-06-proof-learning.md",
+    "proof/artifacts/step-06-screen-slice.md",
+    "proof/artifacts/step-06-screen-slice.json",
+    "proof/artifacts/step-06-widget-slice.md",
+    "proof/artifacts/step-06-widget-slice.json",
+    "proof/artifacts/step-06-work-map.md"
   ],
   "absentFiles": [],
   "requiredJson": [
-    { "path": "proof/artifacts/step-05-adopt-write.json", "keys": ["ok", "adoption", "receipt"] },
-    { "path": "proof/artifacts/step-05-ui-design-coverage.json", "keys": ["design_matrix.rows", "design_matrix.review_rows"] },
-    { "path": "proof/artifacts/step-05-ui-realization-report.json", "keys": ["designLanguages.designLanguages"] },
-    { "path": "proof/artifacts/step-05-widget-slice.json", "keys": ["ui_agent_packet.designReview", "ui_agent_packet.designLanguages"] }
+    { "path": "proof/artifacts/step-06-screen-slice.json", "keys": ["ui_agent_packet", "ui_agent_packet.agent_readiness"] },
+    { "path": "proof/artifacts/step-06-widget-slice.json", "keys": ["ui_agent_packet.designReview", "ui_agent_packet.designLanguages"] }
   ],
   "requiredText": [
-    { "path": "topo/component-maps/component-map-acme-ops-widgets.tg", "includes": ["command_toolbar_web_narrow", "acme.actionToolbar", "Accepted from explicit Storybook metadata"] },
-    { "path": "proof/artifacts/step-05-ui-design-coverage.md", "includes": ["acme.actionToolbar", "rendered"] },
-    { "path": "proof/artifacts/step-05-work-map.md", "includes": ["widget_command_toolbar", "acme.actionToolbar"] },
-    { "path": "proof/STEP.md", "includes": ["Step 05", "canonical component_map"] }
+    { "path": "proof/artifacts/step-06-designer-review-checklist.md", "includes": ["Accepted", "Deferred", "Unsupported Or Missing", "acme.actionToolbar"] },
+    { "path": "proof/artifacts/step-06-screen-slice.md", "includes": ["UI Work Map", "intake_queue", "Widget Bindings"] },
+    { "path": "proof/artifacts/step-06-widget-slice.md", "includes": ["widget_command_toolbar", "Design Review"] },
+    { "path": "proof/artifacts/step-06-proof-learning.md", "includes": ["What worked", "Limit found", "work-map command"] },
+    { "path": "proof/STEP.md", "includes": ["Step 06", "Designer Closeout"] }
   ]
 }

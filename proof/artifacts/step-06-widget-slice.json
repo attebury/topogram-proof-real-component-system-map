@@ -1,0 +1,1359 @@
+{
+  "agent_guidance": {
+    "completion_command": "topogram sdlc prep commit . --json",
+    "mode": "implementation",
+    "next_commands": [
+      "topogram query slice ./topo --mode implementation --surface proj_web --widget widget_command_toolbar --detail compact --json",
+      "topogram query single-agent-plan ./topo --mode implementation --surface proj_web --widget widget_command_toolbar --json",
+      "topogram query sdlc-proof-gaps ./topo --json",
+      "topogram check . --json",
+      "topogram sdlc check . --strict",
+      "topogram sdlc prep commit . --json"
+    ],
+    "next_queries": [
+      "topogram query slice ./topo --mode implementation --surface proj_web --widget widget_command_toolbar --detail compact --json",
+      "topogram query single-agent-plan ./topo --mode implementation --surface proj_web --widget widget_command_toolbar --json"
+    ],
+    "proof_commands": [
+      "topogram check . --json",
+      "topogram sdlc check . --strict",
+      "topogram sdlc prep commit . --json"
+    ],
+    "read_first": [
+      "focus",
+      "summary",
+      "agent_guidance",
+      "review_boundary",
+      "ownership_boundary",
+      "write_scope",
+      "ui_agent_packet"
+    ],
+    "read_order": [
+      "focus",
+      "summary",
+      "agent_guidance",
+      "review_boundary",
+      "ownership_boundary",
+      "write_scope",
+      "ui_agent_packet"
+    ],
+    "required_commands": [
+      "topogram query sdlc-proof-gaps ./topo --json",
+      "topogram check . --json",
+      "topogram sdlc check . --strict",
+      "topogram sdlc prep commit . --json"
+    ],
+    "warnings": [],
+    "write_scope_summary": "Edit the canonical Topogram source and project-owned files only; generated-owned outputs should be regenerated."
+  },
+  "depends_on": {
+    "capabilities": [],
+    "entities": [],
+    "shapes": [
+      "shape_alert_banner"
+    ],
+    "surfaces": [
+      "proj_semantic_ui",
+      "proj_web"
+    ],
+    "verifications": [],
+    "widgets": []
+  },
+  "detail_level": "compact",
+  "focus": {
+    "id": "widget_command_toolbar",
+    "kind": "widget",
+    "projectionId": "proj_web",
+    "scope": {
+      "componentMapId": null,
+      "layoutId": null,
+      "projectionId": "proj_web",
+      "regionId": null,
+      "screenId": null
+    }
+  },
+  "ownership_boundary": {
+    "canonical_topogram": {
+      "agent_mode": "propose_review_adopt",
+      "owner": "human"
+    },
+    "generated_artifacts": {
+      "agent_mode": "regenerate_or_compare",
+      "owner": "engine"
+    },
+    "maintained_code": {
+      "agent_mode": "bounded_edit_only",
+      "owner": "human"
+    },
+    "proposal_surfaces": {
+      "agent_mode": "stage_map_customize_reject",
+      "owner": "human"
+    }
+  },
+  "related": {},
+  "related_summary": {
+    "shapes": {
+      "count": 1,
+      "ids": [
+        "shape_alert_banner"
+      ]
+    },
+    "surfaces": {
+      "count": 2,
+      "ids": [
+        "proj_semantic_ui",
+        "proj_web"
+      ]
+    }
+  },
+  "review_boundary": {
+    "automation_class": "review_required",
+    "reasons": [
+      "widget_surface"
+    ]
+  },
+  "slice_manifest": {
+    "detail_level": "compact",
+    "note": "Read must_read sections first; use reference sections only as needed; run proof commands before completing work.",
+    "proof_sections": [
+      "verification_targets"
+    ],
+    "read_order": [
+      "focus",
+      "summary",
+      "agent_guidance",
+      "review_boundary",
+      "ownership_boundary",
+      "write_scope",
+      "ui_agent_packet"
+    ],
+    "sections": [
+      {
+        "field": "focus",
+        "id": "focus",
+        "item_count": 4,
+        "reason": "The selected graph surface this packet is scoped to.",
+        "tier": "must_read",
+        "title": "Focus"
+      },
+      {
+        "field": "summary",
+        "id": "summary",
+        "item_count": 18,
+        "reason": "The shortest human-readable description of the selected work or surface.",
+        "tier": "must_read",
+        "title": "Summary"
+      },
+      {
+        "field": "agent_guidance",
+        "id": "agent_guidance",
+        "item_count": 10,
+        "reason": "Mode, read order, follow-up queries, and required proof commands.",
+        "tier": "must_read",
+        "title": "Agent Guidance"
+      },
+      {
+        "field": "review_boundary",
+        "id": "review_boundary",
+        "item_count": 2,
+        "reason": "Automation and human-review expectations for this scope.",
+        "tier": "must_read",
+        "title": "Review Boundary"
+      },
+      {
+        "field": "ownership_boundary",
+        "id": "ownership_boundary",
+        "item_count": 4,
+        "reason": "Generated, maintained, and human-owned boundaries that constrain edits.",
+        "tier": "must_read",
+        "title": "Ownership Boundary"
+      },
+      {
+        "field": "write_scope",
+        "id": "write_scope",
+        "item_count": 4,
+        "reason": "Files and surfaces that are safe, risky, or out of bounds to edit.",
+        "tier": "must_read",
+        "title": "Write Scope"
+      },
+      {
+        "field": "ui_agent_packet",
+        "id": "ui_agent_packet",
+        "item_count": 13,
+        "reason": "Screen, layout, region, widget, accessibility, i18n, design-token, and UI proof context for UI slices.",
+        "tier": "must_read",
+        "title": "UI Agent Packet"
+      },
+      {
+        "field": "depends_on",
+        "id": "depends_on",
+        "item_count": 6,
+        "reason": "IDs that define the semantic closure without embedding every full record.",
+        "tier": "reference",
+        "title": "Depends On"
+      },
+      {
+        "field": "related_summary",
+        "id": "related_summary",
+        "item_count": 2,
+        "reason": "Compact counts and IDs for related records omitted from compact detail.",
+        "tier": "reference",
+        "title": "Related Summary"
+      },
+      {
+        "field": "verification_targets",
+        "id": "verification_targets",
+        "item_count": 4,
+        "reason": "Smallest verification set recommended for this change.",
+        "tier": "proof",
+        "title": "Verification Targets"
+      }
+    ]
+  },
+  "standing_rules": [],
+  "summary": {
+    "approvals": [],
+    "behavior": [],
+    "behaviors": [],
+    "category": "navigation",
+    "dependencies": [],
+    "description": "Primary and bulk action toolbar.",
+    "events": [
+      {
+        "id": "acknowledge_alert",
+        "shape": "shape_alert_banner"
+      }
+    ],
+    "id": "widget_command_toolbar",
+    "kind": "widget",
+    "lookups": [],
+    "name": "Command Toolbar",
+    "ownership_boundary": {
+      "canonical_topogram": {
+        "agent_mode": "propose_review_adopt",
+        "owner": "human"
+      },
+      "generated_artifacts": {
+        "agent_mode": "regenerate_or_compare",
+        "owner": "engine"
+      },
+      "maintained_code": {
+        "agent_mode": "bounded_edit_only",
+        "owner": "human"
+      },
+      "proposal_surfaces": {
+        "agent_mode": "stage_map_customize_reject",
+        "owner": "human"
+      }
+    },
+    "patterns": [
+      "action_bar"
+    ],
+    "props": [
+      {
+        "defaultValue": [],
+        "name": "actions",
+        "requiredness": "optional",
+        "type": "array"
+      }
+    ],
+    "regions": [
+      "toolbar"
+    ],
+    "slots": [],
+    "status": "active",
+    "version": "1.0"
+  },
+  "type": "context_slice",
+  "ui_agent_packet": {
+    "accessibility": {
+      "authoredObligations": [],
+      "currentSignals": {
+        "authoredContract": null,
+        "designTokens": null
+      },
+      "decisions": [
+        {
+          "found": false,
+          "id": "decision_aria_attributes_are_implementation_evidence",
+          "kind": null,
+          "name": "decision_aria_attributes_are_implementation_evidence",
+          "status": null
+        }
+      ],
+      "diagnostics": [
+        "No authored accessibility obligation DSL block exists yet; use the linked terms, decision, and draft requirement as implementation guidance."
+      ],
+      "obligations": [
+        "Prefer semantic role, accessible-name source, keyboard model, focus behavior, live-region need, and proof command over raw aria-* snapshots.",
+        "Treat raw aria-* attributes as generated or maintained implementation evidence, not the contract source."
+      ],
+      "proofCommands": [
+        "topogram widget check --json",
+        "topogram widget behavior --json",
+        "topogram emit ui-realization-report --surface proj_web --json"
+      ],
+      "requirements": [
+        {
+          "found": false,
+          "id": "req_aria_accessibility_contract_v1",
+          "kind": null,
+          "name": "req_aria_accessibility_contract_v1",
+          "status": null
+        }
+      ],
+      "scope": {
+        "projectionId": "proj_web",
+        "screenId": null,
+        "widgetId": "widget_command_toolbar"
+      },
+      "source": "topo terms, decisions, draft requirements, and design-token evidence",
+      "status": "semantic_context_only",
+      "terms": [
+        {
+          "found": false,
+          "id": "term_accessibility_obligation",
+          "kind": null,
+          "name": "term_accessibility_obligation",
+          "status": null
+        },
+        {
+          "found": false,
+          "id": "term_accessible_name",
+          "kind": null,
+          "name": "term_accessible_name",
+          "status": null
+        },
+        {
+          "found": false,
+          "id": "term_semantic_role",
+          "kind": null,
+          "name": "term_semantic_role",
+          "status": null
+        },
+        {
+          "found": false,
+          "id": "term_keyboard_interaction",
+          "kind": null,
+          "name": "term_keyboard_interaction",
+          "status": null
+        },
+        {
+          "found": false,
+          "id": "term_live_region",
+          "kind": null,
+          "name": "term_live_region",
+          "status": null
+        }
+      ]
+    },
+    "agent_readiness": {
+      "change_targets": [
+        {
+          "id": "widget_command_toolbar",
+          "kind": "widget",
+          "reason": "Focused UI work-map node."
+        },
+        {
+          "id": "intake_commands",
+          "kind": "widget_binding",
+          "reason": "Widget binding is the work leaf where data, action, region, and design obligations meet.",
+          "region": "commands",
+          "widget": "widget_command_toolbar"
+        }
+      ],
+      "human_review_needed": [
+        "Widget 'widget_command_toolbar' has no android design realization in 'design_acme_ops'.",
+        "Widget 'widget_command_toolbar' has no ios design realization in 'design_acme_ops'.",
+        "Realization 'command_toolbar_web' is 'contract_only'.",
+        "Behavior 'bulk_action' is 'contract_only'.",
+        "Widget 'widget_command_toolbar' has no authored accessibility obligation.",
+        "Widget 'widget_command_toolbar' has no authored accessibility obligation.",
+        "Widget 'widget_command_toolbar' has no authored message key.",
+        "Widget 'widget_command_toolbar' has no authored message key.",
+        "Realization 'command_toolbar_web_narrow' does not declare 'empty' state coverage.",
+        "Realization 'command_toolbar_web_narrow' does not declare 'error' state coverage.",
+        "Realization 'command_toolbar_web' does not declare 'empty' state coverage.",
+        "Realization 'command_toolbar_web' does not declare 'error' state coverage."
+      ],
+      "missing_context": [],
+      "proof_commands": [
+        "topogram query ui-design-coverage ./topo --surface proj_web --widget widget_command_toolbar --json",
+        "topogram query ui-design-coverage ./topo --surface proj_web --widget widget_command_toolbar --format markdown",
+        "topogram emit ui-realization-report ./topo --surface proj_web --json",
+        "topogram check",
+        "topogram widget check --surface proj_web --widget widget_command_toolbar",
+        "topogram widget behavior --surface proj_web --widget widget_command_toolbar",
+        "topogram emit ui-realization-report --surface proj_web --json"
+      ],
+      "ready_to_edit": true,
+      "status": "ready_with_review"
+    },
+    "designLanguages": {
+      "contracts": [
+        {
+          "behaviorSupport": [
+            {
+              "behavior": "bulk_action",
+              "componentMap": {
+                "id": "component_map_acme_ops_widgets",
+                "name": "Acme Operations Component Map"
+              },
+              "density": "compact",
+              "loc": {
+                "end": {
+                  "column": 4,
+                  "line": 100,
+                  "offset": 2788
+                },
+                "file": "topo/component-maps/component-map-acme-ops-widgets.tg",
+                "start": {
+                  "column": 3,
+                  "line": 88,
+                  "offset": 2398
+                }
+              },
+              "localeContexts": [],
+              "platform": "web",
+              "roleContexts": [],
+              "stateCoverage": [
+                "loading"
+              ],
+              "status": "contract_only",
+              "themeContexts": [],
+              "type": "component_mapping_behavior_support",
+              "viewport": "wide",
+              "widget": {
+                "id": "widget_command_toolbar",
+                "kind": "widget",
+                "target": {
+                  "id": "widget_command_toolbar",
+                  "kind": "widget"
+                }
+              }
+            },
+            {
+              "behavior": "bulk_action",
+              "componentMap": {
+                "id": "component_map_acme_ops_widgets",
+                "name": "Acme Operations Component Map"
+              },
+              "density": "compact",
+              "loc": {
+                "end": {
+                  "column": 4,
+                  "line": 114,
+                  "offset": 3169
+                },
+                "file": "topo/component-maps/component-map-acme-ops-widgets.tg",
+                "start": {
+                  "column": 3,
+                  "line": 102,
+                  "offset": 2792
+                }
+              },
+              "localeContexts": [],
+              "platform": "web",
+              "roleContexts": [],
+              "stateCoverage": [
+                "loading"
+              ],
+              "status": "rendered",
+              "themeContexts": [],
+              "type": "component_mapping_behavior_support",
+              "viewport": "narrow",
+              "widget": {
+                "id": "widget_command_toolbar",
+                "kind": "widget",
+                "target": {
+                  "id": "widget_command_toolbar",
+                  "kind": "widget"
+                }
+              }
+            }
+          ],
+          "componentMaps": [
+            {
+              "id": "component_map_acme_ops_widgets",
+              "name": "Acme Operations Component Map",
+              "status": "active",
+              "widgetMappings": [
+                {
+                  "behaviorsContractOnly": [
+                    "bulk_action"
+                  ],
+                  "behaviorsImplementationOwned": [],
+                  "behaviorsRendered": [],
+                  "behaviorsUnsupported": [],
+                  "componentRef": "acme.actionToolbar",
+                  "density": "compact",
+                  "id": "command_toolbar_web",
+                  "loc": {
+                    "end": {
+                      "column": 4,
+                      "line": 100,
+                      "offset": 2788
+                    },
+                    "file": "topo/component-maps/component-map-acme-ops-widgets.tg",
+                    "start": {
+                      "column": 3,
+                      "line": 88,
+                      "offset": 2398
+                    }
+                  },
+                  "localeContexts": [],
+                  "pattern": "action_bar",
+                  "platform": "web",
+                  "reviewNotes": "Bulk action support remains contract-only until implementation proof exists.",
+                  "roleContexts": [],
+                  "stateCoverage": [
+                    "loading"
+                  ],
+                  "status": "contract_only",
+                  "styleRefs": [],
+                  "themeContexts": [],
+                  "type": "widget_mapping",
+                  "viewport": "wide",
+                  "widget": {
+                    "id": "widget_command_toolbar",
+                    "kind": "widget",
+                    "target": {
+                      "id": "widget_command_toolbar",
+                      "kind": "widget"
+                    }
+                  }
+                },
+                {
+                  "behaviorsContractOnly": [],
+                  "behaviorsImplementationOwned": [],
+                  "behaviorsRendered": [
+                    "bulk_action"
+                  ],
+                  "behaviorsUnsupported": [],
+                  "componentRef": "acme.actionToolbar",
+                  "density": "compact",
+                  "id": "command_toolbar_web_narrow",
+                  "loc": {
+                    "end": {
+                      "column": 4,
+                      "line": 114,
+                      "offset": 3169
+                    },
+                    "file": "topo/component-maps/component-map-acme-ops-widgets.tg",
+                    "start": {
+                      "column": 3,
+                      "line": 102,
+                      "offset": 2792
+                    }
+                  },
+                  "localeContexts": [],
+                  "pattern": "action_bar",
+                  "platform": "web",
+                  "reviewNotes": "Accepted from explicit Storybook metadata after designer review.",
+                  "roleContexts": [],
+                  "stateCoverage": [
+                    "loading"
+                  ],
+                  "status": "rendered",
+                  "styleRefs": [],
+                  "themeContexts": [],
+                  "type": "widget_mapping",
+                  "viewport": "narrow",
+                  "widget": {
+                    "id": "widget_command_toolbar",
+                    "kind": "widget",
+                    "target": {
+                      "id": "widget_command_toolbar",
+                      "kind": "widget"
+                    }
+                  }
+                }
+              ]
+            }
+          ],
+          "components": [
+            {
+              "componentMap": {
+                "id": "component_map_acme_ops_widgets",
+                "name": "Acme Operations Component Map"
+              },
+              "density": "compact",
+              "id": "command_toolbar_web",
+              "loc": {
+                "end": {
+                  "column": 4,
+                  "line": 100,
+                  "offset": 2788
+                },
+                "file": "topo/component-maps/component-map-acme-ops-widgets.tg",
+                "start": {
+                  "column": 3,
+                  "line": 88,
+                  "offset": 2398
+                }
+              },
+              "localeContexts": [],
+              "pattern": "action_bar",
+              "platform": "web",
+              "realizes": {
+                "id": "widget_command_toolbar",
+                "kind": "widget",
+                "target": {
+                  "id": "widget_command_toolbar",
+                  "kind": "widget"
+                }
+              },
+              "ref": "acme.actionToolbar",
+              "reviewNotes": "Bulk action support remains contract-only until implementation proof exists.",
+              "roleContexts": [],
+              "stateCoverage": [
+                "loading"
+              ],
+              "status": "contract_only",
+              "styleRefs": [],
+              "themeContexts": [],
+              "type": "component_mapping_component",
+              "viewport": "wide"
+            },
+            {
+              "componentMap": {
+                "id": "component_map_acme_ops_widgets",
+                "name": "Acme Operations Component Map"
+              },
+              "density": "compact",
+              "id": "command_toolbar_web_narrow",
+              "loc": {
+                "end": {
+                  "column": 4,
+                  "line": 114,
+                  "offset": 3169
+                },
+                "file": "topo/component-maps/component-map-acme-ops-widgets.tg",
+                "start": {
+                  "column": 3,
+                  "line": 102,
+                  "offset": 2792
+                }
+              },
+              "localeContexts": [],
+              "pattern": "action_bar",
+              "platform": "web",
+              "realizes": {
+                "id": "widget_command_toolbar",
+                "kind": "widget",
+                "target": {
+                  "id": "widget_command_toolbar",
+                  "kind": "widget"
+                }
+              },
+              "ref": "acme.actionToolbar",
+              "reviewNotes": "Accepted from explicit Storybook metadata after designer review.",
+              "roleContexts": [],
+              "stateCoverage": [
+                "loading"
+              ],
+              "status": "rendered",
+              "styleRefs": [],
+              "themeContexts": [],
+              "type": "component_mapping_component",
+              "viewport": "narrow"
+            }
+          ],
+          "id": "design_acme_ops",
+          "library": "acme_ops",
+          "name": "Acme Operations Design Language",
+          "packageName": "@acme/ops-ui",
+          "platforms": [
+            "web",
+            "ios",
+            "android"
+          ],
+          "status": "active",
+          "styleIntent": [],
+          "surfaces": [
+            "proj_web"
+          ],
+          "tokenMappings": [
+            {
+              "loc": {
+                "end": {
+                  "column": 58,
+                  "line": 9,
+                  "offset": 327
+                },
+                "file": "topo/design-languages/design-acme-ops.tg",
+                "start": {
+                  "column": 5,
+                  "line": 9,
+                  "offset": 274
+                }
+              },
+              "platform": null,
+              "raw": [
+                "color_role",
+                "surface",
+                "token",
+                "acme.color.surface.default"
+              ],
+              "role": "surface",
+              "roleKind": "color_role",
+              "token": "acme.color.surface.default",
+              "type": "design_language_token_mapping"
+            },
+            {
+              "loc": {
+                "end": {
+                  "column": 57,
+                  "line": 10,
+                  "offset": 384
+                },
+                "file": "topo/design-languages/design-acme-ops.tg",
+                "start": {
+                  "column": 5,
+                  "line": 10,
+                  "offset": 332
+                }
+              },
+              "platform": null,
+              "raw": [
+                "color_role",
+                "danger",
+                "token",
+                "acme.color.status.critical"
+              ],
+              "role": "danger",
+              "roleKind": "color_role",
+              "token": "acme.color.status.critical",
+              "type": "design_language_token_mapping"
+            },
+            {
+              "loc": {
+                "end": {
+                  "column": 48,
+                  "line": 11,
+                  "offset": 432
+                },
+                "file": "topo/design-languages/design-acme-ops.tg",
+                "start": {
+                  "column": 5,
+                  "line": 11,
+                  "offset": 389
+                }
+              },
+              "platform": null,
+              "raw": [
+                "typography_role",
+                "body",
+                "token",
+                "acme.type.body"
+              ],
+              "role": "body",
+              "roleKind": "typography_role",
+              "token": "acme.type.body",
+              "type": "design_language_token_mapping"
+            },
+            {
+              "loc": {
+                "end": {
+                  "column": 54,
+                  "line": 12,
+                  "offset": 486
+                },
+                "file": "topo/design-languages/design-acme-ops.tg",
+                "start": {
+                  "column": 5,
+                  "line": 12,
+                  "offset": 437
+                }
+              },
+              "platform": null,
+              "raw": [
+                "typography_role",
+                "heading",
+                "token",
+                "acme.type.heading"
+              ],
+              "role": "heading",
+              "roleKind": "typography_role",
+              "token": "acme.type.heading",
+              "type": "design_language_token_mapping"
+            }
+          ]
+        }
+      ],
+      "diagnostics": [],
+      "proofCommands": [
+        "topogram emit ui-realization-report --surface proj_web --json",
+        "topogram query slice ./topo --widget widget_command_toolbar --json"
+      ],
+      "scope": {
+        "projectionId": "proj_web",
+        "screenId": null,
+        "widgetId": "widget_command_toolbar"
+      },
+      "source": "design_language records own design-system scope and token mappings; component_map records map semantic widgets to platform component refs and behavior support.",
+      "status": "mapped"
+    },
+    "designReview": {
+      "diagnostics": [
+        "Widget 'widget_command_toolbar' has no android design realization in 'design_acme_ops'.",
+        "Widget 'widget_command_toolbar' has no ios design realization in 'design_acme_ops'.",
+        "Realization 'command_toolbar_web' is 'contract_only'.",
+        "Behavior 'bulk_action' is 'contract_only'.",
+        "Widget 'widget_command_toolbar' has no authored accessibility obligation.",
+        "Widget 'widget_command_toolbar' has no authored accessibility obligation.",
+        "Widget 'widget_command_toolbar' has no authored message key.",
+        "Widget 'widget_command_toolbar' has no authored message key.",
+        "Realization 'command_toolbar_web_narrow' does not declare 'empty' state coverage.",
+        "Realization 'command_toolbar_web_narrow' does not declare 'error' state coverage.",
+        "Realization 'command_toolbar_web' does not declare 'empty' state coverage.",
+        "Realization 'command_toolbar_web' does not declare 'error' state coverage."
+      ],
+      "gaps": {
+        "behavior_review_items": 1,
+        "missing_accessibility": 2,
+        "missing_i18n": 2,
+        "missing_platforms": 2,
+        "missing_states": 4,
+        "missing_style_evidence": 0,
+        "missing_token_mappings": 0
+      },
+      "matrix": {
+        "review_rows": [
+          {
+            "code": "design_missing_platform",
+            "message": "Widget 'widget_command_toolbar' has no android design realization in 'design_acme_ops'.",
+            "platform": "android",
+            "widget": "widget_command_toolbar"
+          },
+          {
+            "code": "design_missing_platform",
+            "message": "Widget 'widget_command_toolbar' has no ios design realization in 'design_acme_ops'.",
+            "platform": "ios",
+            "widget": "widget_command_toolbar"
+          },
+          {
+            "code": "component_mapping_status_review",
+            "component_ref": "acme.actionToolbar",
+            "message": "Realization 'command_toolbar_web' is 'contract_only'.",
+            "platform": "web",
+            "status": "contract_only",
+            "viewport": "wide",
+            "widget": "widget_command_toolbar"
+          },
+          {
+            "code": "design_behavior_review_required",
+            "component_ref": "acme.actionToolbar",
+            "message": "Behavior 'bulk_action' is 'contract_only'.",
+            "platform": "web",
+            "status": "contract_only",
+            "viewport": "wide",
+            "widget": "widget_command_toolbar"
+          },
+          {
+            "code": "design_missing_accessibility",
+            "component_ref": "acme.actionToolbar",
+            "message": "Widget 'widget_command_toolbar' has no authored accessibility obligation.",
+            "platform": "web",
+            "status": "missing_accessibility",
+            "viewport": "narrow",
+            "widget": "widget_command_toolbar"
+          },
+          {
+            "code": "design_missing_accessibility",
+            "component_ref": "acme.actionToolbar",
+            "message": "Widget 'widget_command_toolbar' has no authored accessibility obligation.",
+            "platform": "web",
+            "status": "missing_accessibility",
+            "viewport": "wide",
+            "widget": "widget_command_toolbar"
+          },
+          {
+            "code": "design_missing_i18n",
+            "component_ref": "acme.actionToolbar",
+            "message": "Widget 'widget_command_toolbar' has no authored message key.",
+            "platform": "web",
+            "status": "missing_i18n",
+            "viewport": "narrow",
+            "widget": "widget_command_toolbar"
+          },
+          {
+            "code": "design_missing_i18n",
+            "component_ref": "acme.actionToolbar",
+            "message": "Widget 'widget_command_toolbar' has no authored message key.",
+            "platform": "web",
+            "status": "missing_i18n",
+            "viewport": "wide",
+            "widget": "widget_command_toolbar"
+          },
+          {
+            "code": "design_missing_state",
+            "component_ref": "acme.actionToolbar",
+            "message": "Realization 'command_toolbar_web_narrow' does not declare 'empty' state coverage.",
+            "platform": "web",
+            "status": "missing_state",
+            "viewport": "narrow",
+            "widget": "widget_command_toolbar"
+          },
+          {
+            "code": "design_missing_state",
+            "component_ref": "acme.actionToolbar",
+            "message": "Realization 'command_toolbar_web_narrow' does not declare 'error' state coverage.",
+            "platform": "web",
+            "status": "missing_state",
+            "viewport": "narrow",
+            "widget": "widget_command_toolbar"
+          },
+          {
+            "code": "design_missing_state",
+            "component_ref": "acme.actionToolbar",
+            "message": "Realization 'command_toolbar_web' does not declare 'empty' state coverage.",
+            "platform": "web",
+            "status": "missing_state",
+            "viewport": "wide",
+            "widget": "widget_command_toolbar"
+          },
+          {
+            "code": "design_missing_state",
+            "component_ref": "acme.actionToolbar",
+            "message": "Realization 'command_toolbar_web' does not declare 'error' state coverage.",
+            "platform": "web",
+            "status": "missing_state",
+            "viewport": "wide",
+            "widget": "widget_command_toolbar"
+          }
+        ],
+        "rows": [
+          {
+            "accessibility_status": "missing",
+            "behavior_statuses": [],
+            "component_ref": null,
+            "density": "unspecified",
+            "design_style_intent": [],
+            "i18n_status": "missing",
+            "missing_states": [
+              "loading",
+              "empty",
+              "error"
+            ],
+            "pattern": null,
+            "platform": "android",
+            "review_status": "review_required",
+            "state_coverage": [],
+            "status": "missing_platform",
+            "style_refs": [],
+            "style_status": "mapped",
+            "token_status": "mapped",
+            "usage_style_intent": [
+              "compact",
+              "actionable"
+            ],
+            "viewport": "any",
+            "widget": "widget_command_toolbar"
+          },
+          {
+            "accessibility_status": "missing",
+            "behavior_statuses": [],
+            "component_ref": null,
+            "density": "unspecified",
+            "design_style_intent": [],
+            "i18n_status": "missing",
+            "missing_states": [
+              "loading",
+              "empty",
+              "error"
+            ],
+            "pattern": null,
+            "platform": "ios",
+            "review_status": "review_required",
+            "state_coverage": [],
+            "status": "missing_platform",
+            "style_refs": [],
+            "style_status": "mapped",
+            "token_status": "mapped",
+            "usage_style_intent": [
+              "compact",
+              "actionable"
+            ],
+            "viewport": "any",
+            "widget": "widget_command_toolbar"
+          },
+          {
+            "accessibility_status": "missing",
+            "behavior_statuses": [
+              {
+                "behavior": "bulk_action",
+                "status": "rendered"
+              }
+            ],
+            "component_ref": "acme.actionToolbar",
+            "density": "compact",
+            "design_style_intent": [],
+            "i18n_status": "missing",
+            "missing_states": [
+              "empty",
+              "error"
+            ],
+            "pattern": "action_bar",
+            "platform": "web",
+            "review_status": "review_required",
+            "state_coverage": [
+              "loading"
+            ],
+            "status": "rendered",
+            "style_refs": [],
+            "style_status": "mapped",
+            "token_status": "mapped",
+            "usage_style_intent": [
+              "compact",
+              "actionable"
+            ],
+            "viewport": "narrow",
+            "widget": "widget_command_toolbar"
+          },
+          {
+            "accessibility_status": "missing",
+            "behavior_statuses": [
+              {
+                "behavior": "bulk_action",
+                "status": "contract_only"
+              }
+            ],
+            "component_ref": "acme.actionToolbar",
+            "density": "compact",
+            "design_style_intent": [],
+            "i18n_status": "missing",
+            "missing_states": [
+              "empty",
+              "error"
+            ],
+            "pattern": "action_bar",
+            "platform": "web",
+            "review_status": "review_required",
+            "state_coverage": [
+              "loading"
+            ],
+            "status": "contract_only",
+            "style_refs": [],
+            "style_status": "mapped",
+            "token_status": "mapped",
+            "usage_style_intent": [
+              "compact",
+              "actionable"
+            ],
+            "viewport": "wide",
+            "widget": "widget_command_toolbar"
+          }
+        ]
+      },
+      "proofCommands": [
+        "topogram query ui-design-coverage ./topo --surface proj_web --widget widget_command_toolbar --json",
+        "topogram query ui-design-coverage ./topo --surface proj_web --widget widget_command_toolbar --format markdown",
+        "topogram emit ui-realization-report ./topo --surface proj_web --json"
+      ],
+      "scope": {
+        "projectionId": "proj_web",
+        "screenId": null,
+        "widgetId": "widget_command_toolbar"
+      },
+      "source": "ui-design-coverage design_matrix rows from design_language and component_map records",
+      "status": "review_required"
+    },
+    "inheritedBy": [
+      "proj_web"
+    ],
+    "internationalization": {
+      "currentSignals": {
+        "authoredContract": null,
+        "localePolicy": null,
+        "messageKeys": []
+      },
+      "decisions": [
+        {
+          "found": false,
+          "id": "decision_i18n_messages_are_separate_from_glossary_terms",
+          "kind": null,
+          "name": "decision_i18n_messages_are_separate_from_glossary_terms",
+          "status": null
+        }
+      ],
+      "diagnostics": [
+        "No authored i18n message contract block exists yet; use linked terms, decision, and draft requirement as implementation guidance."
+      ],
+      "messages": [],
+      "obligations": [
+        "Use glossary terms for canonical meaning and message keys for translated wording.",
+        "Keep concrete locale catalogs in generated or maintained app code until a message contract DSL exists."
+      ],
+      "proofCommands": [
+        "topogram emit glossary ./topo --json"
+      ],
+      "requirements": [
+        {
+          "found": false,
+          "id": "req_i18n_message_contract_v1",
+          "kind": null,
+          "name": "req_i18n_message_contract_v1",
+          "status": null
+        }
+      ],
+      "scope": {
+        "projectionId": "proj_web",
+        "screenId": null,
+        "widgetId": "widget_command_toolbar"
+      },
+      "source": "topo terms, decisions, and draft requirements",
+      "status": "semantic_context_only",
+      "terms": [
+        {
+          "found": false,
+          "id": "term_translatable_message",
+          "kind": null,
+          "name": "term_translatable_message",
+          "status": null
+        },
+        {
+          "found": false,
+          "id": "term_message_key",
+          "kind": null,
+          "name": "term_message_key",
+          "status": null
+        },
+        {
+          "found": false,
+          "id": "term_locale_policy",
+          "kind": null,
+          "name": "term_locale_policy",
+          "status": null
+        },
+        {
+          "found": false,
+          "id": "term_source_text",
+          "kind": null,
+          "name": "term_source_text",
+          "status": null
+        }
+      ]
+    },
+    "ownership": {
+      "concreteSurfacesInherit": true,
+      "widgetContract": "widget",
+      "widgetPlacement": "semantic_ui"
+    },
+    "requiredGates": [
+      {
+        "command": "topogram check",
+        "reason": "Validate shared UI ownership, taxonomy, references, and topology."
+      },
+      {
+        "command": "topogram widget check --surface proj_web --widget widget_command_toolbar",
+        "reason": "Validate widget placement, props, events, regions, and patterns."
+      },
+      {
+        "command": "topogram widget behavior --surface proj_web --widget widget_command_toolbar",
+        "reason": "Inspect behavior realizations and partial bindings before code changes."
+      },
+      {
+        "command": "topogram emit ui-realization-report --surface proj_web --json",
+        "reason": "Confirm screens, regions, widgets, display fields, behavior, and design tokens are realizable by the web generator."
+      }
+    ],
+    "scope": {
+      "projectionId": "proj_web",
+      "screenId": null,
+      "widgetId": "widget_command_toolbar"
+    },
+    "sourceUsages": [
+      {
+        "designTokens": [],
+        "surface": {
+          "id": "proj_semantic_ui",
+          "ownership": "owner",
+          "type": "semantic_ui"
+        },
+        "usage": {
+          "behaviorRealizations": [],
+          "bindingId": "intake_commands",
+          "dataBindings": [],
+          "display": null,
+          "displayFields": [],
+          "eventBindings": [
+            {
+              "action": "action",
+              "event": "acknowledge_alert",
+              "target": "cap_acknowledge_alert"
+            }
+          ],
+          "generatedBindingId": false,
+          "intent": "Expose queue actions and bulk operations.",
+          "layout": {
+            "appShell": null,
+            "fills": "content",
+            "id": "layout_intake_workspace",
+            "inherited": [
+              {
+                "appShell": null,
+                "fills": null,
+                "id": "layout_ops_shell",
+                "name": "Operations Shell",
+                "pattern": "app_shell",
+                "styleIntent": []
+              },
+              {
+                "appShell": null,
+                "fills": "content",
+                "id": "layout_intake_workspace",
+                "name": "Intake Workspace",
+                "pattern": "collection_workspace",
+                "styleIntent": []
+              }
+            ],
+            "name": "Intake Workspace",
+            "pattern": "collection_workspace",
+            "styleIntent": []
+          },
+          "linkedCapabilities": [],
+          "linkedShapes": [],
+          "priority": "high",
+          "region": "commands",
+          "regionContract": {
+            "accessibilityObligations": [],
+            "allowedWidgetPatterns": [
+              "action_bar"
+            ],
+            "density": "compact",
+            "i18nObligations": [],
+            "kind": "toolbar",
+            "layoutId": "layout_intake_workspace",
+            "name": "commands",
+            "pattern": "action_bar",
+            "placement": "secondary",
+            "regionContractId": "region_command_bar",
+            "slotRole": "command_area",
+            "source": "layout",
+            "state": null,
+            "style": {
+              "effective_intent": [
+                "compact",
+                "actionable"
+              ],
+              "sources": [
+                {
+                  "id": "region_command_bar",
+                  "intent": [
+                    "compact",
+                    "actionable"
+                  ],
+                  "scope": "region"
+                }
+              ]
+            },
+            "styleIntent": [
+              "compact",
+              "actionable"
+            ],
+            "title": "Command Bar",
+            "variant": null
+          },
+          "regionContractId": "region_command_bar",
+          "route": null,
+          "screen": {
+            "id": "intake_queue",
+            "kind": "list",
+            "layout": {
+              "appShell": null,
+              "fills": "content",
+              "id": "layout_intake_workspace",
+              "inherited": [
+                {
+                  "appShell": null,
+                  "fills": null,
+                  "id": "layout_ops_shell",
+                  "name": "Operations Shell",
+                  "pattern": "app_shell",
+                  "styleIntent": []
+                },
+                {
+                  "appShell": null,
+                  "fills": "content",
+                  "id": "layout_intake_workspace",
+                  "name": "Intake Workspace",
+                  "pattern": "collection_workspace",
+                  "styleIntent": []
+                }
+              ],
+              "name": "Intake Workspace",
+              "pattern": "collection_workspace",
+              "styleIntent": []
+            },
+            "title": "Intake Queue"
+          },
+          "screenId": "intake_queue",
+          "slotRole": "command_area",
+          "style": {
+            "effective_intent": [
+              "compact",
+              "actionable"
+            ],
+            "sources": [
+              {
+                "id": "region_command_bar",
+                "intent": [
+                  "compact",
+                  "actionable"
+                ],
+                "scope": "region"
+              }
+            ]
+          },
+          "styleIntent": [
+            "compact",
+            "actionable"
+          ],
+          "widgetId": "widget_command_toolbar"
+        }
+      }
+    ],
+    "type": "ui_agent_packet",
+    "version": 1,
+    "widget": {
+      "behaviors": [],
+      "category": "navigation",
+      "id": "widget_command_toolbar",
+      "name": "Command Toolbar",
+      "patterns": [
+        "action_bar"
+      ],
+      "regions": [
+        "toolbar"
+      ]
+    }
+  },
+  "verification": [],
+  "verification_targets": {
+    "generated_checks": [
+      "compile-check"
+    ],
+    "maintained_app_checks": [],
+    "rationale": "Widget changes affect every related surface, so verification should follow the widget contract closure.",
+    "verification_ids": []
+  },
+  "version": 1,
+  "write_scope": {
+    "generator_owned": [
+      "artifacts/**",
+      "apps/**"
+    ],
+    "human_owned_review_required": [
+      "examples/maintained/proof-app/**"
+    ],
+    "out_of_bounds": [
+      ".git/**",
+      "node_modules/**"
+    ],
+    "safe_to_edit": [
+      "topo/**",
+      "candidates/**"
+    ]
+  }
+}
