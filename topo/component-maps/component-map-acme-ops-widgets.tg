@@ -1,0 +1,114 @@
+component_map component_map_acme_ops_widgets {
+  name "Acme Operations Component Map"
+  description "Maps semantic operations widgets to stable Acme component refs across platforms."
+  design_language design_acme_ops
+  status active
+
+  widget_mapping {
+    id intake_grid_web_wide
+    widget widget_intake_grid
+    platform web
+    viewport wide
+    component_ref "acme.dataGrid"
+    pattern data_grid_view
+    density compact
+    state_coverage [loading, empty, error]
+    role_contexts [operator]
+    theme_contexts [light, dark]
+    locale_contexts [default_locale]
+    status rendered
+    behaviors_rendered [selection, sorting, filtering]
+  }
+
+  widget_mapping {
+    id intake_grid_web_narrow
+    widget widget_intake_grid
+    platform web
+    viewport narrow
+    component_ref "acme.cardList"
+    pattern resource_cards
+    density comfortable
+    state_coverage [loading, empty]
+    role_contexts [operator]
+    theme_contexts [light]
+    locale_contexts [default_locale]
+    review_notes "Narrow web uses cards and still needs error-state coverage."
+    status contract_only
+    behaviors_rendered [selection]
+    behaviors_contract_only [sorting, filtering]
+  }
+
+  widget_mapping {
+    id intake_grid_ios
+    widget widget_intake_grid
+    platform ios
+    viewport any
+    component_ref "acme.mobile.IntakeList"
+    pattern resource_cards
+    density comfortable
+    state_coverage [loading]
+    role_contexts [operator]
+    theme_contexts [system]
+    locale_contexts [default_locale]
+    status implementation_owned
+    behaviors_rendered [selection]
+    behaviors_implementation_owned [sorting, filtering]
+  }
+
+  widget_mapping {
+    id intake_grid_android
+    widget widget_intake_grid
+    platform android
+    viewport any
+    component_ref "acme.android.IntakeCards"
+    pattern resource_cards
+    density comfortable
+    state_coverage [loading]
+    role_contexts [operator]
+    theme_contexts [system]
+    locale_contexts [default_locale]
+    review_notes "Android mapping is intentionally unsupported for review visibility."
+    status unsupported
+    behaviors_unsupported [sorting, filtering]
+  }
+
+  widget_mapping {
+    id filter_panel_web
+    widget widget_filter_panel
+    platform web
+    viewport wide
+    component_ref "acme.filterPanel"
+    pattern filter_panel
+    density compact
+    state_coverage [empty]
+    status rendered
+    behaviors_rendered [filtering]
+  }
+
+  widget_mapping {
+    id command_toolbar_web
+    widget widget_command_toolbar
+    platform web
+    viewport wide
+    component_ref "acme.actionToolbar"
+    pattern action_bar
+    density compact
+    state_coverage [loading]
+    review_notes "Bulk action support remains contract-only until implementation proof exists."
+    status contract_only
+    behaviors_contract_only [bulk_action]
+  }
+
+  widget_mapping {
+    id alert_banner_web
+    widget widget_alert_banner
+    platform web
+    viewport wide
+    component_ref "acme.alertBanner"
+    pattern empty_state_panel
+    density comfortable
+    state_coverage [empty]
+    review_notes "Alert banner is missing iOS and Android mappings on purpose."
+    status rendered
+  }
+}

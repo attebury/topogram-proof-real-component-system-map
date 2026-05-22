@@ -1,0 +1,2073 @@
+{
+  "component_maps": [
+    {
+      "component_refs": [
+        "acme.actionToolbar",
+        "acme.alertBanner",
+        "acme.android.IntakeCards",
+        "acme.cardList",
+        "acme.dataGrid",
+        "acme.filterPanel",
+        "acme.mobile.IntakeList"
+      ],
+      "design_language": "design_acme_ops",
+      "id": "component_map_acme_ops_widgets",
+      "mappings": [
+        {
+          "component_ref": "acme.alertBanner",
+          "density": "comfortable",
+          "id": "alert_banner_web",
+          "pattern": "empty_state_panel",
+          "platform": "web",
+          "review_status": "review_required",
+          "status": "rendered",
+          "style_refs": [],
+          "viewport": "wide",
+          "widget": "widget_alert_banner"
+        },
+        {
+          "component_ref": "acme.actionToolbar",
+          "density": "compact",
+          "id": "command_toolbar_web",
+          "pattern": "action_bar",
+          "platform": "web",
+          "review_status": "review_required",
+          "status": "contract_only",
+          "style_refs": [],
+          "viewport": "wide",
+          "widget": "widget_command_toolbar"
+        },
+        {
+          "component_ref": "acme.filterPanel",
+          "density": "compact",
+          "id": "filter_panel_web",
+          "pattern": "filter_panel",
+          "platform": "web",
+          "review_status": "review_required",
+          "status": "rendered",
+          "style_refs": [],
+          "viewport": "wide",
+          "widget": "widget_filter_panel"
+        },
+        {
+          "component_ref": "acme.android.IntakeCards",
+          "density": "comfortable",
+          "id": "intake_grid_android",
+          "pattern": "resource_cards",
+          "platform": "android",
+          "review_status": "review_required",
+          "status": "unsupported",
+          "style_refs": [],
+          "viewport": "any",
+          "widget": "widget_intake_grid"
+        },
+        {
+          "component_ref": "acme.mobile.IntakeList",
+          "density": "comfortable",
+          "id": "intake_grid_ios",
+          "pattern": "resource_cards",
+          "platform": "ios",
+          "review_status": "review_required",
+          "status": "implementation_owned",
+          "style_refs": [],
+          "viewport": "any",
+          "widget": "widget_intake_grid"
+        },
+        {
+          "component_ref": "acme.cardList",
+          "density": "comfortable",
+          "id": "intake_grid_web_narrow",
+          "pattern": "resource_cards",
+          "platform": "web",
+          "review_status": "review_required",
+          "status": "contract_only",
+          "style_refs": [],
+          "viewport": "narrow",
+          "widget": "widget_intake_grid"
+        },
+        {
+          "component_ref": "acme.dataGrid",
+          "density": "compact",
+          "id": "intake_grid_web_wide",
+          "pattern": "data_grid_view",
+          "platform": "web",
+          "review_status": "mapped",
+          "status": "rendered",
+          "style_refs": [],
+          "viewport": "wide",
+          "widget": "widget_intake_grid"
+        }
+      ],
+      "platforms": [
+        "android",
+        "ios",
+        "web"
+      ],
+      "proof_commands": [
+        "topogram query slice ./topo --component-map component_map_acme_ops_widgets --detail compact --format markdown",
+        "topogram query work-map ./topo --component-map component_map_acme_ops_widgets --format markdown"
+      ]
+    }
+  ],
+  "focus": {
+    "component_map": null,
+    "layout": null,
+    "region": null,
+    "screen": null,
+    "surface": "proj_web",
+    "widget": null
+  },
+  "gaps": [
+    {
+      "code": "component_mapping_status_review",
+      "component_map": "component_map_acme_ops_widgets",
+      "component_ref": "acme.actionToolbar",
+      "design_language": "design_acme_ops",
+      "message": "Realization 'command_toolbar_web' is 'contract_only'.",
+      "platform": "web",
+      "proof_commands": [
+        "topogram query ui-design-coverage ./topo --json",
+        "topogram query slice ./topo --widget widget_command_toolbar --json",
+        "topogram emit ui-realization-report ./topo --surface <surface-id> --json"
+      ],
+      "realization_id": "command_toolbar_web",
+      "review_type": "contract_only",
+      "severity": "review",
+      "viewport": "wide",
+      "widget": "widget_command_toolbar"
+    },
+    {
+      "code": "component_mapping_status_review",
+      "component_map": "component_map_acme_ops_widgets",
+      "component_ref": "acme.android.IntakeCards",
+      "design_language": "design_acme_ops",
+      "message": "Realization 'intake_grid_android' is 'unsupported'.",
+      "platform": "android",
+      "proof_commands": [
+        "topogram query ui-design-coverage ./topo --json",
+        "topogram query slice ./topo --widget widget_intake_grid --json",
+        "topogram emit ui-realization-report ./topo --surface <surface-id> --json"
+      ],
+      "realization_id": "intake_grid_android",
+      "review_type": "unsupported",
+      "severity": "review",
+      "viewport": "any",
+      "widget": "widget_intake_grid"
+    },
+    {
+      "code": "component_mapping_status_review",
+      "component_map": "component_map_acme_ops_widgets",
+      "component_ref": "acme.cardList",
+      "design_language": "design_acme_ops",
+      "message": "Realization 'intake_grid_web_narrow' is 'contract_only'.",
+      "platform": "web",
+      "proof_commands": [
+        "topogram query ui-design-coverage ./topo --json",
+        "topogram query slice ./topo --widget widget_intake_grid --json",
+        "topogram emit ui-realization-report ./topo --surface <surface-id> --json"
+      ],
+      "realization_id": "intake_grid_web_narrow",
+      "review_type": "contract_only",
+      "severity": "review",
+      "viewport": "narrow",
+      "widget": "widget_intake_grid"
+    },
+    {
+      "code": "design_behavior_review_required",
+      "component_map": "component_map_acme_ops_widgets",
+      "component_ref": "acme.actionToolbar",
+      "design_language": "design_acme_ops",
+      "message": "Behavior 'bulk_action' is 'contract_only'.",
+      "platform": "web",
+      "proof_commands": [
+        "topogram query ui-design-coverage ./topo --json",
+        "topogram query slice ./topo --widget widget_command_toolbar --json",
+        "topogram emit ui-realization-report ./topo --surface <surface-id> --json"
+      ],
+      "realization_id": "command_toolbar_web",
+      "review_type": "contract_only",
+      "severity": "review",
+      "viewport": "wide",
+      "widget": "widget_command_toolbar"
+    },
+    {
+      "code": "design_behavior_review_required",
+      "component_map": "component_map_acme_ops_widgets",
+      "component_ref": "acme.android.IntakeCards",
+      "design_language": "design_acme_ops",
+      "message": "Behavior 'filtering' is 'unsupported'.",
+      "platform": "android",
+      "proof_commands": [
+        "topogram query ui-design-coverage ./topo --json",
+        "topogram query slice ./topo --widget widget_intake_grid --json",
+        "topogram emit ui-realization-report ./topo --surface <surface-id> --json"
+      ],
+      "realization_id": "intake_grid_android",
+      "review_type": "unsupported",
+      "severity": "review",
+      "viewport": "any",
+      "widget": "widget_intake_grid"
+    },
+    {
+      "code": "design_behavior_review_required",
+      "component_map": "component_map_acme_ops_widgets",
+      "component_ref": "acme.android.IntakeCards",
+      "design_language": "design_acme_ops",
+      "message": "Behavior 'sorting' is 'unsupported'.",
+      "platform": "android",
+      "proof_commands": [
+        "topogram query ui-design-coverage ./topo --json",
+        "topogram query slice ./topo --widget widget_intake_grid --json",
+        "topogram emit ui-realization-report ./topo --surface <surface-id> --json"
+      ],
+      "realization_id": "intake_grid_android",
+      "review_type": "unsupported",
+      "severity": "review",
+      "viewport": "any",
+      "widget": "widget_intake_grid"
+    },
+    {
+      "code": "design_behavior_review_required",
+      "component_map": "component_map_acme_ops_widgets",
+      "component_ref": "acme.cardList",
+      "design_language": "design_acme_ops",
+      "message": "Behavior 'filtering' is 'contract_only'.",
+      "platform": "web",
+      "proof_commands": [
+        "topogram query ui-design-coverage ./topo --json",
+        "topogram query slice ./topo --widget widget_intake_grid --json",
+        "topogram emit ui-realization-report ./topo --surface <surface-id> --json"
+      ],
+      "realization_id": "intake_grid_web_narrow",
+      "review_type": "contract_only",
+      "severity": "review",
+      "viewport": "narrow",
+      "widget": "widget_intake_grid"
+    },
+    {
+      "code": "design_behavior_review_required",
+      "component_map": "component_map_acme_ops_widgets",
+      "component_ref": "acme.cardList",
+      "design_language": "design_acme_ops",
+      "message": "Behavior 'sorting' is 'contract_only'.",
+      "platform": "web",
+      "proof_commands": [
+        "topogram query ui-design-coverage ./topo --json",
+        "topogram query slice ./topo --widget widget_intake_grid --json",
+        "topogram emit ui-realization-report ./topo --surface <surface-id> --json"
+      ],
+      "realization_id": "intake_grid_web_narrow",
+      "review_type": "contract_only",
+      "severity": "review",
+      "viewport": "narrow",
+      "widget": "widget_intake_grid"
+    },
+    {
+      "code": "design_coverage_behavior_review_required",
+      "message": "Widget 'widget_command_toolbar' behavior 'bulk_action' is 'contract_only' for 'proj_web'.",
+      "platform": "web",
+      "proof_commands": [],
+      "review_type": "contract_only",
+      "screen": "intake_queue",
+      "severity": "review",
+      "surface": "proj_web",
+      "widget": "widget_command_toolbar"
+    },
+    {
+      "code": "design_coverage_behavior_review_required",
+      "message": "Widget 'widget_intake_grid' behavior 'sorting' is 'contract_only' for 'proj_web'.",
+      "platform": "web",
+      "proof_commands": [],
+      "review_type": "contract_only",
+      "screen": "intake_queue",
+      "severity": "review",
+      "surface": "proj_web",
+      "widget": "widget_intake_grid"
+    },
+    {
+      "code": "design_coverage_behavior_review_required",
+      "message": "Widget 'widget_intake_grid' behavior 'filtering' is 'contract_only' for 'proj_web'.",
+      "platform": "web",
+      "proof_commands": [],
+      "review_type": "contract_only",
+      "screen": "intake_queue",
+      "severity": "review",
+      "surface": "proj_web",
+      "widget": "widget_intake_grid"
+    },
+    {
+      "code": "design_missing_accessibility",
+      "component_map": "component_map_acme_ops_widgets",
+      "component_ref": "acme.actionToolbar",
+      "design_language": "design_acme_ops",
+      "message": "Widget 'widget_command_toolbar' has no authored accessibility obligation.",
+      "platform": "web",
+      "proof_commands": [
+        "topogram query ui-design-coverage ./topo --json",
+        "topogram query slice ./topo --widget widget_command_toolbar --json",
+        "topogram emit ui-realization-report ./topo --surface <surface-id> --json"
+      ],
+      "realization_id": "command_toolbar_web",
+      "review_type": "missing_accessibility",
+      "severity": "review",
+      "viewport": "wide",
+      "widget": "widget_command_toolbar"
+    },
+    {
+      "code": "design_missing_accessibility",
+      "component_map": "component_map_acme_ops_widgets",
+      "component_ref": "acme.filterPanel",
+      "design_language": "design_acme_ops",
+      "message": "Widget 'widget_filter_panel' has no authored accessibility obligation.",
+      "platform": "web",
+      "proof_commands": [
+        "topogram query ui-design-coverage ./topo --json",
+        "topogram query slice ./topo --widget widget_filter_panel --json",
+        "topogram emit ui-realization-report ./topo --surface <surface-id> --json"
+      ],
+      "realization_id": "filter_panel_web",
+      "review_type": "missing_accessibility",
+      "severity": "review",
+      "viewport": "wide",
+      "widget": "widget_filter_panel"
+    },
+    {
+      "code": "design_missing_i18n",
+      "component_map": "component_map_acme_ops_widgets",
+      "component_ref": "acme.actionToolbar",
+      "design_language": "design_acme_ops",
+      "message": "Widget 'widget_command_toolbar' has no authored message key.",
+      "platform": "web",
+      "proof_commands": [
+        "topogram query ui-design-coverage ./topo --json",
+        "topogram query slice ./topo --widget widget_command_toolbar --json",
+        "topogram emit ui-realization-report ./topo --surface <surface-id> --json"
+      ],
+      "realization_id": "command_toolbar_web",
+      "review_type": "missing_i18n",
+      "severity": "review",
+      "viewport": "wide",
+      "widget": "widget_command_toolbar"
+    },
+    {
+      "code": "design_missing_i18n",
+      "component_map": "component_map_acme_ops_widgets",
+      "component_ref": "acme.filterPanel",
+      "design_language": "design_acme_ops",
+      "message": "Widget 'widget_filter_panel' has no authored message key.",
+      "platform": "web",
+      "proof_commands": [
+        "topogram query ui-design-coverage ./topo --json",
+        "topogram query slice ./topo --widget widget_filter_panel --json",
+        "topogram emit ui-realization-report ./topo --surface <surface-id> --json"
+      ],
+      "realization_id": "filter_panel_web",
+      "review_type": "missing_i18n",
+      "severity": "review",
+      "viewport": "wide",
+      "widget": "widget_filter_panel"
+    },
+    {
+      "code": "design_missing_platform",
+      "component_map": null,
+      "component_ref": null,
+      "design_language": "design_acme_ops",
+      "message": "Widget 'widget_alert_banner' has no android design realization in 'design_acme_ops'.",
+      "platform": "android",
+      "proof_commands": [
+        "topogram query ui-design-coverage ./topo --json",
+        "topogram query slice ./topo --widget widget_alert_banner --json",
+        "topogram emit ui-realization-report ./topo --surface <surface-id> --json"
+      ],
+      "realization_id": null,
+      "review_type": "design_missing_platform",
+      "severity": "review",
+      "viewport": null,
+      "widget": "widget_alert_banner"
+    },
+    {
+      "code": "design_missing_platform",
+      "component_map": null,
+      "component_ref": null,
+      "design_language": "design_acme_ops",
+      "message": "Widget 'widget_alert_banner' has no ios design realization in 'design_acme_ops'.",
+      "platform": "ios",
+      "proof_commands": [
+        "topogram query ui-design-coverage ./topo --json",
+        "topogram query slice ./topo --widget widget_alert_banner --json",
+        "topogram emit ui-realization-report ./topo --surface <surface-id> --json"
+      ],
+      "realization_id": null,
+      "review_type": "design_missing_platform",
+      "severity": "review",
+      "viewport": null,
+      "widget": "widget_alert_banner"
+    },
+    {
+      "code": "design_missing_platform",
+      "component_map": null,
+      "component_ref": null,
+      "design_language": "design_acme_ops",
+      "message": "Widget 'widget_command_toolbar' has no android design realization in 'design_acme_ops'.",
+      "platform": "android",
+      "proof_commands": [
+        "topogram query ui-design-coverage ./topo --json",
+        "topogram query slice ./topo --widget widget_command_toolbar --json",
+        "topogram emit ui-realization-report ./topo --surface <surface-id> --json"
+      ],
+      "realization_id": null,
+      "review_type": "design_missing_platform",
+      "severity": "review",
+      "viewport": null,
+      "widget": "widget_command_toolbar"
+    },
+    {
+      "code": "design_missing_platform",
+      "component_map": null,
+      "component_ref": null,
+      "design_language": "design_acme_ops",
+      "message": "Widget 'widget_command_toolbar' has no ios design realization in 'design_acme_ops'.",
+      "platform": "ios",
+      "proof_commands": [
+        "topogram query ui-design-coverage ./topo --json",
+        "topogram query slice ./topo --widget widget_command_toolbar --json",
+        "topogram emit ui-realization-report ./topo --surface <surface-id> --json"
+      ],
+      "realization_id": null,
+      "review_type": "design_missing_platform",
+      "severity": "review",
+      "viewport": null,
+      "widget": "widget_command_toolbar"
+    },
+    {
+      "code": "design_missing_platform",
+      "component_map": null,
+      "component_ref": null,
+      "design_language": "design_acme_ops",
+      "message": "Widget 'widget_filter_panel' has no android design realization in 'design_acme_ops'.",
+      "platform": "android",
+      "proof_commands": [
+        "topogram query ui-design-coverage ./topo --json",
+        "topogram query slice ./topo --widget widget_filter_panel --json",
+        "topogram emit ui-realization-report ./topo --surface <surface-id> --json"
+      ],
+      "realization_id": null,
+      "review_type": "design_missing_platform",
+      "severity": "review",
+      "viewport": null,
+      "widget": "widget_filter_panel"
+    },
+    {
+      "code": "design_missing_platform",
+      "component_map": null,
+      "component_ref": null,
+      "design_language": "design_acme_ops",
+      "message": "Widget 'widget_filter_panel' has no ios design realization in 'design_acme_ops'.",
+      "platform": "ios",
+      "proof_commands": [
+        "topogram query ui-design-coverage ./topo --json",
+        "topogram query slice ./topo --widget widget_filter_panel --json",
+        "topogram emit ui-realization-report ./topo --surface <surface-id> --json"
+      ],
+      "realization_id": null,
+      "review_type": "design_missing_platform",
+      "severity": "review",
+      "viewport": null,
+      "widget": "widget_filter_panel"
+    },
+    {
+      "code": "design_missing_state",
+      "component_map": "component_map_acme_ops_widgets",
+      "component_ref": "acme.alertBanner",
+      "design_language": "design_acme_ops",
+      "message": "Realization 'alert_banner_web' does not declare 'loading' state coverage.",
+      "platform": "web",
+      "proof_commands": [
+        "topogram query ui-design-coverage ./topo --json",
+        "topogram query slice ./topo --widget widget_alert_banner --json",
+        "topogram emit ui-realization-report ./topo --surface <surface-id> --json"
+      ],
+      "realization_id": "alert_banner_web",
+      "review_type": "missing_state",
+      "severity": "review",
+      "viewport": "wide",
+      "widget": "widget_alert_banner"
+    },
+    {
+      "code": "design_missing_state",
+      "component_map": "component_map_acme_ops_widgets",
+      "component_ref": "acme.alertBanner",
+      "design_language": "design_acme_ops",
+      "message": "Realization 'alert_banner_web' does not declare 'error' state coverage.",
+      "platform": "web",
+      "proof_commands": [
+        "topogram query ui-design-coverage ./topo --json",
+        "topogram query slice ./topo --widget widget_alert_banner --json",
+        "topogram emit ui-realization-report ./topo --surface <surface-id> --json"
+      ],
+      "realization_id": "alert_banner_web",
+      "review_type": "missing_state",
+      "severity": "review",
+      "viewport": "wide",
+      "widget": "widget_alert_banner"
+    },
+    {
+      "code": "design_missing_state",
+      "component_map": "component_map_acme_ops_widgets",
+      "component_ref": "acme.actionToolbar",
+      "design_language": "design_acme_ops",
+      "message": "Realization 'command_toolbar_web' does not declare 'empty' state coverage.",
+      "platform": "web",
+      "proof_commands": [
+        "topogram query ui-design-coverage ./topo --json",
+        "topogram query slice ./topo --widget widget_command_toolbar --json",
+        "topogram emit ui-realization-report ./topo --surface <surface-id> --json"
+      ],
+      "realization_id": "command_toolbar_web",
+      "review_type": "missing_state",
+      "severity": "review",
+      "viewport": "wide",
+      "widget": "widget_command_toolbar"
+    },
+    {
+      "code": "design_missing_state",
+      "component_map": "component_map_acme_ops_widgets",
+      "component_ref": "acme.actionToolbar",
+      "design_language": "design_acme_ops",
+      "message": "Realization 'command_toolbar_web' does not declare 'error' state coverage.",
+      "platform": "web",
+      "proof_commands": [
+        "topogram query ui-design-coverage ./topo --json",
+        "topogram query slice ./topo --widget widget_command_toolbar --json",
+        "topogram emit ui-realization-report ./topo --surface <surface-id> --json"
+      ],
+      "realization_id": "command_toolbar_web",
+      "review_type": "missing_state",
+      "severity": "review",
+      "viewport": "wide",
+      "widget": "widget_command_toolbar"
+    },
+    {
+      "code": "design_missing_state",
+      "component_map": "component_map_acme_ops_widgets",
+      "component_ref": "acme.filterPanel",
+      "design_language": "design_acme_ops",
+      "message": "Realization 'filter_panel_web' does not declare 'loading' state coverage.",
+      "platform": "web",
+      "proof_commands": [
+        "topogram query ui-design-coverage ./topo --json",
+        "topogram query slice ./topo --widget widget_filter_panel --json",
+        "topogram emit ui-realization-report ./topo --surface <surface-id> --json"
+      ],
+      "realization_id": "filter_panel_web",
+      "review_type": "missing_state",
+      "severity": "review",
+      "viewport": "wide",
+      "widget": "widget_filter_panel"
+    },
+    {
+      "code": "design_missing_state",
+      "component_map": "component_map_acme_ops_widgets",
+      "component_ref": "acme.filterPanel",
+      "design_language": "design_acme_ops",
+      "message": "Realization 'filter_panel_web' does not declare 'error' state coverage.",
+      "platform": "web",
+      "proof_commands": [
+        "topogram query ui-design-coverage ./topo --json",
+        "topogram query slice ./topo --widget widget_filter_panel --json",
+        "topogram emit ui-realization-report ./topo --surface <surface-id> --json"
+      ],
+      "realization_id": "filter_panel_web",
+      "review_type": "missing_state",
+      "severity": "review",
+      "viewport": "wide",
+      "widget": "widget_filter_panel"
+    },
+    {
+      "code": "design_missing_state",
+      "component_map": "component_map_acme_ops_widgets",
+      "component_ref": "acme.android.IntakeCards",
+      "design_language": "design_acme_ops",
+      "message": "Realization 'intake_grid_android' does not declare 'empty' state coverage.",
+      "platform": "android",
+      "proof_commands": [
+        "topogram query ui-design-coverage ./topo --json",
+        "topogram query slice ./topo --widget widget_intake_grid --json",
+        "topogram emit ui-realization-report ./topo --surface <surface-id> --json"
+      ],
+      "realization_id": "intake_grid_android",
+      "review_type": "missing_state",
+      "severity": "review",
+      "viewport": "any",
+      "widget": "widget_intake_grid"
+    },
+    {
+      "code": "design_missing_state",
+      "component_map": "component_map_acme_ops_widgets",
+      "component_ref": "acme.android.IntakeCards",
+      "design_language": "design_acme_ops",
+      "message": "Realization 'intake_grid_android' does not declare 'error' state coverage.",
+      "platform": "android",
+      "proof_commands": [
+        "topogram query ui-design-coverage ./topo --json",
+        "topogram query slice ./topo --widget widget_intake_grid --json",
+        "topogram emit ui-realization-report ./topo --surface <surface-id> --json"
+      ],
+      "realization_id": "intake_grid_android",
+      "review_type": "missing_state",
+      "severity": "review",
+      "viewport": "any",
+      "widget": "widget_intake_grid"
+    },
+    {
+      "code": "design_missing_state",
+      "component_map": "component_map_acme_ops_widgets",
+      "component_ref": "acme.mobile.IntakeList",
+      "design_language": "design_acme_ops",
+      "message": "Realization 'intake_grid_ios' does not declare 'empty' state coverage.",
+      "platform": "ios",
+      "proof_commands": [
+        "topogram query ui-design-coverage ./topo --json",
+        "topogram query slice ./topo --widget widget_intake_grid --json",
+        "topogram emit ui-realization-report ./topo --surface <surface-id> --json"
+      ],
+      "realization_id": "intake_grid_ios",
+      "review_type": "missing_state",
+      "severity": "review",
+      "viewport": "any",
+      "widget": "widget_intake_grid"
+    },
+    {
+      "code": "design_missing_state",
+      "component_map": "component_map_acme_ops_widgets",
+      "component_ref": "acme.mobile.IntakeList",
+      "design_language": "design_acme_ops",
+      "message": "Realization 'intake_grid_ios' does not declare 'error' state coverage.",
+      "platform": "ios",
+      "proof_commands": [
+        "topogram query ui-design-coverage ./topo --json",
+        "topogram query slice ./topo --widget widget_intake_grid --json",
+        "topogram emit ui-realization-report ./topo --surface <surface-id> --json"
+      ],
+      "realization_id": "intake_grid_ios",
+      "review_type": "missing_state",
+      "severity": "review",
+      "viewport": "any",
+      "widget": "widget_intake_grid"
+    },
+    {
+      "code": "design_missing_state",
+      "component_map": "component_map_acme_ops_widgets",
+      "component_ref": "acme.cardList",
+      "design_language": "design_acme_ops",
+      "message": "Realization 'intake_grid_web_narrow' does not declare 'error' state coverage.",
+      "platform": "web",
+      "proof_commands": [
+        "topogram query ui-design-coverage ./topo --json",
+        "topogram query slice ./topo --widget widget_intake_grid --json",
+        "topogram emit ui-realization-report ./topo --surface <surface-id> --json"
+      ],
+      "realization_id": "intake_grid_web_narrow",
+      "review_type": "missing_state",
+      "severity": "review",
+      "viewport": "narrow",
+      "widget": "widget_intake_grid"
+    }
+  ],
+  "layouts": [
+    {
+      "id": "layout_intake_workspace",
+      "name": "Intake Workspace",
+      "pattern": "collection_workspace",
+      "proof_commands": [
+        "topogram query slice ./topo --layout layout_intake_workspace --detail compact --format markdown",
+        "topogram query work-map ./topo --layout layout_intake_workspace --format markdown"
+      ],
+      "screens": [
+        {
+          "id": "intake_queue",
+          "route": "/intake",
+          "surface": "proj_web"
+        }
+      ],
+      "slots": [
+        {
+          "accessibility_obligations": [],
+          "allowed_widget_patterns": [
+            "action_bar"
+          ],
+          "i18n_obligations": [],
+          "id": "commands",
+          "kind": "toolbar",
+          "layout": "layout_intake_workspace",
+          "pattern": "action_bar",
+          "placement": "secondary",
+          "region_contract": "region_command_bar",
+          "slot_role": "command_area",
+          "source": "layout",
+          "style_intent": [
+            "compact",
+            "actionable"
+          ],
+          "title": "Command Bar"
+        },
+        {
+          "accessibility_obligations": [
+            "labelled_region"
+          ],
+          "allowed_widget_patterns": [
+            "filter_panel"
+          ],
+          "i18n_obligations": [
+            "filter_labels"
+          ],
+          "id": "filters",
+          "kind": "filters",
+          "layout": "layout_intake_workspace",
+          "pattern": "filter_panel",
+          "placement": "secondary",
+          "region_contract": "region_filter_panel",
+          "slot_role": "filter_area",
+          "source": "layout",
+          "style_intent": [
+            "collapsible"
+          ],
+          "title": "Filter Panel"
+        },
+        {
+          "accessibility_obligations": [
+            "labelled_region",
+            "keyboard_collection_navigation"
+          ],
+          "allowed_widget_patterns": [
+            "data_grid_view",
+            "resource_cards"
+          ],
+          "i18n_obligations": [
+            "title",
+            "empty_state"
+          ],
+          "id": "results",
+          "kind": "results",
+          "layout": "layout_intake_workspace",
+          "pattern": "data_grid_view",
+          "placement": "primary",
+          "region_contract": "region_results",
+          "slot_role": "primary_work_area",
+          "source": "layout",
+          "style_intent": [
+            "scannable",
+            "structured"
+          ],
+          "title": "Results"
+        },
+        {
+          "accessibility_obligations": [
+            "live_region"
+          ],
+          "allowed_widget_patterns": [],
+          "i18n_obligations": [
+            "alert_message"
+          ],
+          "id": "alerts",
+          "kind": "content",
+          "layout": "layout_intake_workspace",
+          "pattern": "empty_state_panel",
+          "placement": "supporting",
+          "region_contract": "region_alerts",
+          "slot_role": "status_feedback",
+          "source": "layout",
+          "style_intent": [
+            "status_visible"
+          ],
+          "title": "Alerts"
+        }
+      ],
+      "style_intent": []
+    },
+    {
+      "id": "layout_ops_shell",
+      "name": "Operations Shell",
+      "pattern": "app_shell",
+      "proof_commands": [
+        "topogram query slice ./topo --layout layout_ops_shell --detail compact --format markdown",
+        "topogram query work-map ./topo --layout layout_ops_shell --format markdown"
+      ],
+      "screens": [
+        {
+          "id": "intake_queue",
+          "route": "/intake",
+          "surface": "proj_web"
+        }
+      ],
+      "slots": [
+        {
+          "accessibility_obligations": [
+            "landmark_banner"
+          ],
+          "allowed_widget_patterns": [],
+          "i18n_obligations": [
+            "brand_label"
+          ],
+          "id": "header",
+          "kind": "header",
+          "layout": "layout_ops_shell",
+          "pattern": "app_header",
+          "placement": "top",
+          "region_contract": "region_app_header",
+          "slot_role": "page_header",
+          "source": "layout",
+          "style_intent": [
+            "brand",
+            "persistent"
+          ],
+          "title": "App Header"
+        },
+        {
+          "accessibility_obligations": [
+            "landmark_navigation",
+            "keyboard_navigation"
+          ],
+          "allowed_widget_patterns": [],
+          "i18n_obligations": [],
+          "id": "nav",
+          "kind": "navigation",
+          "layout": "layout_ops_shell",
+          "pattern": "primary_navigation",
+          "placement": "shell",
+          "region_contract": "region_global_nav",
+          "slot_role": "global_navigation",
+          "source": "layout",
+          "style_intent": [
+            "persistent"
+          ],
+          "title": "Global Navigation"
+        },
+        {
+          "accessibility_obligations": [
+            "labelled_region",
+            "keyboard_collection_navigation"
+          ],
+          "allowed_widget_patterns": [
+            "data_grid_view",
+            "resource_cards"
+          ],
+          "i18n_obligations": [
+            "title",
+            "empty_state"
+          ],
+          "id": "content",
+          "kind": "results",
+          "layout": "layout_ops_shell",
+          "pattern": "data_grid_view",
+          "placement": "primary",
+          "region_contract": "region_results",
+          "slot_role": "primary_work_area",
+          "source": "layout",
+          "style_intent": [
+            "scannable",
+            "structured"
+          ],
+          "title": "Results"
+        }
+      ],
+      "style_intent": []
+    }
+  ],
+  "proof_commands": [
+    "topogram query work-map ./topo --surface proj_web --format markdown",
+    "topogram query work-map ./topo --surface proj_web --json",
+    "topogram query slice ./topo --surface proj_web --detail compact --format markdown",
+    "topogram query ui-design-coverage ./topo --surface proj_web --format markdown",
+    "topogram emit ui-realization-report ./topo --surface proj_web --json",
+    "topogram widget check ./topo --surface proj_web --json",
+    "topogram emit work-map-report ./topo --surface proj_web --format markdown --write --out-dir ./artifacts"
+  ],
+  "regions": [
+    {
+      "accessibility_obligations": [
+        "live_region"
+      ],
+      "allowed_widget_patterns": [],
+      "i18n_obligations": [
+        "alert_message"
+      ],
+      "id": "region_alerts",
+      "kind": "content",
+      "layouts": [
+        "layout_intake_workspace"
+      ],
+      "name": "Alerts",
+      "pattern": "empty_state_panel",
+      "placement": "supporting",
+      "proof_commands": [
+        "topogram query slice ./topo --region region_alerts --detail compact --format markdown",
+        "topogram query work-map ./topo --region region_alerts --format markdown"
+      ],
+      "slot_roles": [
+        "status_feedback"
+      ],
+      "style_intent": [
+        "status_visible"
+      ],
+      "usage_sites": [
+        {
+          "region": "alerts",
+          "screen": "intake_queue",
+          "surface": "proj_web"
+        }
+      ],
+      "widget_bindings": [
+        {
+          "id": "intake_alerts",
+          "screen": "intake_queue",
+          "surface": "proj_web",
+          "widget": "widget_alert_banner"
+        }
+      ]
+    },
+    {
+      "accessibility_obligations": [
+        "landmark_banner"
+      ],
+      "allowed_widget_patterns": [],
+      "i18n_obligations": [
+        "brand_label"
+      ],
+      "id": "region_app_header",
+      "kind": "header",
+      "layouts": [
+        "layout_ops_shell"
+      ],
+      "name": "App Header",
+      "pattern": "app_header",
+      "placement": "top",
+      "proof_commands": [
+        "topogram query slice ./topo --region region_app_header --detail compact --format markdown",
+        "topogram query work-map ./topo --region region_app_header --format markdown"
+      ],
+      "slot_roles": [
+        "page_header"
+      ],
+      "style_intent": [
+        "brand",
+        "persistent"
+      ],
+      "usage_sites": [
+        {
+          "region": "header",
+          "screen": "intake_queue",
+          "surface": "proj_web"
+        }
+      ],
+      "widget_bindings": []
+    },
+    {
+      "accessibility_obligations": [],
+      "allowed_widget_patterns": [
+        "action_bar"
+      ],
+      "i18n_obligations": [],
+      "id": "region_command_bar",
+      "kind": "toolbar",
+      "layouts": [
+        "layout_intake_workspace"
+      ],
+      "name": "Command Bar",
+      "pattern": "action_bar",
+      "placement": "secondary",
+      "proof_commands": [
+        "topogram query slice ./topo --region region_command_bar --detail compact --format markdown",
+        "topogram query work-map ./topo --region region_command_bar --format markdown"
+      ],
+      "slot_roles": [
+        "command_area"
+      ],
+      "style_intent": [
+        "actionable",
+        "compact"
+      ],
+      "usage_sites": [
+        {
+          "region": "commands",
+          "screen": "intake_queue",
+          "surface": "proj_web"
+        }
+      ],
+      "widget_bindings": [
+        {
+          "id": "intake_commands",
+          "screen": "intake_queue",
+          "surface": "proj_web",
+          "widget": "widget_command_toolbar"
+        }
+      ]
+    },
+    {
+      "accessibility_obligations": [
+        "labelled_region"
+      ],
+      "allowed_widget_patterns": [
+        "filter_panel"
+      ],
+      "i18n_obligations": [
+        "filter_labels"
+      ],
+      "id": "region_filter_panel",
+      "kind": "filters",
+      "layouts": [
+        "layout_intake_workspace"
+      ],
+      "name": "Filter Panel",
+      "pattern": "filter_panel",
+      "placement": "secondary",
+      "proof_commands": [
+        "topogram query slice ./topo --region region_filter_panel --detail compact --format markdown",
+        "topogram query work-map ./topo --region region_filter_panel --format markdown"
+      ],
+      "slot_roles": [
+        "filter_area"
+      ],
+      "style_intent": [
+        "collapsible"
+      ],
+      "usage_sites": [
+        {
+          "region": "filters",
+          "screen": "intake_queue",
+          "surface": "proj_web"
+        }
+      ],
+      "widget_bindings": [
+        {
+          "id": "intake_filters",
+          "screen": "intake_queue",
+          "surface": "proj_web",
+          "widget": "widget_filter_panel"
+        }
+      ]
+    },
+    {
+      "accessibility_obligations": [
+        "keyboard_navigation",
+        "landmark_navigation"
+      ],
+      "allowed_widget_patterns": [],
+      "i18n_obligations": [],
+      "id": "region_global_nav",
+      "kind": "navigation",
+      "layouts": [
+        "layout_ops_shell"
+      ],
+      "name": "Global Navigation",
+      "pattern": "primary_navigation",
+      "placement": "shell",
+      "proof_commands": [
+        "topogram query slice ./topo --region region_global_nav --detail compact --format markdown",
+        "topogram query work-map ./topo --region region_global_nav --format markdown"
+      ],
+      "slot_roles": [
+        "global_navigation"
+      ],
+      "style_intent": [
+        "persistent"
+      ],
+      "usage_sites": [
+        {
+          "region": "nav",
+          "screen": "intake_queue",
+          "surface": "proj_web"
+        }
+      ],
+      "widget_bindings": []
+    },
+    {
+      "accessibility_obligations": [
+        "keyboard_collection_navigation",
+        "labelled_region"
+      ],
+      "allowed_widget_patterns": [
+        "data_grid_view",
+        "resource_cards"
+      ],
+      "i18n_obligations": [
+        "empty_state",
+        "title"
+      ],
+      "id": "region_results",
+      "kind": "results",
+      "layouts": [
+        "layout_intake_workspace",
+        "layout_ops_shell"
+      ],
+      "name": "Results",
+      "pattern": "data_grid_view",
+      "placement": "primary",
+      "proof_commands": [
+        "topogram query slice ./topo --region region_results --detail compact --format markdown",
+        "topogram query work-map ./topo --region region_results --format markdown"
+      ],
+      "slot_roles": [
+        "primary_work_area"
+      ],
+      "style_intent": [
+        "scannable",
+        "structured"
+      ],
+      "usage_sites": [
+        {
+          "region": "content",
+          "screen": "intake_queue",
+          "surface": "proj_web"
+        },
+        {
+          "region": "results",
+          "screen": "intake_queue",
+          "surface": "proj_web"
+        }
+      ],
+      "widget_bindings": [
+        {
+          "id": "intake_results_grid",
+          "screen": "intake_queue",
+          "surface": "proj_web",
+          "widget": "widget_intake_grid"
+        },
+        {
+          "id": "intake_results_grid",
+          "screen": "intake_queue",
+          "surface": "proj_web",
+          "widget": "widget_intake_grid"
+        }
+      ]
+    }
+  ],
+  "screens": [
+    {
+      "accessibility": [
+        {
+          "focus": "visible",
+          "keyboard": "standard",
+          "live": "off",
+          "role": "main",
+          "target_id": "intake_queue",
+          "target_kind": "screen"
+        },
+        {
+          "focus": "roving_tabindex",
+          "keyboard": "data_grid",
+          "live": "off",
+          "role": "grid",
+          "target_id": "widget_intake_grid",
+          "target_kind": "widget"
+        },
+        {
+          "focus": "visible",
+          "keyboard": "standard",
+          "live": "polite",
+          "role": "status",
+          "target_id": "widget_alert_banner",
+          "target_kind": "widget"
+        }
+      ],
+      "id": "intake_queue",
+      "kind": "list",
+      "layout": {
+        "id": "layout_intake_workspace",
+        "inherited": [
+          {
+            "id": "layout_ops_shell",
+            "name": "Operations Shell",
+            "pattern": "app_shell"
+          },
+          {
+            "id": "layout_intake_workspace",
+            "name": "Intake Workspace",
+            "pattern": "collection_workspace"
+          }
+        ],
+        "name": "Intake Workspace",
+        "pattern": "collection_workspace"
+      },
+      "messages": [
+        {
+          "context": "screen_title",
+          "default_text": "Intake Queue",
+          "id": "msg_intake_title",
+          "key": "intake.title"
+        },
+        {
+          "context": "widget_label",
+          "default_text": "Intake results",
+          "id": "msg_grid_label",
+          "key": "intake.grid.label"
+        },
+        {
+          "context": "widget_label",
+          "default_text": "Operations alerts",
+          "id": "msg_alert_label",
+          "key": "alerts.label"
+        }
+      ],
+      "proof_commands": [
+        "topogram query slice ./topo --surface proj_web --screen intake_queue --detail compact --format markdown",
+        "topogram query work-map ./topo --surface proj_web --screen intake_queue --format markdown",
+        "topogram emit ui-realization-report ./topo --surface proj_web --json"
+      ],
+      "regions": [
+        {
+          "accessibility_obligations": [
+            "landmark_banner"
+          ],
+          "allowed_widget_patterns": [],
+          "i18n_obligations": [
+            "brand_label"
+          ],
+          "id": "header",
+          "kind": "header",
+          "layout": "layout_ops_shell",
+          "pattern": "app_header",
+          "placement": "top",
+          "region_contract": "region_app_header",
+          "slot_role": "page_header",
+          "source": "layout",
+          "style_intent": [
+            "brand",
+            "persistent"
+          ],
+          "title": "App Header"
+        },
+        {
+          "accessibility_obligations": [
+            "landmark_navigation",
+            "keyboard_navigation"
+          ],
+          "allowed_widget_patterns": [],
+          "i18n_obligations": [],
+          "id": "nav",
+          "kind": "navigation",
+          "layout": "layout_ops_shell",
+          "pattern": "primary_navigation",
+          "placement": "shell",
+          "region_contract": "region_global_nav",
+          "slot_role": "global_navigation",
+          "source": "layout",
+          "style_intent": [
+            "persistent"
+          ],
+          "title": "Global Navigation"
+        },
+        {
+          "accessibility_obligations": [
+            "labelled_region",
+            "keyboard_collection_navigation"
+          ],
+          "allowed_widget_patterns": [
+            "data_grid_view",
+            "resource_cards"
+          ],
+          "i18n_obligations": [
+            "title",
+            "empty_state"
+          ],
+          "id": "content",
+          "kind": "results",
+          "layout": "layout_ops_shell",
+          "pattern": "data_grid_view",
+          "placement": "primary",
+          "region_contract": "region_results",
+          "slot_role": "primary_work_area",
+          "source": "layout",
+          "style_intent": [
+            "scannable",
+            "structured"
+          ],
+          "title": "Results"
+        },
+        {
+          "accessibility_obligations": [],
+          "allowed_widget_patterns": [
+            "action_bar"
+          ],
+          "i18n_obligations": [],
+          "id": "commands",
+          "kind": "toolbar",
+          "layout": "layout_intake_workspace",
+          "pattern": "action_bar",
+          "placement": "secondary",
+          "region_contract": "region_command_bar",
+          "slot_role": "command_area",
+          "source": "layout",
+          "style_intent": [
+            "compact",
+            "actionable"
+          ],
+          "title": "Command Bar"
+        },
+        {
+          "accessibility_obligations": [
+            "labelled_region"
+          ],
+          "allowed_widget_patterns": [
+            "filter_panel"
+          ],
+          "i18n_obligations": [
+            "filter_labels"
+          ],
+          "id": "filters",
+          "kind": "filters",
+          "layout": "layout_intake_workspace",
+          "pattern": "filter_panel",
+          "placement": "secondary",
+          "region_contract": "region_filter_panel",
+          "slot_role": "filter_area",
+          "source": "layout",
+          "style_intent": [
+            "collapsible"
+          ],
+          "title": "Filter Panel"
+        },
+        {
+          "accessibility_obligations": [
+            "labelled_region",
+            "keyboard_collection_navigation"
+          ],
+          "allowed_widget_patterns": [
+            "data_grid_view",
+            "resource_cards"
+          ],
+          "i18n_obligations": [
+            "title",
+            "empty_state"
+          ],
+          "id": "results",
+          "kind": "results",
+          "layout": "layout_intake_workspace",
+          "pattern": "data_grid_view",
+          "placement": "primary",
+          "region_contract": "region_results",
+          "slot_role": "primary_work_area",
+          "source": "layout",
+          "style_intent": [
+            "scannable",
+            "structured"
+          ],
+          "title": "Results"
+        },
+        {
+          "accessibility_obligations": [
+            "live_region"
+          ],
+          "allowed_widget_patterns": [],
+          "i18n_obligations": [
+            "alert_message"
+          ],
+          "id": "alerts",
+          "kind": "content",
+          "layout": "layout_intake_workspace",
+          "pattern": "empty_state_panel",
+          "placement": "supporting",
+          "region_contract": "region_alerts",
+          "slot_role": "status_feedback",
+          "source": "layout",
+          "style_intent": [
+            "status_visible"
+          ],
+          "title": "Alerts"
+        }
+      ],
+      "route": "/intake",
+      "style_intent": [],
+      "surface": "proj_web",
+      "title": "Intake Queue",
+      "widget_bindings": [
+        {
+          "accessibility": [],
+          "action_sources": [],
+          "component_refs": [
+            "acme.filterPanel"
+          ],
+          "data_sources": [
+            {
+              "id": "shape_intake_filter",
+              "kind": "shape",
+              "prop": "filters"
+            }
+          ],
+          "design_status": "rendered",
+          "display_fields": [
+            {
+              "label": "Status",
+              "name": "status",
+              "required": false,
+              "role": "metadata",
+              "type": "string"
+            },
+            {
+              "label": "Priority",
+              "name": "priority",
+              "required": false,
+              "role": "metadata",
+              "type": "string"
+            },
+            {
+              "label": "Assignee",
+              "name": "assignee",
+              "required": false,
+              "role": "metadata",
+              "type": "string"
+            }
+          ],
+          "id": "intake_filters",
+          "intent": "Filter intake items by status, priority, and assignee.",
+          "layout": "layout_intake_workspace",
+          "linked_capabilities": [],
+          "linked_shapes": [
+            "shape_intake_filter"
+          ],
+          "messages": [],
+          "pattern": "filter_panel",
+          "priority": "high",
+          "proof_commands": [
+            "topogram query slice ./topo --widget widget_filter_panel --detail compact --format markdown",
+            "topogram widget check ./topo --widget widget_filter_panel --json"
+          ],
+          "region": "filters",
+          "region_contract": "region_filter_panel",
+          "slot_role": "filter_area",
+          "style_intent": [
+            "collapsible"
+          ],
+          "widget": "widget_filter_panel",
+          "widget_name": "Filter Panel"
+        },
+        {
+          "accessibility": [],
+          "action_sources": [
+            {
+              "action": "action",
+              "event": "acknowledge_alert",
+              "target": "cap_acknowledge_alert",
+              "target_kind": "capability"
+            }
+          ],
+          "component_refs": [
+            "acme.actionToolbar"
+          ],
+          "data_sources": [],
+          "design_status": "contract_only",
+          "display_fields": [
+            {
+              "label": "Title",
+              "name": "title",
+              "required": true,
+              "role": "primary",
+              "type": "string"
+            },
+            {
+              "label": "Status",
+              "name": "status",
+              "required": true,
+              "role": "metadata",
+              "type": "string"
+            },
+            {
+              "label": "Priority",
+              "name": "priority",
+              "required": true,
+              "role": "metadata",
+              "type": "string"
+            },
+            {
+              "label": "Assignee",
+              "name": "assignee",
+              "required": false,
+              "role": "metadata",
+              "type": "string"
+            },
+            {
+              "label": "Updated At",
+              "name": "updated_at",
+              "required": true,
+              "role": "date",
+              "type": "datetime"
+            }
+          ],
+          "id": "intake_commands",
+          "intent": "Expose queue actions and bulk operations.",
+          "layout": "layout_intake_workspace",
+          "linked_capabilities": [
+            "cap_acknowledge_alert"
+          ],
+          "linked_shapes": [
+            "shape_intake_row"
+          ],
+          "messages": [],
+          "pattern": "action_bar",
+          "priority": "high",
+          "proof_commands": [
+            "topogram query slice ./topo --widget widget_command_toolbar --detail compact --format markdown",
+            "topogram widget check ./topo --widget widget_command_toolbar --json"
+          ],
+          "region": "commands",
+          "region_contract": "region_command_bar",
+          "slot_role": "command_area",
+          "style_intent": [
+            "compact",
+            "actionable"
+          ],
+          "widget": "widget_command_toolbar",
+          "widget_name": "Command Toolbar"
+        },
+        {
+          "accessibility": [
+            {
+              "focus": "roving_tabindex",
+              "keyboard": "data_grid",
+              "live": "off",
+              "role": "grid",
+              "target_id": "widget_intake_grid",
+              "target_kind": "widget"
+            }
+          ],
+          "action_sources": [
+            {
+              "action": "navigate",
+              "event": "row_select",
+              "target": "intake_queue",
+              "target_kind": "screen"
+            }
+          ],
+          "component_refs": [
+            "acme.dataGrid"
+          ],
+          "data_sources": [
+            {
+              "id": "cap_list_intake",
+              "kind": "capability",
+              "prop": "rows"
+            }
+          ],
+          "design_status": "rendered",
+          "display_fields": [
+            {
+              "label": "Title",
+              "name": "title",
+              "required": true,
+              "role": "primary",
+              "type": "string"
+            },
+            {
+              "label": "Status",
+              "name": "status",
+              "required": true,
+              "role": "metadata",
+              "type": "string"
+            },
+            {
+              "label": "Priority",
+              "name": "priority",
+              "required": true,
+              "role": "metadata",
+              "type": "string"
+            },
+            {
+              "label": "Assignee",
+              "name": "assignee",
+              "required": false,
+              "role": "metadata",
+              "type": "string"
+            },
+            {
+              "label": "Updated At",
+              "name": "updated_at",
+              "required": true,
+              "role": "date",
+              "type": "datetime"
+            }
+          ],
+          "id": "intake_results_grid",
+          "intent": "Review and select intake rows.",
+          "layout": "layout_intake_workspace",
+          "linked_capabilities": [
+            "cap_list_intake"
+          ],
+          "linked_shapes": [
+            "shape_intake_row"
+          ],
+          "messages": [
+            {
+              "context": "widget_label",
+              "default_text": "Intake results",
+              "id": "msg_grid_label",
+              "key": "intake.grid.label"
+            }
+          ],
+          "pattern": "data_grid_view",
+          "priority": "high",
+          "proof_commands": [
+            "topogram query slice ./topo --widget widget_intake_grid --detail compact --format markdown",
+            "topogram widget check ./topo --widget widget_intake_grid --json"
+          ],
+          "region": "results",
+          "region_contract": "region_results",
+          "slot_role": "primary_work_area",
+          "style_intent": [
+            "scannable",
+            "structured"
+          ],
+          "widget": "widget_intake_grid",
+          "widget_name": "Intake Grid"
+        },
+        {
+          "accessibility": [
+            {
+              "focus": "visible",
+              "keyboard": "standard",
+              "live": "polite",
+              "role": "status",
+              "target_id": "widget_alert_banner",
+              "target_kind": "widget"
+            }
+          ],
+          "action_sources": [
+            {
+              "action": "action",
+              "event": "acknowledge",
+              "target": "cap_acknowledge_alert",
+              "target_kind": "capability"
+            }
+          ],
+          "component_refs": [
+            "acme.alertBanner"
+          ],
+          "data_sources": [
+            {
+              "id": "shape_alert_banner",
+              "kind": "shape",
+              "prop": "alert"
+            }
+          ],
+          "design_status": "rendered",
+          "display_fields": [
+            {
+              "label": "Severity",
+              "name": "severity",
+              "required": true,
+              "role": "metadata",
+              "type": "string"
+            },
+            {
+              "label": "Message",
+              "name": "message",
+              "required": true,
+              "role": "metadata",
+              "type": "string"
+            },
+            {
+              "label": "Acknowledged",
+              "name": "acknowledged",
+              "required": true,
+              "role": "flag",
+              "type": "boolean"
+            }
+          ],
+          "id": "intake_alerts",
+          "intent": "Show operational alerts and live review feedback.",
+          "layout": "layout_intake_workspace",
+          "linked_capabilities": [
+            "cap_acknowledge_alert"
+          ],
+          "linked_shapes": [
+            "shape_alert_banner"
+          ],
+          "messages": [
+            {
+              "context": "widget_label",
+              "default_text": "Operations alerts",
+              "id": "msg_alert_label",
+              "key": "alerts.label"
+            }
+          ],
+          "pattern": "empty_state_panel",
+          "priority": "medium",
+          "proof_commands": [
+            "topogram query slice ./topo --widget widget_alert_banner --detail compact --format markdown",
+            "topogram widget check ./topo --widget widget_alert_banner --json"
+          ],
+          "region": "alerts",
+          "region_contract": "region_alerts",
+          "slot_role": "status_feedback",
+          "style_intent": [
+            "status_visible"
+          ],
+          "widget": "widget_alert_banner",
+          "widget_name": "Alert Banner"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "component_maps": 1,
+    "gaps": 32,
+    "high_priority_gaps": 0,
+    "layouts": 2,
+    "regions": 6,
+    "review_gaps": 32,
+    "screens": 1,
+    "surfaces": 1,
+    "widget_bindings": 4,
+    "widgets": 4
+  },
+  "surfaces": [
+    {
+      "id": "proj_web",
+      "name": "Operations Web Surface",
+      "proof_commands": [
+        "topogram query work-map ./topo --surface proj_web --format markdown",
+        "topogram query ui-design-coverage ./topo --surface proj_web --format markdown",
+        "topogram emit ui-realization-report ./topo --surface proj_web --json"
+      ],
+      "screen_count": 1,
+      "semantic_ui": "proj_semantic_ui",
+      "type": "web",
+      "widget_binding_count": 4
+    }
+  ],
+  "type": "work_map_report",
+  "version": 1,
+  "widgets": [
+    {
+      "accessibility": [
+        {
+          "focus": "visible",
+          "keyboard": "standard",
+          "live": "polite",
+          "role": "status",
+          "target_id": "widget_alert_banner",
+          "target_kind": "widget"
+        }
+      ],
+      "bindings": [
+        {
+          "id": "intake_alerts",
+          "priority": "medium",
+          "region": "alerts",
+          "region_contract": "region_alerts",
+          "screen": "intake_queue",
+          "slot_role": "status_feedback",
+          "surface": "proj_web"
+        }
+      ],
+      "category": "feedback",
+      "component_mappings": [
+        {
+          "component_map": "component_map_acme_ops_widgets",
+          "component_ref": "acme.alertBanner",
+          "platform": "web",
+          "realization_id": "alert_banner_web",
+          "review_status": "review_required",
+          "status": "rendered",
+          "style_refs": [],
+          "viewport": "wide"
+        }
+      ],
+      "display_fields": [
+        {
+          "label": "Severity",
+          "name": "severity",
+          "role": "metadata",
+          "type": "string"
+        },
+        {
+          "label": "Message",
+          "name": "message",
+          "role": "metadata",
+          "type": "string"
+        },
+        {
+          "label": "Acknowledged",
+          "name": "acknowledged",
+          "role": "flag",
+          "type": "boolean"
+        }
+      ],
+      "id": "widget_alert_banner",
+      "messages": [
+        {
+          "context": "widget_label",
+          "default_text": "Operations alerts",
+          "id": "msg_alert_label",
+          "key": "alerts.label"
+        }
+      ],
+      "name": "Alert Banner",
+      "patterns": [
+        "empty_state_panel"
+      ],
+      "proof_commands": [
+        "topogram query slice ./topo --widget widget_alert_banner --detail compact --format markdown",
+        "topogram query work-map ./topo --widget widget_alert_banner --format markdown",
+        "topogram widget behavior ./topo --widget widget_alert_banner --json"
+      ],
+      "style_intent": [
+        "status_visible"
+      ]
+    },
+    {
+      "accessibility": [],
+      "bindings": [
+        {
+          "id": "intake_commands",
+          "priority": "high",
+          "region": "commands",
+          "region_contract": "region_command_bar",
+          "screen": "intake_queue",
+          "slot_role": "command_area",
+          "surface": "proj_web"
+        }
+      ],
+      "category": "navigation",
+      "component_mappings": [
+        {
+          "component_map": "component_map_acme_ops_widgets",
+          "component_ref": "acme.actionToolbar",
+          "platform": "web",
+          "realization_id": "command_toolbar_web",
+          "review_status": "review_required",
+          "status": "contract_only",
+          "style_refs": [],
+          "viewport": "wide"
+        }
+      ],
+      "display_fields": [
+        {
+          "label": "Title",
+          "name": "title",
+          "role": "primary",
+          "type": "string"
+        },
+        {
+          "label": "Status",
+          "name": "status",
+          "role": "metadata",
+          "type": "string"
+        },
+        {
+          "label": "Priority",
+          "name": "priority",
+          "role": "metadata",
+          "type": "string"
+        },
+        {
+          "label": "Assignee",
+          "name": "assignee",
+          "role": "metadata",
+          "type": "string"
+        },
+        {
+          "label": "Updated At",
+          "name": "updated_at",
+          "role": "date",
+          "type": "datetime"
+        }
+      ],
+      "id": "widget_command_toolbar",
+      "messages": [],
+      "name": "Command Toolbar",
+      "patterns": [
+        "action_bar"
+      ],
+      "proof_commands": [
+        "topogram query slice ./topo --widget widget_command_toolbar --detail compact --format markdown",
+        "topogram query work-map ./topo --widget widget_command_toolbar --format markdown",
+        "topogram widget behavior ./topo --widget widget_command_toolbar --json"
+      ],
+      "style_intent": [
+        "actionable",
+        "compact"
+      ]
+    },
+    {
+      "accessibility": [],
+      "bindings": [
+        {
+          "id": "intake_filters",
+          "priority": "high",
+          "region": "filters",
+          "region_contract": "region_filter_panel",
+          "screen": "intake_queue",
+          "slot_role": "filter_area",
+          "surface": "proj_web"
+        }
+      ],
+      "category": "form",
+      "component_mappings": [
+        {
+          "component_map": "component_map_acme_ops_widgets",
+          "component_ref": "acme.filterPanel",
+          "platform": "web",
+          "realization_id": "filter_panel_web",
+          "review_status": "review_required",
+          "status": "rendered",
+          "style_refs": [],
+          "viewport": "wide"
+        }
+      ],
+      "display_fields": [
+        {
+          "label": "Status",
+          "name": "status",
+          "role": "metadata",
+          "type": "string"
+        },
+        {
+          "label": "Priority",
+          "name": "priority",
+          "role": "metadata",
+          "type": "string"
+        },
+        {
+          "label": "Assignee",
+          "name": "assignee",
+          "role": "metadata",
+          "type": "string"
+        }
+      ],
+      "id": "widget_filter_panel",
+      "messages": [],
+      "name": "Filter Panel",
+      "patterns": [
+        "filter_panel"
+      ],
+      "proof_commands": [
+        "topogram query slice ./topo --widget widget_filter_panel --detail compact --format markdown",
+        "topogram query work-map ./topo --widget widget_filter_panel --format markdown",
+        "topogram widget behavior ./topo --widget widget_filter_panel --json"
+      ],
+      "style_intent": [
+        "collapsible"
+      ]
+    },
+    {
+      "accessibility": [
+        {
+          "focus": "roving_tabindex",
+          "keyboard": "data_grid",
+          "live": "off",
+          "role": "grid",
+          "target_id": "widget_intake_grid",
+          "target_kind": "widget"
+        }
+      ],
+      "bindings": [
+        {
+          "id": "intake_results_grid",
+          "priority": "high",
+          "region": "results",
+          "region_contract": "region_results",
+          "screen": "intake_queue",
+          "slot_role": "primary_work_area",
+          "surface": "proj_web"
+        }
+      ],
+      "category": "collection",
+      "component_mappings": [
+        {
+          "component_map": "component_map_acme_ops_widgets",
+          "component_ref": "acme.android.IntakeCards",
+          "platform": "android",
+          "realization_id": "intake_grid_android",
+          "review_status": "review_required",
+          "status": "unsupported",
+          "style_refs": [],
+          "viewport": "any"
+        },
+        {
+          "component_map": "component_map_acme_ops_widgets",
+          "component_ref": "acme.mobile.IntakeList",
+          "platform": "ios",
+          "realization_id": "intake_grid_ios",
+          "review_status": "review_required",
+          "status": "implementation_owned",
+          "style_refs": [],
+          "viewport": "any"
+        },
+        {
+          "component_map": "component_map_acme_ops_widgets",
+          "component_ref": "acme.cardList",
+          "platform": "web",
+          "realization_id": "intake_grid_web_narrow",
+          "review_status": "review_required",
+          "status": "contract_only",
+          "style_refs": [],
+          "viewport": "narrow"
+        },
+        {
+          "component_map": "component_map_acme_ops_widgets",
+          "component_ref": "acme.dataGrid",
+          "platform": "web",
+          "realization_id": "intake_grid_web_wide",
+          "review_status": "mapped",
+          "status": "rendered",
+          "style_refs": [],
+          "viewport": "wide"
+        }
+      ],
+      "display_fields": [
+        {
+          "label": "Title",
+          "name": "title",
+          "role": "primary",
+          "type": "string"
+        },
+        {
+          "label": "Status",
+          "name": "status",
+          "role": "metadata",
+          "type": "string"
+        },
+        {
+          "label": "Priority",
+          "name": "priority",
+          "role": "metadata",
+          "type": "string"
+        },
+        {
+          "label": "Assignee",
+          "name": "assignee",
+          "role": "metadata",
+          "type": "string"
+        },
+        {
+          "label": "Updated At",
+          "name": "updated_at",
+          "role": "date",
+          "type": "datetime"
+        }
+      ],
+      "id": "widget_intake_grid",
+      "messages": [
+        {
+          "context": "widget_label",
+          "default_text": "Intake results",
+          "id": "msg_grid_label",
+          "key": "intake.grid.label"
+        }
+      ],
+      "name": "Intake Grid",
+      "patterns": [
+        "data_grid_view"
+      ],
+      "proof_commands": [
+        "topogram query slice ./topo --widget widget_intake_grid --detail compact --format markdown",
+        "topogram query work-map ./topo --widget widget_intake_grid --format markdown",
+        "topogram widget behavior ./topo --widget widget_intake_grid --json"
+      ],
+      "style_intent": [
+        "scannable",
+        "structured"
+      ]
+    }
+  ]
+}

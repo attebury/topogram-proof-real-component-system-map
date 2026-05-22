@@ -1,19 +1,18 @@
-# Step 02: Semantic App Map
+# Step 03: Manual Component Map
 
-> Add the Topogram semantic app map before accepting any component mapping.
+> Add the first reviewed component map by hand so designers can read the matrix before Storybook extraction is introduced.
 
-This checkpoint adds entities, shapes, capabilities, semantic UI, reusable layouts and regions, widgets, messages, accessibility obligations, and a design language. It intentionally does not add a complete component_map yet.
+This checkpoint adds a widget-first component_map for the Acme operations component system. It maps semantic widgets to stable component refs, style refs, platform coverage, state coverage, and behavior support.
 
 What to inspect:
 
-- topo/surfaces/proj-semantic-ui.tg: screen and widget bindings.
-- topo/ui-structure/layouts.tg: reusable layout slots.
-- topo/ui-structure/regions.tg: reusable region obligations.
-- topo/design-languages/design-acme-ops.tg: token and platform scope.
-- proof/artifacts/step-02-ui-design-coverage.md: missing component mappings as review work.
-- proof/artifacts/step-02-work-map.md: screen to layout to region to widget binding map.
+- topo/component-maps/component-map-acme-ops-widgets.tg: canonical widget mappings.
+- proof/artifacts/step-03-ui-design-coverage.md: designer-readable matrix.
+- proof/artifacts/step-03-ui-realization-report.json: deeper realization proof.
+- proof/artifacts/step-03-work-map.md: readable work-map summary.
 
 Proof:
 
-- topogram check validates the app map.
-- ui-design-coverage and work-map artifacts show design review gaps before mapping components.
+- topogram check validates design_language and component_map references.
+- ui-design-coverage shows rendered, contract-only, implementation-owned, unsupported, missing-platform, and missing-state review rows.
+- work-map shows component refs next to screen, layout, region, and widget binding context.

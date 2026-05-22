@@ -1,30 +1,27 @@
 {
-  "step": "proof-02-semantic-app-map",
+  "step": "proof-03-manual-component-map",
   "cliVersion": "0.3.117",
   "requiredFiles": [
-    "topogram.project.json",
-    "topo/surfaces/proj-semantic-ui.tg",
-    "topo/surfaces/proj-web.tg",
-    "topo/design-languages/design-acme-ops.tg",
-    "topo/widgets/widgets.tg",
-    "topo/ui-structure/layouts.tg",
-    "topo/ui-structure/regions.tg",
-    "proof/artifacts/step-02-check.json",
-    "proof/artifacts/step-02-work-map.md",
-    "proof/artifacts/step-02-work-map.json",
-    "proof/artifacts/step-02-ui-design-coverage.md",
-    "proof/artifacts/step-02-screen-slice.md",
-    "proof/artifacts/step-02-widget-slice.json"
+    "topo/component-maps/component-map-acme-ops-widgets.tg",
+    "proof/artifacts/step-03-ui-design-coverage.md",
+    "proof/artifacts/step-03-ui-design-coverage.json",
+    "proof/artifacts/step-03-ui-realization-report.json",
+    "proof/artifacts/step-03-work-map.md",
+    "proof/artifacts/step-03-work-map.json",
+    "proof/artifacts/step-03-widget-slice.md",
+    "proof/artifacts/step-03-widget-slice.json"
   ],
-  "absentFiles": ["topo/component-maps"],
+  "absentFiles": [],
   "requiredJson": [
-    { "path": "proof/artifacts/step-02-check.json", "keys": ["ok", "topogram.valid"] },
-    { "path": "proof/artifacts/step-02-work-map.json", "keys": ["summary", "screens", "widgets", "gaps"] },
-    { "path": "proof/artifacts/step-02-widget-slice.json", "keys": ["ui_agent_packet", "ui_agent_packet.designReview"] }
+    { "path": "proof/artifacts/step-03-ui-design-coverage.json", "keys": ["design_matrix.rows", "design_matrix.review_rows", "widgets"] },
+    { "path": "proof/artifacts/step-03-ui-realization-report.json", "keys": ["designLanguages.designLanguages"] },
+    { "path": "proof/artifacts/step-03-work-map.json", "keys": ["component_maps", "gaps", "proof_commands"] },
+    { "path": "proof/artifacts/step-03-widget-slice.json", "keys": ["ui_agent_packet.designReview", "ui_agent_packet.designLanguages"] }
   ],
   "requiredText": [
-    { "path": "proof/artifacts/step-02-ui-design-coverage.md", "includes": ["UI Design Coverage", "Design Matrix"] },
-    { "path": "proof/artifacts/step-02-work-map.md", "includes": ["Work Map", "intake_queue", "intake_results_grid", "design_coverage_widget_unmapped"] },
-    { "path": "proof/STEP.md", "includes": ["Step 02", "does not add a complete component_map"] }
+    { "path": "topo/component-maps/component-map-acme-ops-widgets.tg", "includes": ["component_map component_map_acme_ops_widgets", "acme.dataGrid", "behaviors_contract_only"] },
+    { "path": "proof/artifacts/step-03-ui-design-coverage.md", "includes": ["acme.dataGrid", "contract_only", "unsupported"] },
+    { "path": "proof/artifacts/step-03-work-map.md", "includes": ["component_map_acme_ops_widgets", "acme.dataGrid"] },
+    { "path": "proof/STEP.md", "includes": ["Step 03", "designer-readable matrix"] }
   ]
 }
