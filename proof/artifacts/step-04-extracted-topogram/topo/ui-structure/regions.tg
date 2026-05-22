@@ -1,0 +1,75 @@
+region region_app_header {
+  name "App Header"
+  description "Persistent product header."
+  kind header
+  pattern app_header
+  placement top
+  style_intent [brand persistent]
+  accessibility_obligations [landmark_banner]
+  i18n_obligations [brand_label]
+  status active
+}
+
+region region_global_nav {
+  name "Global Navigation"
+  description "Navigation across operations workspaces."
+  kind navigation
+  pattern primary_navigation
+  placement shell
+  style_intent [persistent]
+  accessibility_obligations [landmark_navigation keyboard_navigation]
+  status active
+}
+
+region region_command_bar {
+  name "Command Bar"
+  description "Primary actions and bulk operations."
+  kind toolbar
+  pattern action_bar
+  placement secondary
+  density compact
+  style_intent [compact actionable]
+  allowed_widget_patterns [action_bar]
+  status active
+}
+
+region region_filter_panel {
+  name "Filter Panel"
+  description "Queue filters and search controls."
+  kind filters
+  pattern filter_panel
+  placement secondary
+  density compact
+  style_intent [collapsible]
+  allowed_widget_patterns [filter_panel]
+  accessibility_obligations [labelled_region]
+  i18n_obligations [filter_labels]
+  status active
+}
+
+region region_results {
+  name "Results"
+  description "Primary queue results area."
+  kind results
+  pattern data_grid_view
+  placement primary
+  states [loading, empty, error]
+  density compact
+  style_intent [scannable structured]
+  allowed_widget_patterns [data_grid_view resource_cards]
+  accessibility_obligations [labelled_region keyboard_collection_navigation]
+  i18n_obligations [title empty_state]
+  status active
+}
+
+region region_alerts {
+  name "Alerts"
+  description "Live alert and notification area."
+  kind content
+  pattern empty_state_panel
+  placement supporting
+  style_intent [status_visible]
+  accessibility_obligations [live_region]
+  i18n_obligations [alert_message]
+  status active
+}

@@ -1,0 +1,20 @@
+# imported confidence: high
+# imported source_kind: storybook_csf_metadata
+component_map component_map_acme_ops_widgets {
+  name "Imported Widget Mappings"
+  description "Candidate widget-to-platform component mappings imported from brownfield UI evidence. Review component refs, behavior support, platforms, and design language scope before adoption."
+  design_language design_acme_ops
+  status active
+
+  widget_mapping {
+    id command_toolbar_web_action_toolbar
+    widget widget_command_toolbar
+    platform web
+    viewport narrow
+    component_ref "acme.actionToolbar"
+    pattern action_bar
+    status rendered
+    behaviors_rendered [bulk_action]
+  }
+
+}

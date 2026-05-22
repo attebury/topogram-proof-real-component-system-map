@@ -1,0 +1,9 @@
+capability cap_list_intake {
+  name "List Intake"
+  description "Lists intake incidents for operations review."
+  actors [actor_operator]
+  reads [entity_incident]
+  input [shape_intake_filter]
+  output [shape_intake_row]
+  status active
+}

@@ -1,0 +1,66 @@
+widget widget_intake_grid {
+  name "Intake Grid"
+  description "Reusable queue grid for reviewing incidents."
+  category collection
+
+  props {
+    rows array required
+    selected_ids array optional default []
+    loading boolean optional default false
+  }
+
+  events {
+    row_select shape_intake_row
+  }
+
+  behavior [selection, sorting, filtering]
+  patterns [data_grid_view, resource_cards]
+  regions [results]
+  version "1.0"
+  status active
+}
+
+widget widget_filter_panel {
+  name "Filter Panel"
+  description "Reusable filter controls for queue screens."
+  category form
+  props {
+    filters array required
+  }
+  patterns [filter_panel]
+  regions [filters]
+  version "1.0"
+  status active
+}
+
+widget widget_command_toolbar {
+  name "Command Toolbar"
+  description "Primary and bulk action toolbar."
+  category navigation
+  props {
+    actions array optional default []
+  }
+  events {
+    acknowledge_alert shape_alert_banner
+  }
+  patterns [action_bar]
+  regions [toolbar]
+  version "1.0"
+  status active
+}
+
+widget widget_alert_banner {
+  name "Alert Banner"
+  description "Operational alert banner."
+  category feedback
+  props {
+    alert object required
+  }
+  events {
+    acknowledge shape_alert_banner
+  }
+  patterns [empty_state_panel]
+  regions [content]
+  version "1.0"
+  status active
+}

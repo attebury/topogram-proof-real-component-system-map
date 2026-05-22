@@ -1,28 +1,26 @@
 {
-  "step": "proof-04-storybook-review-candidates",
+  "step": "proof-05-adopt-reviewed-component-map",
   "cliVersion": "0.3.117",
   "requiredFiles": [
-    "component-library/src/ActionToolbar.stories.js",
-    "topogram.extractor-policy.json",
-    "proof/artifacts/step-04-extractor-check.json",
-    "proof/artifacts/step-04-extract.json",
-    "proof/artifacts/step-04-extract-plan.json",
-    "proof/artifacts/step-04-adopt-list.json",
-    "proof/artifacts/step-04-adopt-dry-run.json",
-    "proof/artifacts/step-04-extracted-topogram/topo/candidates/app/ui/candidates.json"
+    "proof/artifacts/step-05-adopt-write.json",
+    "topo/component-maps/component-map-acme-ops-widgets.tg",
+    "proof/artifacts/step-05-ui-design-coverage.md",
+    "proof/artifacts/step-05-ui-design-coverage.json",
+    "proof/artifacts/step-05-ui-realization-report.json",
+    "proof/artifacts/step-05-work-map.md",
+    "proof/artifacts/step-05-widget-slice.json"
   ],
   "absentFiles": [],
   "requiredJson": [
-    { "path": "proof/artifacts/step-04-extractor-check.json", "keys": ["ok"] },
-    { "path": "proof/artifacts/step-04-extract.json", "keys": ["candidateCounts.uiComponentMappings"] },
-    { "path": "proof/artifacts/step-04-extract-plan.json", "keys": ["summary", "extractorContext"] },
-    { "path": "proof/artifacts/step-04-adopt-list.json", "keys": ["selectors"] },
-    { "path": "proof/artifacts/step-04-adopt-dry-run.json", "keys": ["dryRun"] },
-    { "path": "proof/artifacts/step-04-extracted-topogram/topo/candidates/app/ui/candidates.json", "keys": ["component_mappings"] }
+    { "path": "proof/artifacts/step-05-adopt-write.json", "keys": ["ok", "adoption", "receipt"] },
+    { "path": "proof/artifacts/step-05-ui-design-coverage.json", "keys": ["design_matrix.rows", "design_matrix.review_rows"] },
+    { "path": "proof/artifacts/step-05-ui-realization-report.json", "keys": ["designLanguages.designLanguages"] },
+    { "path": "proof/artifacts/step-05-widget-slice.json", "keys": ["ui_agent_packet.designReview", "ui_agent_packet.designLanguages"] }
   ],
   "requiredText": [
-    { "path": "component-library/src/ActionToolbar.stories.js", "includes": ["topogram", "widget_command_toolbar", "acme.actionToolbar"] },
-    { "path": "proof/artifacts/step-04-extracted-topogram/topo/candidates/app/ui/candidates.json", "includes": ["component_mappings", "widget_command_toolbar", "acme.actionToolbar"] },
-    { "path": "proof/STEP.md", "includes": ["Step 04", "review-only"] }
+    { "path": "topo/component-maps/component-map-acme-ops-widgets.tg", "includes": ["command_toolbar_web_narrow", "acme.actionToolbar", "Accepted from explicit Storybook metadata"] },
+    { "path": "proof/artifacts/step-05-ui-design-coverage.md", "includes": ["acme.actionToolbar", "rendered"] },
+    { "path": "proof/artifacts/step-05-work-map.md", "includes": ["widget_command_toolbar", "acme.actionToolbar"] },
+    { "path": "proof/STEP.md", "includes": ["Step 05", "canonical component_map"] }
   ]
 }

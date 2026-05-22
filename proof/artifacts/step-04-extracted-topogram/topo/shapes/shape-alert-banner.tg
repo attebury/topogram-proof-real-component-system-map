@@ -1,0 +1,6 @@
+shape shape_alert_banner from entity_alert {
+  name "Alert Banner"
+  description "Alert banner payload for the operations dashboard."
+  include [severity, message, acknowledged]
+  status active
+}

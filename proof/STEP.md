@@ -1,18 +1,18 @@
-# Step 04: Storybook Review Candidates
+# Step 05: Adopt Reviewed Component Map
 
-> Use Storybook metadata as evidence, not as canonical design truth.
+> Promote a reviewed Storybook mapping into the canonical component_map source.
 
-This checkpoint adds explicit parameters.topogram metadata to the ActionToolbar story and runs the package-backed Storybook extractor. The extractor emits review-only component_mappings candidates into proof artifacts. Canonical component_map source is not changed in this step.
+This checkpoint records the reviewed adoption write receipt and then applies the accepted ActionToolbar narrow-viewport mapping to the canonical component_map in this proof workspace. The extracted workspace stays review evidence; the canonical Topogram source is the component map under topo/component-maps.
 
 What to inspect:
 
-- component-library/src/ActionToolbar.stories.js: explicit Storybook metadata.
-- proof/artifacts/step-04-extract.json: extraction result and candidate counts.
-- proof/artifacts/step-04-extracted-topogram/topo/candidates/app/ui/candidates.json: review-only component_mappings.
-- proof/artifacts/step-04-adopt-dry-run.json: adoption preview without writes.
+- proof/artifacts/step-05-adopt-write.json: reviewed adoption write receipt and guardrail context.
+- topo/component-maps/component-map-acme-ops-widgets.tg: canonical mapping with command_toolbar_web_narrow.
+- proof/artifacts/step-05-ui-design-coverage.md: matrix after the mapping is accepted.
+- proof/artifacts/step-05-widget-slice.json: agent packet for the adopted widget mapping.
 
 Proof:
 
-- topogram extractor check validates the package contract.
-- topogram extract records Storybook provenance and candidates.
-- adopt component-mappings --dry-run previews the canonical write without applying it.
+- topogram check validates the canonical component map.
+- ui-design-coverage, ui-realization-report, work-map, and widget slice all show the adopted ActionToolbar component ref.
+- The proof records that Storybook extraction proposes evidence and the project-owned component_map remains the source of truth.

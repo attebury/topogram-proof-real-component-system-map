@@ -1,0 +1,12 @@
+shape shape_intake_filter {
+  name "Intake Filter"
+  description "Filters for the intake queue."
+
+  fields {
+    status string optional
+    priority string optional
+    assignee string optional
+  }
+
+  status active
+}
