@@ -1,0 +1,5 @@
+actor actor_operator {
+  name "Operations Operator"
+  description "Person reviewing operational intake and incidents."
+  status active
+}

@@ -1,0 +1,19 @@
+surface proj_web {
+  name "Operations Web Surface"
+  description "Web surface for the real component-system proof."
+  type web
+  realizes [proj_semantic_ui, cap_list_intake, cap_acknowledge_alert]
+  outputs [semantic_ui, web_app]
+
+  screen_routes {
+    screen intake_queue path /intake
+  }
+
+  generator_defaults {
+    profile react
+    language typescript
+    styling css
+  }
+
+  status active
+}

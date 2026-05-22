@@ -1,0 +1,9 @@
+capability cap_acknowledge_alert {
+  name "Acknowledge Alert"
+  description "Acknowledges a visible operational alert."
+  actors [actor_operator]
+  reads [entity_alert]
+  updates [entity_alert]
+  output [shape_alert_banner]
+  status active
+}

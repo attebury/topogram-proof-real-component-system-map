@@ -1,0 +1,29 @@
+{
+  "errors": [],
+  "inputPath": "<workspace>",
+  "ok": true,
+  "project": {
+    "compatibility": false,
+    "configPath": "<repo>/topogram.project.json",
+    "resolvedTopology": {
+      "edges": [],
+      "outputs": [
+        {
+          "name": "component_library",
+          "ownership": "maintained",
+          "path": "./component-library"
+        }
+      ],
+      "runtimes": []
+    },
+    "topology": {
+      "runtimes": []
+    },
+    "valid": true
+  },
+  "topogram": {
+    "files": 14,
+    "statements": 23,
+    "valid": true
+  }
+}

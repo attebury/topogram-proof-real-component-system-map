@@ -1,17 +1,19 @@
-# Step 01: Component System Baseline
+# Step 02: Semantic App Map
 
-> Establish the real component-system evidence before Topogram maps it.
+> Add the Topogram semantic app map before accepting any component mapping.
 
-This checkpoint contains a small React-style component system with stable component refs, style identities, token names, and static CSF stories. It intentionally has no topo/ directory yet.
+This checkpoint adds entities, shapes, capabilities, semantic UI, reusable layouts and regions, widgets, messages, accessibility obligations, and a design language. It intentionally does not add a complete component_map yet.
 
 What to inspect:
 
-- component-library/src/components.js: component definitions and stable refs.
-- component-library/src/tokens.js: token and style identities.
-- component-library/src/*.stories.js: static Storybook-style evidence.
+- topo/surfaces/proj-semantic-ui.tg: screen and widget bindings.
+- topo/ui-structure/layouts.tg: reusable layout slots.
+- topo/ui-structure/regions.tg: reusable region obligations.
+- topo/design-languages/design-acme-ops.tg: token and platform scope.
+- proof/artifacts/step-02-ui-design-coverage.md: missing component mappings as review work.
+- proof/artifacts/step-02-work-map.md: screen to layout to region to widget binding map.
 
 Proof:
 
-- npm run build:components validates component refs and story metadata.
-- npm test validates baseline component/stories shape.
-- npm run verify confirms no Topogram workspace exists yet and the worktree remains clean.
+- topogram check validates the app map.
+- ui-design-coverage and work-map artifacts show design review gaps before mapping components.

@@ -1,0 +1,33 @@
+surface proj_semantic_ui {
+  name "Operations Semantic UI"
+  description "Semantic UI map for the real component-system proof."
+  type semantic_ui
+  realizes [cap_list_intake, cap_acknowledge_alert]
+  outputs [semantic_ui]
+
+  messages {
+    locale default "en-US" fallback "en-US" direction ltr supported ["en-US"]
+    message msg_intake_title key "intake.title" default "Intake Queue" context screen_title screen intake_queue
+    message msg_grid_label key "intake.grid.label" default "Intake results" context widget_label widget widget_intake_grid
+    message msg_alert_label key "alerts.label" default "Operations alerts" context widget_label widget widget_alert_banner
+  }
+
+  accessibility {
+    screen intake_queue role main name_from message msg_intake_title keyboard standard focus visible live off
+    widget widget_intake_grid role grid name_from message msg_grid_label keyboard data_grid focus roving_tabindex live off
+    widget widget_alert_banner role status name_from message msg_alert_label keyboard standard focus visible live polite
+  }
+
+  screens {
+    screen intake_queue kind list layout layout_intake_workspace title "Intake Queue" load cap_list_intake item_shape shape_intake_row primary_action cap_acknowledge_alert empty_title "No intake items" loading_state skeleton error_state inline
+  }
+
+  widget_bindings {
+    screen intake_queue region filters widget widget_filter_panel id intake_filters intent "Filter intake items by status, priority, and assignee." priority high data filters from shape_intake_filter
+    screen intake_queue region commands widget widget_command_toolbar id intake_commands intent "Expose queue actions and bulk operations." priority high event acknowledge_alert action cap_acknowledge_alert
+    screen intake_queue region results widget widget_intake_grid id intake_results_grid intent "Review and select intake rows." priority high data rows from cap_list_intake event row_select navigate intake_queue
+    screen intake_queue region alerts widget widget_alert_banner id intake_alerts intent "Show operational alerts and live review feedback." priority medium data alert from shape_alert_banner event acknowledge action cap_acknowledge_alert
+  }
+
+  status active
+}

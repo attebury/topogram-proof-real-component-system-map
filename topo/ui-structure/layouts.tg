@@ -1,0 +1,63 @@
+layout layout_ops_shell {
+  name "Operations Shell"
+  description "Reusable shell for operations screens."
+  pattern app_shell
+  platforms [web, ios, android]
+  viewports [wide, narrow]
+  status active
+
+  slot {
+    id header
+    uses region_app_header
+    role page_header
+  }
+
+  slot {
+    id nav
+    uses region_global_nav
+    role global_navigation
+  }
+
+  slot {
+    id content
+    uses region_results
+    role primary_work_area
+    slot true
+  }
+}
+
+layout layout_intake_workspace {
+  name "Intake Workspace"
+  description "Queue layout with filters, commands, results, and alerts."
+  pattern collection_workspace
+  parent layout_ops_shell
+  fills content
+  platforms [web, ios, android]
+  viewports [wide, narrow]
+  status active
+
+  slot {
+    id commands
+    uses region_command_bar
+    role command_area
+  }
+
+  slot {
+    id filters
+    uses region_filter_panel
+    role filter_area
+  }
+
+  slot {
+    id results
+    uses region_results
+    role primary_work_area
+    slot true
+  }
+
+  slot {
+    id alerts
+    uses region_alerts
+    role status_feedback
+  }
+}

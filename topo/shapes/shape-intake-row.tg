@@ -1,0 +1,6 @@
+shape shape_intake_row from entity_incident {
+  name "Intake Row"
+  description "Row displayed in the intake queue."
+  include [title, status, priority, assignee, updated_at]
+  status active
+}

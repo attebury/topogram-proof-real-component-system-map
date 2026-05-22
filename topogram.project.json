@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "workspace": "./topo",
+  "outputs": {
+    "component_library": {
+      "path": "./component-library",
+      "ownership": "maintained"
+    }
+  },
+  "topology": {
+    "runtimes": []
+  }
+}

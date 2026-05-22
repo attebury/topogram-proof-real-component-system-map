@@ -1,0 +1,17 @@
+entity entity_alert {
+  name "Alert"
+  description "Operational alert shown above the work queue."
+
+  fields {
+    id uuid required
+    severity string required
+    message string required
+    acknowledged boolean required default false
+  }
+
+  keys {
+    primary [id]
+  }
+
+  status active
+}

@@ -1,0 +1,16 @@
+design_language design_acme_ops {
+  name "Acme Operations Design Language"
+  description "Design language for operations dashboards and component maps."
+  platforms [web, ios, android]
+  surfaces [proj_web]
+  library acme_ops
+  package "@acme/ops-ui"
+  token_mappings {
+    color_role surface token "acme.color.surface.default"
+    color_role danger token "acme.color.status.critical"
+    typography_role body token "acme.type.body"
+    typography_role heading token "acme.type.heading"
+  }
+
+  status active
+}

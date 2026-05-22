@@ -1,22 +1,30 @@
 {
-  "step": "proof-01-component-system-baseline",
+  "step": "proof-02-semantic-app-map",
   "cliVersion": "0.3.117",
   "requiredFiles": [
-    "component-library/src/components.js",
-    "component-library/src/tokens.js",
-    "component-library/src/DataGrid.stories.js",
-    "component-library/src/CardList.stories.js",
-    "component-library/src/FilterPanel.stories.js",
-    "component-library/src/ActionToolbar.stories.js",
-    "component-library/src/AlertBanner.stories.js",
-    "component-library/src/Timeline.stories.js",
-    "proof/STEP.md"
+    "topogram.project.json",
+    "topo/surfaces/proj-semantic-ui.tg",
+    "topo/surfaces/proj-web.tg",
+    "topo/design-languages/design-acme-ops.tg",
+    "topo/widgets/widgets.tg",
+    "topo/ui-structure/layouts.tg",
+    "topo/ui-structure/regions.tg",
+    "proof/artifacts/step-02-check.json",
+    "proof/artifacts/step-02-work-map.md",
+    "proof/artifacts/step-02-work-map.json",
+    "proof/artifacts/step-02-ui-design-coverage.md",
+    "proof/artifacts/step-02-screen-slice.md",
+    "proof/artifacts/step-02-widget-slice.json"
   ],
-  "absentFiles": ["topo"],
+  "absentFiles": ["topo/component-maps"],
+  "requiredJson": [
+    { "path": "proof/artifacts/step-02-check.json", "keys": ["ok", "topogram.valid"] },
+    { "path": "proof/artifacts/step-02-work-map.json", "keys": ["summary", "screens", "widgets", "gaps"] },
+    { "path": "proof/artifacts/step-02-widget-slice.json", "keys": ["ui_agent_packet", "ui_agent_packet.designReview"] }
+  ],
   "requiredText": [
-    { "path": "component-library/src/components.js", "includes": ["acme.dataGrid", "acme.cardList", "acme.timeline"] },
-    { "path": "component-library/src/DataGrid.stories.js", "includes": ["componentRef", "acme.dataGrid", "parameters"] },
-    { "path": "proof/STEP.md", "includes": ["Step 01", "no topo/"] }
-  ],
-  "requiredJson": []
+    { "path": "proof/artifacts/step-02-ui-design-coverage.md", "includes": ["UI Design Coverage", "Design Matrix"] },
+    { "path": "proof/artifacts/step-02-work-map.md", "includes": ["Work Map", "intake_queue", "intake_results_grid", "design_coverage_widget_unmapped"] },
+    { "path": "proof/STEP.md", "includes": ["Step 02", "does not add a complete component_map"] }
+  ]
 }
