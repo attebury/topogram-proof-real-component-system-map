@@ -1,0 +1,108 @@
+{
+  "version": "0.1",
+  "kind": "brownfield-extract",
+  "extractedAt": "2026-05-22T06:15:16.860Z",
+  "source": {
+    "path": "<repo>/component-library",
+    "hashAlgorithm": "sha256",
+    "ignoredRoots": [
+      "<repo>/proof/artifacts/step-04-extracted-topogram"
+    ]
+  },
+  "extract": {
+    "tracks": [
+      "ui"
+    ],
+    "findingsCount": 5,
+    "candidateCounts": {
+      "dbEntities": 0,
+      "dbEnums": 0,
+      "dbMaintainedSeams": 0,
+      "apiCapabilities": 0,
+      "apiRoutes": 0,
+      "uiScreens": 0,
+      "uiRoutes": 0,
+      "uiFlows": 0,
+      "uiWidgets": 1,
+      "uiShapes": 0,
+      "uiComponentMappings": 1,
+      "cliCommands": 0,
+      "cliCapabilities": 0,
+      "cliSurfaces": 0,
+      "workflows": 0,
+      "verifications": 0
+    },
+    "extractorPackages": [
+      {
+        "source": "package",
+        "id": "@topogram/extractor-storybook-design",
+        "version": "1",
+        "packageName": "@topogram/extractor-storybook-design",
+        "packageVersion": "0.1.1",
+        "packageVersionStatus": "installed",
+        "compatibleCliRange": "^0.3.114",
+        "policyPin": {
+          "state": "pinned",
+          "pinnedVersion": "1",
+          "expectedVersion": "1",
+          "matches": true,
+          "pinCommand": "topogram extractor policy pin @topogram/extractor-storybook-design@1"
+        },
+        "tracks": [
+          "ui"
+        ],
+        "manifestPath": "<repo>/node_modules/@topogram/extractor-storybook-design/topogram-extractor.json",
+        "packageRoot": "<repo>/node_modules/@topogram/extractor-storybook-design",
+        "extractors": [
+          "ui.storybook-design"
+        ]
+      }
+    ]
+  },
+  "ownership": {
+    "extractedArtifacts": "project-owned",
+    "note": "Topogram artifacts created by extraction are editable after extraction. Source hashes record the brownfield app evidence trusted at extraction time."
+  },
+  "files": [
+    {
+      "path": "src/ActionToolbar.stories.js",
+      "sha256": "d444dadd94fbccc72d43977d634f6d6ee3328d265d3cb37eeef5acf2f03db561",
+      "size": 877
+    },
+    {
+      "path": "src/AlertBanner.stories.js",
+      "sha256": "f063e1c0788ec2feacd7e68aa07b70269b1bb80dca4280d3ebc1bd408d72451f",
+      "size": 346
+    },
+    {
+      "path": "src/CardList.stories.js",
+      "sha256": "f30e975a04b053adcff000e1f9c8f1b8e8af80ad291ad4752e78c0b980c0b77a",
+      "size": 330
+    },
+    {
+      "path": "src/DataGrid.stories.js",
+      "sha256": "8e3188d0d167190030cd2e321d3128627bc17ace9d4b6f956511ed8d1363a0e7",
+      "size": 331
+    },
+    {
+      "path": "src/FilterPanel.stories.js",
+      "sha256": "cfd38b4f4b63b04d1cf978148e9b2f92ff0f75d12118e95c5b41128473584960",
+      "size": 343
+    },
+    {
+      "path": "src/Timeline.stories.js",
+      "sha256": "2eb5e71ae6c19b748f8a1e2e8b5ab134190b7b2834f3cfba62ec8bcfd0583377",
+      "size": 323
+    },
+    {
+      "path": "src/components.js",
+      "sha256": "c9e624891a08569546f27f523b2ffe808258fa2c3623a4cf368e2f461d803a9d",
+      "size": 1905
+    },
+    {
+      "path": "src/tokens.js",
+      "sha256": "49cf67f9920c072687b96e3847609b349b34421d6ee6960ed075e785f6b5b9fe",
+      "size": 674
+    }
+  ]
+}

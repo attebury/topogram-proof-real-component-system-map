@@ -1,0 +1,74 @@
+{
+  "screens": [],
+  "routes": [],
+  "actions": [],
+  "flows": [],
+  "widgets": [
+    {
+      "id_hint": "widget_command_toolbar",
+      "label": "Command Toolbar",
+      "confidence": "low",
+      "source_kind": "storybook_design_metadata",
+      "pattern": "action_bar",
+      "region": "content",
+      "data_prop": "items",
+      "evidence": [
+        {
+          "file": "src/ActionToolbar.stories.js",
+          "reason": "Storybook CSF parameters.topogram maps widget to component ref"
+        }
+      ],
+      "missing_decisions": [
+        "confirm reusable widget contract before adopting",
+        "confirm props, behaviors, events, and regions from product UI intent"
+      ],
+      "provenance": [],
+      "data_source": null,
+      "inferred_props": []
+    }
+  ],
+  "shapes": [],
+  "component_mappings": [
+    {
+      "id_hint": "command_toolbar_web_action_toolbar",
+      "component_map_id_hint": "component_map_acme_ops_widgets",
+      "design_language_id_hint": "design_acme_ops",
+      "widget_id": "widget_command_toolbar",
+      "platform": "web",
+      "component_ref": "acme.actionToolbar",
+      "pattern": "action_bar",
+      "status": "rendered",
+      "confidence": "high",
+      "evidence": [
+        {
+          "file": "src/ActionToolbar.stories.js",
+          "reason": "Storybook CSF parameters.topogram maps widget to component ref"
+        }
+      ],
+      "missing_decisions": [],
+      "source_kind": "storybook_csf_metadata",
+      "viewport": "narrow",
+      "density": "compact",
+      "state_coverage": [
+        "loading"
+      ],
+      "role_contexts": [
+        "operator"
+      ],
+      "theme_contexts": [
+        "light",
+        "dark"
+      ],
+      "locale_contexts": [
+        "default_locale"
+      ],
+      "behaviors_rendered": [
+        "bulk_action"
+      ],
+      "provenance": []
+    }
+  ],
+  "stacks": [
+    "storybook"
+  ]
+}

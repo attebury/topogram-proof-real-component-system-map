@@ -1,0 +1,29 @@
+layout layout_imported_component_library_collection_list {
+  name "Imported Collection List Layout"
+  description "Draft reusable collection layout inferred from imported UI evidence."
+  status proposed
+
+  slot {
+    id toolbar
+    uses region_imported_component_library_toolbar
+  }
+
+  slot {
+    id results
+    uses region_imported_component_library_results
+    slot true
+  }
+}
+
+layout layout_imported_component_library_detail_page {
+  name "Imported Detail Page Layout"
+  description "Draft reusable detail layout inferred from imported UI evidence."
+  status proposed
+
+  slot {
+    id summary
+    uses region_imported_component_library_summary
+    slot true
+  }
+
+}

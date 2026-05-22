@@ -1,0 +1,161 @@
+{
+  "checks": [
+    {
+      "message": "<repo>/node_modules/@topogram/extractor-storybook-design/topogram-extractor.json",
+      "name": "manifest-load",
+      "ok": true
+    },
+    {
+      "message": "Adapter export loaded.",
+      "name": "adapter-load",
+      "ok": true
+    },
+    {
+      "message": "Adapter shape is valid.",
+      "name": "adapter-shape",
+      "ok": true
+    },
+    {
+      "message": "Ran 1 extractor smoke check(s).",
+      "name": "smoke-extract",
+      "ok": true
+    }
+  ],
+  "compatibleCliRange": "^0.3.114",
+  "errors": [],
+  "executesPackageCode": true,
+  "manifest": {
+    "candidateKinds": [
+      "component_mapping",
+      "widget",
+      "stack"
+    ],
+    "capabilities": {
+      "componentMappings": true,
+      "componentRefs": true,
+      "storyMetadata": true
+    },
+    "compatibleCliRange": "^0.3.114",
+    "evidenceTypes": [
+      "runtime_source",
+      "parser_config"
+    ],
+    "extractors": [
+      "ui.storybook-design"
+    ],
+    "id": "@topogram/extractor-storybook-design",
+    "package": "@topogram/extractor-storybook-design",
+    "source": "package",
+    "stack": {
+      "domain": "ui",
+      "framework": "storybook"
+    },
+    "tracks": [
+      "ui"
+    ],
+    "version": "1"
+  },
+  "manifestPath": "<repo>/node_modules/@topogram/extractor-storybook-design/topogram-extractor.json",
+  "ok": true,
+  "packageName": "@topogram/extractor-storybook-design",
+  "packageRoot": "<repo>/node_modules/@topogram/extractor-storybook-design",
+  "packageVersion": "0.1.1",
+  "reviewWorkflow": {
+    "packageCodeExecution": {
+      "check": true,
+      "extract": true,
+      "list": false,
+      "policy": false,
+      "show": false
+    },
+    "safetyNotes": [
+      "topogram extractor list/show/policy do not load package adapter code.",
+      "topogram extractor check and topogram extract load package adapter code.",
+      "Extractor packages emit review-only candidates; core owns persistence, reconcile, adoption, and canonical topo writes.",
+      "Run dry-run adoption before --write."
+    ],
+    "steps": [
+      {
+        "command": "topogram extractor list",
+        "id": "discover",
+        "packageCodeExecution": false,
+        "purpose": "Find bundled and first-party package-backed extractors by track."
+      },
+      {
+        "command": "topogram extractor show @topogram/extractor-storybook-design",
+        "id": "inspect",
+        "packageCodeExecution": false,
+        "purpose": "Read manifest purpose, tracks, install command, policy pin command, and extract command."
+      },
+      {
+        "command": "npm install -D @topogram/extractor-storybook-design",
+        "id": "install",
+        "packageCodeExecution": false,
+        "purpose": "Install the extractor package explicitly; Topogram does not install it during extraction."
+      },
+      {
+        "command": "npm install -D @topogram/extractor-storybook-design@latest",
+        "id": "upgrade",
+        "packageCodeExecution": false,
+        "purpose": "Upgrade the package if its installed npm package version or compatible CLI range is stale."
+      },
+      {
+        "command": "topogram extractor policy pin @topogram/extractor-storybook-design@1",
+        "id": "pin_policy",
+        "packageCodeExecution": false,
+        "purpose": "Allow and pin the extractor manifest version before execution."
+      },
+      {
+        "command": "topogram extractor check @topogram/extractor-storybook-design",
+        "id": "check",
+        "packageCodeExecution": true,
+        "purpose": "Load the adapter and run a minimal smoke extraction against a synthetic fixture."
+      },
+      {
+        "command": "topogram extract ./storybook-components --out ./imported-topogram --from ui --extractor @topogram/extractor-storybook-design",
+        "id": "extract",
+        "packageCodeExecution": true,
+        "purpose": "Read brownfield source and write review-only candidates plus extraction provenance."
+      },
+      {
+        "command": "topogram extract plan ./imported-topogram",
+        "id": "review_plan",
+        "packageCodeExecution": false,
+        "purpose": "Review bundles, extractor provenance, candidate counts, and safety notes."
+      },
+      {
+        "command": "topogram adopt --list ./imported-topogram",
+        "id": "list_selectors",
+        "packageCodeExecution": false,
+        "purpose": "Choose an explicit adoption selector."
+      },
+      {
+        "command": "topogram adopt <selector> ./imported-topogram --dry-run",
+        "id": "dry_run_adoption",
+        "packageCodeExecution": false,
+        "purpose": "Preview canonical topo writes before changing project-owned records."
+      },
+      {
+        "command": "topogram adopt <selector> ./imported-topogram --write",
+        "id": "write_reviewed_adoption",
+        "packageCodeExecution": false,
+        "purpose": "Write only reviewed canonical records; extractor packages never own adoption semantics."
+      }
+    ],
+    "type": "extractor_review_workflow"
+  },
+  "smoke": {
+    "candidateKeys": 3,
+    "diagnostics": 0,
+    "extractors": 1,
+    "findings": 0
+  },
+  "source": "package",
+  "sourceSpec": "@topogram/extractor-storybook-design",
+  "useCommands": [
+    "npm install -D @topogram/extractor-storybook-design",
+    "topogram extractor policy pin @topogram/extractor-storybook-design@1",
+    "topogram extractor check @topogram/extractor-storybook-design",
+    "topogram extract ./storybook-components --out ./imported-topogram --from ui --extractor @topogram/extractor-storybook-design"
+  ]
+}

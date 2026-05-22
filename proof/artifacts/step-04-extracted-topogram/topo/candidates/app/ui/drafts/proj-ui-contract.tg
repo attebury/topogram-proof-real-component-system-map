@@ -1,0 +1,39 @@
+surface proj_semantic_ui_imported_component_library {
+  name "Imported UI Contract Draft"
+  description "Drafted from imported UI candidates. Review and adapt before adoption."
+
+  type semantic_ui
+  realizes [
+    // add capability ids
+  ]
+  outputs [semantic_ui]
+
+  app_shell {
+    brand "Imported component library"
+    shell topbar
+  }
+
+  design_tokens {
+    density comfortable
+    tone operational
+    radius_scale medium
+    color_role primary accent
+    color_role danger critical
+    typography_role body readable
+    typography_role heading prominent
+    action_role primary prominent
+    action_role destructive danger
+    accessibility contrast aa
+    accessibility focus visible
+  }
+
+  screens {
+    // No imported screens detected
+  }
+
+  navigation {
+
+  }
+
+  status proposed
+}

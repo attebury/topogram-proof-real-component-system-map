@@ -1,0 +1,177 @@
+{
+  "broadSelectorCount": 4,
+  "broadSelectors": [
+    {
+      "appliedItemCount": 0,
+      "blockedItemCount": 2,
+      "itemCount": 2,
+      "kind": "plan",
+      "label": "approved or pending plan items",
+      "pendingItemCount": 2,
+      "previewCommand": "topogram adopt from-plan proof/artifacts/step-04-extracted-topogram --dry-run",
+      "selector": "from-plan",
+      "writeCommand": "topogram adopt from-plan proof/artifacts/step-04-extracted-topogram --write"
+    },
+    {
+      "appliedItemCount": 0,
+      "blockedItemCount": 1,
+      "itemCount": 1,
+      "kind": "kind",
+      "label": "widgets",
+      "pendingItemCount": 1,
+      "previewCommand": "topogram adopt widgets proof/artifacts/step-04-extracted-topogram --dry-run",
+      "selector": "widgets",
+      "writeCommand": "topogram adopt widgets proof/artifacts/step-04-extracted-topogram --write"
+    },
+    {
+      "appliedItemCount": 0,
+      "blockedItemCount": 1,
+      "itemCount": 1,
+      "kind": "kind",
+      "label": "component mappings",
+      "pendingItemCount": 1,
+      "previewCommand": "topogram adopt component-mappings proof/artifacts/step-04-extracted-topogram --dry-run",
+      "selector": "component-mappings",
+      "writeCommand": "topogram adopt component-mappings proof/artifacts/step-04-extracted-topogram --write"
+    },
+    {
+      "appliedItemCount": 0,
+      "blockedItemCount": 1,
+      "itemCount": 1,
+      "kind": "track",
+      "label": "UI reports, widgets, and event shapes",
+      "pendingItemCount": 1,
+      "previewCommand": "topogram adopt ui proof/artifacts/step-04-extracted-topogram --dry-run",
+      "selector": "ui",
+      "writeCommand": "topogram adopt ui proof/artifacts/step-04-extracted-topogram --write"
+    }
+  ],
+  "extractorContext": {
+    "bundledExtractors": [],
+    "candidateCounts": {
+      "apiCapabilities": 0,
+      "apiRoutes": 0,
+      "cliCapabilities": 0,
+      "cliCommands": 0,
+      "cliSurfaces": 0,
+      "dbEntities": 0,
+      "dbEnums": 0,
+      "dbMaintainedSeams": 0,
+      "uiComponentMappings": 1,
+      "uiFlows": 0,
+      "uiRoutes": 0,
+      "uiScreens": 0,
+      "uiShapes": 0,
+      "uiWidgets": 1,
+      "verifications": 0,
+      "workflows": 0
+    },
+    "packageBackedExtractors": [
+      {
+        "compatibleCliRange": "^0.3.114",
+        "extractors": [
+          "ui.storybook-design"
+        ],
+        "id": "@topogram/extractor-storybook-design",
+        "manifestPath": "<external>/topogram-extractor.json",
+        "manifestVersion": "1",
+        "packageName": "@topogram/extractor-storybook-design",
+        "packageVersion": "0.1.1",
+        "packageVersionStatus": "installed",
+        "policyPin": {
+          "expectedVersion": "1",
+          "matches": true,
+          "pinCommand": "topogram extractor policy pin @topogram/extractor-storybook-design@1",
+          "pinnedVersion": "1",
+          "state": "pinned"
+        },
+        "tracks": [
+          "ui"
+        ],
+        "version": "1"
+      }
+    ],
+    "provenancePath": "<external>/.topogram-extract.json",
+    "safetyNotes": [
+      "Extractor packages are evidence producers only; review candidates before canonical adoption.",
+      "Use dry-run adoption before --write, especially when package-backed extractors contributed candidates."
+    ],
+    "summary": {
+      "bundled_extractor_count": 0,
+      "package_backed_extractor_count": 1,
+      "source_file_count": 8
+    }
+  },
+  "nextCommand": "topogram adopt bundle:widget-command-toolbar proof/artifacts/step-04-extracted-topogram --dry-run",
+  "ok": true,
+  "projectRoot": "<external>/step-04-extracted-topogram",
+  "selectorCount": 1,
+  "selectors": [
+    {
+      "appliedItemCount": 0,
+      "blockedItemCount": 1,
+      "bundle": "widget-command-toolbar",
+      "complete": false,
+      "extractorContext": {
+        "bundledExtractors": [],
+        "candidateCounts": {
+          "apiCapabilities": 0,
+          "apiRoutes": 0,
+          "cliCapabilities": 0,
+          "cliCommands": 0,
+          "cliSurfaces": 0,
+          "dbEntities": 0,
+          "dbEnums": 0,
+          "dbMaintainedSeams": 0,
+          "uiComponentMappings": 1,
+          "uiFlows": 0,
+          "uiRoutes": 0,
+          "uiScreens": 0,
+          "uiShapes": 0,
+          "uiWidgets": 1,
+          "verifications": 0,
+          "workflows": 0
+        },
+        "packageBackedExtractors": [
+          {
+            "compatibleCliRange": "^0.3.114",
+            "extractors": [
+              "ui.storybook-design"
+            ],
+            "id": "@topogram/extractor-storybook-design",
+            "manifestVersion": "1",
+            "packageName": "@topogram/extractor-storybook-design",
+            "packageVersion": "0.1.1",
+            "packageVersionStatus": "installed",
+            "policyPin": {
+              "expectedVersion": "1",
+              "matches": true,
+              "pinCommand": "topogram extractor policy pin @topogram/extractor-storybook-design@1",
+              "pinnedVersion": "1",
+              "state": "pinned"
+            },
+            "tracks": [
+              "ui"
+            ],
+            "version": "1"
+          }
+        ],
+        "safetyNotes": [
+          "Extractor packages are evidence producers only; review candidates before canonical adoption.",
+          "Use dry-run adoption before --write, especially when package-backed extractors contributed candidates."
+        ],
+        "tracks": [
+          "ui"
+        ]
+      },
+      "itemCount": 2,
+      "kind": "bundle",
+      "pendingItemCount": 1,
+      "previewCommand": "topogram adopt bundle:widget-command-toolbar proof/artifacts/step-04-extracted-topogram --dry-run",
+      "selector": "bundle:widget-command-toolbar",
+      "writeCommand": "topogram adopt bundle:widget-command-toolbar proof/artifacts/step-04-extracted-topogram --write"
+    }
+  ],
+  "topogramRoot": "<workspace>",
+  "workspaceRoot": "<workspace>"
+}

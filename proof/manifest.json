@@ -1,27 +1,28 @@
 {
-  "step": "proof-03-manual-component-map",
+  "step": "proof-04-storybook-review-candidates",
   "cliVersion": "0.3.117",
   "requiredFiles": [
-    "topo/component-maps/component-map-acme-ops-widgets.tg",
-    "proof/artifacts/step-03-ui-design-coverage.md",
-    "proof/artifacts/step-03-ui-design-coverage.json",
-    "proof/artifacts/step-03-ui-realization-report.json",
-    "proof/artifacts/step-03-work-map.md",
-    "proof/artifacts/step-03-work-map.json",
-    "proof/artifacts/step-03-widget-slice.md",
-    "proof/artifacts/step-03-widget-slice.json"
+    "component-library/src/ActionToolbar.stories.js",
+    "topogram.extractor-policy.json",
+    "proof/artifacts/step-04-extractor-check.json",
+    "proof/artifacts/step-04-extract.json",
+    "proof/artifacts/step-04-extract-plan.json",
+    "proof/artifacts/step-04-adopt-list.json",
+    "proof/artifacts/step-04-adopt-dry-run.json",
+    "proof/artifacts/step-04-extracted-topogram/topo/candidates/app/ui/candidates.json"
   ],
   "absentFiles": [],
   "requiredJson": [
-    { "path": "proof/artifacts/step-03-ui-design-coverage.json", "keys": ["design_matrix.rows", "design_matrix.review_rows", "widgets"] },
-    { "path": "proof/artifacts/step-03-ui-realization-report.json", "keys": ["designLanguages.designLanguages"] },
-    { "path": "proof/artifacts/step-03-work-map.json", "keys": ["component_maps", "gaps", "proof_commands"] },
-    { "path": "proof/artifacts/step-03-widget-slice.json", "keys": ["ui_agent_packet.designReview", "ui_agent_packet.designLanguages"] }
+    { "path": "proof/artifacts/step-04-extractor-check.json", "keys": ["ok"] },
+    { "path": "proof/artifacts/step-04-extract.json", "keys": ["candidateCounts.uiComponentMappings"] },
+    { "path": "proof/artifacts/step-04-extract-plan.json", "keys": ["summary", "extractorContext"] },
+    { "path": "proof/artifacts/step-04-adopt-list.json", "keys": ["selectors"] },
+    { "path": "proof/artifacts/step-04-adopt-dry-run.json", "keys": ["dryRun"] },
+    { "path": "proof/artifacts/step-04-extracted-topogram/topo/candidates/app/ui/candidates.json", "keys": ["component_mappings"] }
   ],
   "requiredText": [
-    { "path": "topo/component-maps/component-map-acme-ops-widgets.tg", "includes": ["component_map component_map_acme_ops_widgets", "acme.dataGrid", "behaviors_contract_only"] },
-    { "path": "proof/artifacts/step-03-ui-design-coverage.md", "includes": ["acme.dataGrid", "contract_only", "unsupported"] },
-    { "path": "proof/artifacts/step-03-work-map.md", "includes": ["component_map_acme_ops_widgets", "acme.dataGrid"] },
-    { "path": "proof/STEP.md", "includes": ["Step 03", "designer-readable matrix"] }
+    { "path": "component-library/src/ActionToolbar.stories.js", "includes": ["topogram", "widget_command_toolbar", "acme.actionToolbar"] },
+    { "path": "proof/artifacts/step-04-extracted-topogram/topo/candidates/app/ui/candidates.json", "includes": ["component_mappings", "widget_command_toolbar", "acme.actionToolbar"] },
+    { "path": "proof/STEP.md", "includes": ["Step 04", "review-only"] }
   ]
 }

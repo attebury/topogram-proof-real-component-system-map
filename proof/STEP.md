@@ -1,18 +1,18 @@
-# Step 03: Manual Component Map
+# Step 04: Storybook Review Candidates
 
-> Add the first reviewed component map by hand so designers can read the matrix before Storybook extraction is introduced.
+> Use Storybook metadata as evidence, not as canonical design truth.
 
-This checkpoint adds a widget-first component_map for the Acme operations component system. It maps semantic widgets to stable component refs, style refs, platform coverage, state coverage, and behavior support.
+This checkpoint adds explicit parameters.topogram metadata to the ActionToolbar story and runs the package-backed Storybook extractor. The extractor emits review-only component_mappings candidates into proof artifacts. Canonical component_map source is not changed in this step.
 
 What to inspect:
 
-- topo/component-maps/component-map-acme-ops-widgets.tg: canonical widget mappings.
-- proof/artifacts/step-03-ui-design-coverage.md: designer-readable matrix.
-- proof/artifacts/step-03-ui-realization-report.json: deeper realization proof.
-- proof/artifacts/step-03-work-map.md: readable work-map summary.
+- component-library/src/ActionToolbar.stories.js: explicit Storybook metadata.
+- proof/artifacts/step-04-extract.json: extraction result and candidate counts.
+- proof/artifacts/step-04-extracted-topogram/topo/candidates/app/ui/candidates.json: review-only component_mappings.
+- proof/artifacts/step-04-adopt-dry-run.json: adoption preview without writes.
 
 Proof:
 
-- topogram check validates design_language and component_map references.
-- ui-design-coverage shows rendered, contract-only, implementation-owned, unsupported, missing-platform, and missing-state review rows.
-- work-map shows component refs next to screen, layout, region, and widget binding context.
+- topogram extractor check validates the package contract.
+- topogram extract records Storybook provenance and candidates.
+- adopt component-mappings --dry-run previews the canonical write without applying it.

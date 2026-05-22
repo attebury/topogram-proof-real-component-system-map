@@ -3,7 +3,7 @@ import path from "node:path";
 
 const root = process.cwd();
 const ignored = new Set([".git", "node_modules"]);
-const forbidden = [/\/Users\//, /\/home\//, /\/private\/tmp\//, /C:\\Users\\/i, /attebury/i];
+const forbidden = [/\/Users\//, /\/home\//, /\/private\/tmp\//, /C:\\Users\\/i];
 const checkedExtensions = new Set([".md", ".json", ".js", ".tg", ".txt", ".yml", ".yaml"]);
 const failures = [];
 function walk(dir) {

@@ -1,0 +1,151 @@
+{
+  "accepted_items": [],
+  "adoption_state_vocabulary": [
+    "accept",
+    "map",
+    "customize",
+    "stage",
+    "reject"
+  ],
+  "approved_review_groups": [],
+  "imported_maintained_db_seam_candidates": [],
+  "imported_proposal_surfaces": [
+    {
+      "available_actions": [
+        "accept",
+        "map",
+        "customize",
+        "stage",
+        "reject"
+      ],
+      "bundle": "widget-command-toolbar",
+      "canonical_rel_path": "component-maps/component-map-acme-ops-widgets.tg",
+      "current_state": "stage",
+      "event_name": null,
+      "human_review_required": true,
+      "id": "widget-command-toolbar:component_mapping:component_map_acme_ops_widgets",
+      "item": "component_map_acme_ops_widgets",
+      "kind": "component_mapping",
+      "maintained_seam_candidates": [],
+      "mapping_suggestions": [
+        {
+          "id": "ui_review:missing_design_language:design_acme_ops",
+          "reason": "Component mapping candidate command_toolbar_web_action_toolbar references missing design_language design_acme_ops. Author or adopt the design language before adopting the realization set.",
+          "type": "ui_review"
+        }
+      ],
+      "projection_impacts": [],
+      "provenance": {
+        "bundle": "widget-command-toolbar",
+        "canonical_rel_path": "component-maps/component-map-acme-ops-widgets.tg",
+        "source_path": "candidates/reconcile/model/bundles/widget-command-toolbar/component-mappings/component_map_acme_ops_widgets.tg"
+      },
+      "recommended_state": "accept",
+      "related_shapes": [],
+      "requirements": {
+        "blocking_dependencies": [
+          {
+            "id": "ui_review:missing_design_language:design_acme_ops",
+            "reason": "Component mapping candidate command_toolbar_web_action_toolbar references missing design_language design_acme_ops. Author or adopt the design language before adopting the realization set.",
+            "type": "ui_review"
+          }
+        ],
+        "related_capabilities": [],
+        "related_docs": [],
+        "related_rules": [],
+        "related_shapes": [],
+        "related_workflows": []
+      },
+      "review_boundary": {
+        "automation_class": "manual_decision",
+        "reasons": [
+          "proposal_has_blocking_dependencies"
+        ]
+      },
+      "source_kind": null,
+      "source_path": "candidates/reconcile/model/bundles/widget-command-toolbar/component-mappings/component_map_acme_ops_widgets.tg",
+      "supported_states": [
+        "accept",
+        "map",
+        "customize",
+        "stage",
+        "reject"
+      ],
+      "track": "ui",
+      "ui_impacts": [],
+      "widget_id": null,
+      "workflow_impacts": []
+    },
+    {
+      "available_actions": [
+        "accept",
+        "map",
+        "customize",
+        "stage",
+        "reject"
+      ],
+      "bundle": "widget-command-toolbar",
+      "canonical_rel_path": "widgets/widget-command-toolbar.tg",
+      "current_state": "stage",
+      "event_name": null,
+      "human_review_required": true,
+      "id": "widget-command-toolbar:widget:widget_command_toolbar",
+      "item": "widget_command_toolbar",
+      "kind": "widget",
+      "maintained_seam_candidates": [],
+      "mapping_suggestions": [],
+      "projection_impacts": [],
+      "provenance": {
+        "bundle": "widget-command-toolbar",
+        "canonical_rel_path": "widgets/widget-command-toolbar.tg",
+        "source_path": "candidates/reconcile/model/bundles/widget-command-toolbar/widgets/widget_command_toolbar.tg"
+      },
+      "recommended_state": "accept",
+      "related_shapes": [],
+      "requirements": {
+        "blocking_dependencies": [],
+        "related_capabilities": [],
+        "related_docs": [],
+        "related_rules": [],
+        "related_shapes": [],
+        "related_workflows": []
+      },
+      "review_boundary": {
+        "automation_class": "safe",
+        "reasons": [
+          "proposal_metadata_only"
+        ]
+      },
+      "source_kind": null,
+      "source_path": "candidates/reconcile/model/bundles/widget-command-toolbar/widgets/widget_command_toolbar.tg",
+      "supported_states": [
+        "accept",
+        "map",
+        "customize",
+        "stage",
+        "reject"
+      ],
+      "track": "widget",
+      "ui_impacts": [],
+      "widget_id": null,
+      "workflow_impacts": []
+    }
+  ],
+  "rejected_items": [],
+  "requires_human_review": [
+    "widget-command-toolbar:component_mapping:component_map_acme_ops_widgets",
+    "widget-command-toolbar:widget:widget_command_toolbar"
+  ],
+  "source_plan_type": "reconcile_adoption_plan",
+  "staged_items": [
+    "widget-command-toolbar:component_mapping:component_map_acme_ops_widgets",
+    "widget-command-toolbar:widget:widget_command_toolbar"
+  ],
+  "terminology": {
+    "candidate_workspace_term": "candidate",
+    "non_canonical_adoption_state": "stage"
+  },
+  "type": "agent_adoption_plan",
+  "version": 1,
+  "workspace": "<repo>/proof/artifacts/step-04-extracted-topogram/topo"
+}

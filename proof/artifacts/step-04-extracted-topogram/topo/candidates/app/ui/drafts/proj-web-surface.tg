@@ -1,0 +1,23 @@
+surface proj_web_imported_component_library {
+  name "Imported Web Surface Draft"
+  description "Drafted from imported UI candidates. Review and adapt before adoption."
+
+  type web
+  realizes [
+    proj_semantic_ui_imported_component_library,
+    // add capability ids
+  ]
+  outputs [semantic_ui, web_app]
+
+  screen_routes {
+    // add routes
+  }
+
+  generator_defaults {
+    profile react
+    language typescript
+    styling css
+  }
+
+  status proposed
+}

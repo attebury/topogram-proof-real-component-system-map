@@ -1,0 +1,67 @@
+[
+  {
+    "kind": "storybook_topogram_metadata_missing",
+    "message": "Storybook story src/AlertBanner.stories.js has no parameters.topogram metadata.",
+    "evidence": [
+      {
+        "file": "src/AlertBanner.stories.js",
+        "reason": "CSF story has no explicit Topogram design metadata"
+      }
+    ],
+    "missing_decisions": [
+      "add explicit parameters.topogram metadata before adopting a component mapping"
+    ]
+  },
+  {
+    "kind": "storybook_topogram_metadata_missing",
+    "message": "Storybook story src/CardList.stories.js has no parameters.topogram metadata.",
+    "evidence": [
+      {
+        "file": "src/CardList.stories.js",
+        "reason": "CSF story has no explicit Topogram design metadata"
+      }
+    ],
+    "missing_decisions": [
+      "add explicit parameters.topogram metadata before adopting a component mapping"
+    ]
+  },
+  {
+    "kind": "storybook_topogram_metadata_missing",
+    "message": "Storybook story src/DataGrid.stories.js has no parameters.topogram metadata.",
+    "evidence": [
+      {
+        "file": "src/DataGrid.stories.js",
+        "reason": "CSF story has no explicit Topogram design metadata"
+      }
+    ],
+    "missing_decisions": [
+      "add explicit parameters.topogram metadata before adopting a component mapping"
+    ]
+  },
+  {
+    "kind": "storybook_topogram_metadata_missing",
+    "message": "Storybook story src/FilterPanel.stories.js has no parameters.topogram metadata.",
+    "evidence": [
+      {
+        "file": "src/FilterPanel.stories.js",
+        "reason": "CSF story has no explicit Topogram design metadata"
+      }
+    ],
+    "missing_decisions": [
+      "add explicit parameters.topogram metadata before adopting a component mapping"
+    ]
+  },
+  {
+    "kind": "storybook_topogram_metadata_missing",
+    "message": "Storybook story src/Timeline.stories.js has no parameters.topogram metadata.",
+    "evidence": [
+      {
+        "file": "src/Timeline.stories.js",
+        "reason": "CSF story has no explicit Topogram design metadata"
+      }
+    ],
+    "missing_decisions": [
+      "add explicit parameters.topogram metadata before adopting a component mapping"
+    ]
+  }
+]

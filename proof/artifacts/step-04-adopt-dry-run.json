@@ -1,0 +1,626 @@
+{
+  "adoption": {
+    "adopt_selector": "component-mappings",
+    "adopt_write_mode": false,
+    "adoption_plan_items": [
+      {
+        "bundle": "widget-command-toolbar",
+        "confidence": "high",
+        "item": "component_map_acme_ops_widgets",
+        "kind": "component_mapping",
+        "recommendation": "Promote only after confirming the referenced design language, widget, component refs, and behavior support are correct.",
+        "related_capabilities": [],
+        "related_docs": [],
+        "related_rules": [],
+        "related_workflows": [],
+        "status": "needs_ui_review"
+      },
+      {
+        "bundle": "widget-command-toolbar",
+        "confidence": "low",
+        "item": "widget_command_toolbar",
+        "kind": "widget",
+        "recommendation": "Promote this reviewed widget candidate before binding or reusing it from canonical projections.",
+        "related_capabilities": [],
+        "related_docs": [],
+        "related_rules": [],
+        "related_workflows": [],
+        "status": "pending"
+      }
+    ],
+    "adoption_plan_path": "candidates/reconcile/adoption-plan.json",
+    "agent_adoption_plan_items": [
+      {
+        "available_actions": [
+          "accept",
+          "map",
+          "customize",
+          "stage",
+          "reject"
+        ],
+        "bundle": "widget-command-toolbar",
+        "canonical_rel_path": "component-maps/component-map-acme-ops-widgets.tg",
+        "current_state": "stage",
+        "event_name": null,
+        "human_review_required": true,
+        "id": "widget-command-toolbar:component_mapping:component_map_acme_ops_widgets",
+        "item": "component_map_acme_ops_widgets",
+        "kind": "component_mapping",
+        "maintained_seam_candidates": [],
+        "mapping_suggestions": [
+          {
+            "id": "ui_review:missing_design_language:design_acme_ops",
+            "reason": "Component mapping candidate command_toolbar_web_action_toolbar references missing design_language design_acme_ops. Author or adopt the design language before adopting the realization set.",
+            "type": "ui_review"
+          }
+        ],
+        "projection_impacts": [],
+        "provenance": {
+          "bundle": "widget-command-toolbar",
+          "canonical_rel_path": "component-maps/component-map-acme-ops-widgets.tg",
+          "source_path": "candidates/reconcile/model/bundles/widget-command-toolbar/component-mappings/component_map_acme_ops_widgets.tg"
+        },
+        "recommended_state": "accept",
+        "related_shapes": [],
+        "requirements": {
+          "blocking_dependencies": [
+            {
+              "id": "ui_review:missing_design_language:design_acme_ops",
+              "reason": "Component mapping candidate command_toolbar_web_action_toolbar references missing design_language design_acme_ops. Author or adopt the design language before adopting the realization set.",
+              "type": "ui_review"
+            }
+          ],
+          "related_capabilities": [],
+          "related_docs": [],
+          "related_rules": [],
+          "related_shapes": [],
+          "related_workflows": []
+        },
+        "review_boundary": {
+          "automation_class": "manual_decision",
+          "reasons": [
+            "proposal_has_blocking_dependencies"
+          ]
+        },
+        "source_kind": null,
+        "source_path": "candidates/reconcile/model/bundles/widget-command-toolbar/component-mappings/component_map_acme_ops_widgets.tg",
+        "supported_states": [
+          "accept",
+          "map",
+          "customize",
+          "stage",
+          "reject"
+        ],
+        "track": "ui",
+        "ui_impacts": [],
+        "widget_id": null,
+        "workflow_impacts": []
+      },
+      {
+        "available_actions": [
+          "accept",
+          "map",
+          "customize",
+          "stage",
+          "reject"
+        ],
+        "bundle": "widget-command-toolbar",
+        "canonical_rel_path": "widgets/widget-command-toolbar.tg",
+        "current_state": "stage",
+        "event_name": null,
+        "human_review_required": true,
+        "id": "widget-command-toolbar:widget:widget_command_toolbar",
+        "item": "widget_command_toolbar",
+        "kind": "widget",
+        "maintained_seam_candidates": [],
+        "mapping_suggestions": [],
+        "projection_impacts": [],
+        "provenance": {
+          "bundle": "widget-command-toolbar",
+          "canonical_rel_path": "widgets/widget-command-toolbar.tg",
+          "source_path": "candidates/reconcile/model/bundles/widget-command-toolbar/widgets/widget_command_toolbar.tg"
+        },
+        "recommended_state": "accept",
+        "related_shapes": [],
+        "requirements": {
+          "blocking_dependencies": [],
+          "related_capabilities": [],
+          "related_docs": [],
+          "related_rules": [],
+          "related_shapes": [],
+          "related_workflows": []
+        },
+        "review_boundary": {
+          "automation_class": "safe",
+          "reasons": [
+            "proposal_metadata_only"
+          ]
+        },
+        "source_kind": null,
+        "source_path": "candidates/reconcile/model/bundles/widget-command-toolbar/widgets/widget_command_toolbar.tg",
+        "supported_states": [
+          "accept",
+          "map",
+          "customize",
+          "stage",
+          "reject"
+        ],
+        "track": "widget",
+        "ui_impacts": [],
+        "widget_id": null,
+        "workflow_impacts": []
+      }
+    ],
+    "agent_adoption_plan_path": "candidates/reconcile/adoption-plan.agent.json",
+    "applied_items": [],
+    "approved_items": [],
+    "approved_review_groups": [],
+    "blocked_items": [
+      "component_map_acme_ops_widgets"
+    ],
+    "bootstrapped_topogram_root": false,
+    "bundle_blockers": [
+      {
+        "applied_items": [],
+        "approved_items": [],
+        "blocked_items": [
+          "component_map_acme_ops_widgets"
+        ],
+        "blocking_dependencies": [
+          "ui_review:missing_design_language:design_acme_ops"
+        ],
+        "bundle": "widget-command-toolbar",
+        "pending_items": [
+          "widget_command_toolbar"
+        ],
+        "skipped_items": []
+      }
+    ],
+    "bundle_priorities": [
+      {
+        "applied_items": 0,
+        "approved_items": 0,
+        "auth_aging_summary": {
+          "escalationLevel": "none",
+          "escalationReason": "This bundle is not currently high risk.",
+          "repeatCount": 0
+        },
+        "auth_claim_hints": [],
+        "auth_closure_summary": {
+          "adopted": 0,
+          "deferred": 0,
+          "label": "no auth hints",
+          "reason": "This bundle does not currently carry inferred permission, claim, or ownership hints.",
+          "status": "no_auth_hints",
+          "total": 0,
+          "unresolved": 0
+        },
+        "auth_ownership_hints": [],
+        "auth_permission_hints": [],
+        "auth_risk_rank": 0,
+        "auth_role_guidance": [],
+        "blocked_items": 1,
+        "bundle": "widget-command-toolbar",
+        "evidence": {
+          "actors": 0,
+          "capabilities": 0,
+          "docs": 0,
+          "entities": 0,
+          "enums": 0,
+          "roles": 0,
+          "screens": 0,
+          "shapes": 0,
+          "widgets": 1,
+          "workflows": 0
+        },
+        "evidence_score": 0,
+        "is_complete": false,
+        "next_action": {
+          "kind": "review_bundle",
+          "label": "Review this bundle next",
+          "reason": "Component mapping candidate command_toolbar_web_action_toolbar references missing design_language design_acme_ops. Author or adopt the design language before adopting the realization set.",
+          "safe_adopt_now_count": 0,
+          "selector": "bundle-review:widget-command-toolbar",
+          "unlock_review_group_id": "ui_review:missing_design_language:design_acme_ops",
+          "unlock_review_selector": "ui-review:missing_design_language:design_acme_ops"
+        },
+        "next_review_groups": [
+          {
+            "id": "ui_review:missing_design_language:design_acme_ops",
+            "item_count": 1,
+            "reason": "Component mapping candidate command_toolbar_web_action_toolbar references missing design_language design_acme_ops. Author or adopt the design language before adopting the realization set.",
+            "type": "ui"
+          }
+        ],
+        "operator_summary": {
+          "authAging": {
+            "escalationLevel": "none",
+            "escalationReason": "This bundle is not currently high risk.",
+            "repeatCount": 0
+          },
+          "authClaimHints": [],
+          "authClosureSummary": {
+            "adopted": 0,
+            "deferred": 0,
+            "label": "no auth hints",
+            "reason": "This bundle does not currently carry inferred permission, claim, or ownership hints.",
+            "status": "no_auth_hints",
+            "total": 0,
+            "unresolved": 0
+          },
+          "authOwnershipHints": [],
+          "authPermissionHints": [],
+          "authRoleGuidance": [],
+          "capabilityIds": [],
+          "cliSurfaceIds": [],
+          "participants": {
+            "actors": [],
+            "label": "_none_",
+            "roles": []
+          },
+          "primaryConcept": "entity_widget-command-toolbar",
+          "primaryEntityId": null,
+          "routePaths": [],
+          "screenIds": [],
+          "whyThisBundle": "This bundle exists because UI widget evidence converges on the same widget command toolbar concept.",
+          "widgetIds": [
+            "widget_command_toolbar"
+          ],
+          "workflowIds": []
+        },
+        "pending_items": 1,
+        "recommend_bundle_review_selector": "bundle-review:widget-command-toolbar",
+        "recommend_from_plan": false,
+        "recommended_actor_role_actions": [],
+        "recommended_doc_drift_actions": [],
+        "recommended_doc_link_actions": [],
+        "recommended_doc_metadata_patch_actions": []
+      }
+    ],
+    "candidate_model_bundles": [
+      {
+        "actor_details": [],
+        "actors": [],
+        "adoption_plan": [
+          {
+            "action": "promote_widget",
+            "canonical_rel_path": "widgets/widget-command-toolbar.tg",
+            "confidence": "low",
+            "inference_summary": null,
+            "item": "widget_command_toolbar",
+            "related_capabilities": [],
+            "related_shapes": [],
+            "source_path": "candidates/reconcile/model/bundles/widget-command-toolbar/widgets/widget_command_toolbar.tg",
+            "target": null
+          },
+          {
+            "action": "promote_component_map",
+            "blocking_dependencies": [
+              {
+                "id": "ui_review:missing_design_language:design_acme_ops",
+                "reason": "Component mapping candidate command_toolbar_web_action_toolbar references missing design_language design_acme_ops. Author or adopt the design language before adopting the realization set.",
+                "type": "ui_review"
+              }
+            ],
+            "canonical_rel_path": "component-maps/component-map-acme-ops-widgets.tg",
+            "confidence": "high",
+            "inference_summary": "Review widget-to-platform component mappings for component_map_acme_ops_widgets.",
+            "item": "component_map_acme_ops_widgets",
+            "related_widgets": [
+              "widget_command_toolbar"
+            ],
+            "source_path": "candidates/reconcile/model/bundles/widget-command-toolbar/component-mappings/component_map_acme_ops_widgets.tg",
+            "target": "design_acme_ops",
+            "track": "ui"
+          }
+        ],
+        "auth_claim_hints": [],
+        "auth_ownership_hints": [],
+        "auth_permission_hints": [],
+        "auth_role_guidance": [],
+        "capabilities": [],
+        "cli_surfaces": [],
+        "component_mappings": [
+          "command_toolbar_web_action_toolbar"
+        ],
+        "doc_drift_summaries": [],
+        "doc_link_suggestions": [],
+        "doc_metadata_patches": [],
+        "docs": [],
+        "entities": [],
+        "enums": [],
+        "id": "entity_widget-command-toolbar",
+        "label": "Widget Command Toolbar",
+        "maintained_seam_candidates": [],
+        "merge_hints": {
+          "action": "promote_as_candidate_concept",
+          "canonicalEntityTarget": null,
+          "promoteActors": [],
+          "promoteCapabilities": [],
+          "promoteDocs": [],
+          "promoteEnums": [],
+          "promoteRoles": [],
+          "promoteScreens": [],
+          "promoteShapes": [],
+          "promoteWorkflows": []
+        },
+        "operator_summary": {
+          "authAging": {
+            "escalationLevel": "none",
+            "escalationReason": "This bundle is not currently high risk.",
+            "repeatCount": 0
+          },
+          "authClaimHints": [],
+          "authClosureSummary": {
+            "adopted": 0,
+            "deferred": 0,
+            "label": "no auth hints",
+            "reason": "This bundle does not currently carry inferred permission, claim, or ownership hints.",
+            "status": "no_auth_hints",
+            "total": 0,
+            "unresolved": 0
+          },
+          "authOwnershipHints": [],
+          "authPermissionHints": [],
+          "authRoleGuidance": [],
+          "capabilityIds": [],
+          "cliSurfaceIds": [],
+          "participants": {
+            "actors": [],
+            "label": "_none_",
+            "roles": []
+          },
+          "primaryConcept": "entity_widget-command-toolbar",
+          "primaryEntityId": null,
+          "routePaths": [],
+          "screenIds": [],
+          "whyThisBundle": "This bundle exists because UI widget evidence converges on the same widget command toolbar concept.",
+          "widgetIds": [
+            "widget_command_toolbar"
+          ],
+          "workflowIds": []
+        },
+        "projection_impacts": [],
+        "projection_patches": [],
+        "role_details": [],
+        "roles": [],
+        "screens": [],
+        "shapes": [],
+        "slug": "widget-command-toolbar",
+        "ui_flows": [],
+        "ui_impacts": [],
+        "widgets": [
+          "widget_command_toolbar"
+        ],
+        "workflow_impacts": [],
+        "workflows": []
+      }
+    ],
+    "candidate_model_files": [
+      "candidates/reconcile/model/bundles/widget-command-toolbar/README.md"
+    ],
+    "projection_dependent_items": [],
+    "projection_review_groups": [],
+    "promoted": [],
+    "promoted_canonical_items": [],
+    "refreshed_canonical_files": [],
+    "skipped": [],
+    "skipped_items": [],
+    "staged_items": [
+      "widget-command-toolbar:component_mapping:component_map_acme_ops_widgets",
+      "widget-command-toolbar:widget:widget_command_toolbar"
+    ],
+    "suppressed_noise_bundles": [],
+    "type": "reconcile_report",
+    "ui_review_groups": [
+      {
+        "id": "ui_review:missing_design_language:design_acme_ops",
+        "items": [
+          {
+            "bundle": "widget-command-toolbar",
+            "item": "component_map_acme_ops_widgets",
+            "kind": "component_mapping",
+            "status": "needs_ui_review"
+          }
+        ],
+        "reason": "Component mapping candidate command_toolbar_web_action_toolbar references missing design_language design_acme_ops. Author or adopt the design language before adopting the realization set."
+      }
+    ],
+    "workflow_review_groups": [],
+    "workspace": "<workspace>",
+    "written_canonical_files": []
+  },
+  "dryRun": true,
+  "extract": {
+    "content": {
+      "added": [],
+      "changed": [],
+      "removed": []
+    },
+    "diagnostics": [],
+    "errors": [],
+    "exists": true,
+    "ok": true,
+    "path": "<external>/.topogram-extract.json",
+    "source": {
+      "extract": {
+        "candidateCounts": {
+          "apiCapabilities": 0,
+          "apiRoutes": 0,
+          "cliCapabilities": 0,
+          "cliCommands": 0,
+          "cliSurfaces": 0,
+          "dbEntities": 0,
+          "dbEnums": 0,
+          "dbMaintainedSeams": 0,
+          "uiComponentMappings": 1,
+          "uiFlows": 0,
+          "uiRoutes": 0,
+          "uiScreens": 0,
+          "uiShapes": 0,
+          "uiWidgets": 1,
+          "verifications": 0,
+          "workflows": 0
+        },
+        "extractorPackages": [
+          {
+            "compatibleCliRange": "^0.3.114",
+            "extractors": [
+              "ui.storybook-design"
+            ],
+            "id": "@topogram/extractor-storybook-design",
+            "manifestPath": "<external>/topogram-extractor.json",
+            "packageName": "@topogram/extractor-storybook-design",
+            "packageRoot": "<external>/extractor-storybook-design",
+            "packageVersion": "0.1.1",
+            "packageVersionStatus": "installed",
+            "policyPin": {
+              "expectedVersion": "1",
+              "matches": true,
+              "pinCommand": "topogram extractor policy pin @topogram/extractor-storybook-design@1",
+              "pinnedVersion": "1",
+              "state": "pinned"
+            },
+            "source": "package",
+            "tracks": [
+              "ui"
+            ],
+            "version": "1"
+          }
+        ],
+        "findingsCount": 5,
+        "tracks": [
+          "ui"
+        ]
+      },
+      "extractedAt": "2026-05-22T06:15:16.860Z",
+      "files": [
+        {
+          "path": "src/ActionToolbar.stories.js",
+          "sha256": "d444dadd94fbccc72d43977d634f6d6ee3328d265d3cb37eeef5acf2f03db561",
+          "size": 877
+        },
+        {
+          "path": "src/AlertBanner.stories.js",
+          "sha256": "f063e1c0788ec2feacd7e68aa07b70269b1bb80dca4280d3ebc1bd408d72451f",
+          "size": 346
+        },
+        {
+          "path": "src/CardList.stories.js",
+          "sha256": "f30e975a04b053adcff000e1f9c8f1b8e8af80ad291ad4752e78c0b980c0b77a",
+          "size": 330
+        },
+        {
+          "path": "src/DataGrid.stories.js",
+          "sha256": "8e3188d0d167190030cd2e321d3128627bc17ace9d4b6f956511ed8d1363a0e7",
+          "size": 331
+        },
+        {
+          "path": "src/FilterPanel.stories.js",
+          "sha256": "cfd38b4f4b63b04d1cf978148e9b2f92ff0f75d12118e95c5b41128473584960",
+          "size": 343
+        },
+        {
+          "path": "src/Timeline.stories.js",
+          "sha256": "2eb5e71ae6c19b748f8a1e2e8b5ab134190b7b2834f3cfba62ec8bcfd0583377",
+          "size": 323
+        },
+        {
+          "path": "src/components.js",
+          "sha256": "c9e624891a08569546f27f523b2ffe808258fa2c3623a4cf368e2f461d803a9d",
+          "size": 1905
+        },
+        {
+          "path": "src/tokens.js",
+          "sha256": "49cf67f9920c072687b96e3847609b349b34421d6ee6960ed075e785f6b5b9fe",
+          "size": 674
+        }
+      ],
+      "kind": "brownfield-extract",
+      "ownership": {
+        "extractedArtifacts": "project-owned",
+        "note": "Topogram artifacts created by extraction are editable after extraction. Source hashes record the brownfield app evidence trusted at extraction time."
+      },
+      "source": {
+        "hashAlgorithm": "sha256",
+        "ignoredRoots": [
+          "<external>/step-04-extracted-topogram"
+        ],
+        "path": "<external>/component-library"
+      },
+      "version": "0.1"
+    },
+    "status": "clean"
+  },
+  "extractorContext": {
+    "bundledExtractors": [],
+    "candidateCounts": {
+      "apiCapabilities": 0,
+      "apiRoutes": 0,
+      "cliCapabilities": 0,
+      "cliCommands": 0,
+      "cliSurfaces": 0,
+      "dbEntities": 0,
+      "dbEnums": 0,
+      "dbMaintainedSeams": 0,
+      "uiComponentMappings": 1,
+      "uiFlows": 0,
+      "uiRoutes": 0,
+      "uiScreens": 0,
+      "uiShapes": 0,
+      "uiWidgets": 1,
+      "verifications": 0,
+      "workflows": 0
+    },
+    "packageBackedExtractors": [
+      {
+        "compatibleCliRange": "^0.3.114",
+        "extractors": [
+          "ui.storybook-design"
+        ],
+        "id": "@topogram/extractor-storybook-design",
+        "manifestVersion": "1",
+        "packageName": "@topogram/extractor-storybook-design",
+        "packageVersion": "0.1.1",
+        "packageVersionStatus": "installed",
+        "policyPin": {
+          "expectedVersion": "1",
+          "matches": true,
+          "pinCommand": "topogram extractor policy pin @topogram/extractor-storybook-design@1",
+          "pinnedVersion": "1",
+          "state": "pinned"
+        },
+        "tracks": [
+          "ui"
+        ],
+        "version": "1"
+      }
+    ],
+    "safetyNotes": [
+      "Extractor packages are evidence producers only; review candidates before canonical adoption.",
+      "Use dry-run adoption before --write, especially when package-backed extractors contributed candidates."
+    ],
+    "tracks": [
+      "ui"
+    ]
+  },
+  "forced": false,
+  "nextCommands": [
+    "topogram adopt component-mappings proof/artifacts/step-04-extracted-topogram --write",
+    "topogram extract status proof/artifacts/step-04-extracted-topogram"
+  ],
+  "ok": true,
+  "outputRoot": "<workspace>",
+  "projectRoot": "<external>/step-04-extracted-topogram",
+  "promotedCanonicalItemCount": 0,
+  "promotedCanonicalItems": [],
+  "reason": null,
+  "receipt": null,
+  "receiptPath": null,
+  "selector": "component-mappings",
+  "topogramRoot": "<workspace>",
+  "warnings": [],
+  "workspaceRoot": "<workspace>",
+  "write": false,
+  "writtenFiles": []
+}

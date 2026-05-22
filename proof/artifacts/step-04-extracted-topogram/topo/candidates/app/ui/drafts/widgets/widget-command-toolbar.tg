@@ -1,0 +1,14 @@
+widget widget_command_toolbar {
+  # Import metadata: confidence low; evidence 1; inferred pattern action_bar; inferred region content.
+  # Missing decisions: confirm reusable widget contract before adopting; confirm props, behaviors, events, and regions from product UI intent.
+  # Event declarations are draft bindings and require payload shape review before adoption.
+  name "Command Toolbar"
+  description "Candidate reusable widget inferred from imported UI evidence. Review props, behavior, events, and reuse before adoption."
+  category collection
+  props {
+    items array required
+  }
+  patterns [action_bar]
+  regions [content]
+  status proposed
+}

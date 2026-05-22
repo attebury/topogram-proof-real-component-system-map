@@ -12,6 +12,7 @@
     "verify": "node ./scripts/verify.mjs"
   },
   "devDependencies": {
-    "@topogram/cli": "0.3.117"
+    "@topogram/cli": "0.3.117",
+    "@topogram/extractor-storybook-design": "github:attebury/topogram-extractor-storybook-design"
   }
 }

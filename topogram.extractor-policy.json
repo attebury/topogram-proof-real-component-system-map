@@ -1,0 +1,9 @@
+{
+  "version": "0.1",
+  "allowedPackageScopes": ["@topogram"],
+  "allowedPackages": ["@topogram/extractor-storybook-design"],
+  "pinnedVersions": {
+    "@topogram/extractor-storybook-design": "1"
+  },
+  "enabledPackages": []
+}

@@ -1,0 +1,98 @@
+{
+  "approved_review_groups": [],
+  "imported_maintained_db_seams": [],
+  "items": [
+    {
+      "blocking_dependencies": [
+        {
+          "id": "ui_review:missing_design_language:design_acme_ops",
+          "reason": "Component mapping candidate command_toolbar_web_action_toolbar references missing design_language design_acme_ops. Author or adopt the design language before adopting the realization set.",
+          "type": "ui_review"
+        }
+      ],
+      "bundle": "widget-command-toolbar",
+      "canonical_path": "topo/component-maps/component-map-acme-ops-widgets.tg",
+      "canonical_rel_path": "component-maps/component-map-acme-ops-widgets.tg",
+      "claim": null,
+      "claim_value": null,
+      "confidence": "high",
+      "event_name": null,
+      "inference_summary": "Review widget-to-platform component mappings for component_map_acme_ops_widgets.",
+      "item": "component_map_acme_ops_widgets",
+      "kind": "component_mapping",
+      "ownership": null,
+      "ownership_field": null,
+      "permission": null,
+      "projection_impacts": [],
+      "projection_surface": null,
+      "reason": "Promote this reviewed widget-to-platform component mapping into canonical Topogram.",
+      "recommendation": "Promote only after confirming the referenced design language, widget, component refs, and behavior support are correct.",
+      "related_capabilities": [],
+      "related_docs": [],
+      "related_shapes": [],
+      "related_widgets": [
+        "widget_command_toolbar"
+      ],
+      "source_kind": null,
+      "source_path": "candidates/reconcile/model/bundles/widget-command-toolbar/component-mappings/component_map_acme_ops_widgets.tg",
+      "status": "needs_ui_review",
+      "suggested_action": "promote_component_map",
+      "target": "design_acme_ops",
+      "track": "ui",
+      "ui_impacts": [],
+      "widget_id": null,
+      "workflow_impacts": []
+    },
+    {
+      "blocking_dependencies": [],
+      "bundle": "widget-command-toolbar",
+      "canonical_path": "topo/widgets/widget-command-toolbar.tg",
+      "canonical_rel_path": "widgets/widget-command-toolbar.tg",
+      "claim": null,
+      "claim_value": null,
+      "confidence": "low",
+      "event_name": null,
+      "inference_summary": null,
+      "item": "widget_command_toolbar",
+      "kind": "widget",
+      "ownership": null,
+      "ownership_field": null,
+      "permission": null,
+      "projection_impacts": [],
+      "projection_surface": null,
+      "reason": "Promote this imported reusable UI widget into canonical Topogram.",
+      "recommendation": "Promote this reviewed widget candidate before binding or reusing it from canonical projections.",
+      "related_capabilities": [],
+      "related_docs": [],
+      "related_shapes": [],
+      "related_widgets": [],
+      "source_kind": null,
+      "source_path": "candidates/reconcile/model/bundles/widget-command-toolbar/widgets/widget_command_toolbar.tg",
+      "status": "pending",
+      "suggested_action": "promote_widget",
+      "target": null,
+      "track": "widget",
+      "ui_impacts": [],
+      "widget_id": null,
+      "workflow_impacts": []
+    }
+  ],
+  "projection_review_groups": [],
+  "type": "reconcile_adoption_plan",
+  "ui_review_groups": [
+    {
+      "id": "ui_review:missing_design_language:design_acme_ops",
+      "items": [
+        {
+          "bundle": "widget-command-toolbar",
+          "item": "component_map_acme_ops_widgets",
+          "kind": "component_mapping",
+          "status": "needs_ui_review"
+        }
+      ],
+      "reason": "Component mapping candidate command_toolbar_web_action_toolbar references missing design_language design_acme_ops. Author or adopt the design language before adopting the realization set."
+    }
+  ],
+  "workflow_review_groups": [],
+  "workspace": "<repo>/proof/artifacts/step-04-extracted-topogram/topo"
+}

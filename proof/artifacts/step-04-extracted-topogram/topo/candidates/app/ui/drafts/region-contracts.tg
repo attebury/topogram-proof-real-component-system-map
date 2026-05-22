@@ -1,0 +1,43 @@
+region region_imported_component_library_toolbar {
+  name "Imported Toolbar"
+  description "Draft reusable action toolbar inferred from imported UI evidence."
+  kind toolbar
+  pattern action_bar
+  placement primary
+  density compact
+  style_intent [review inferred]
+  status proposed
+}
+
+region region_imported_component_library_results {
+  name "Imported Results"
+  description "Draft reusable collection results region inferred from imported UI evidence."
+  kind results
+  pattern search_results
+  placement primary
+  states [loading empty error]
+  style_intent [review inferred]
+  allowed_widget_patterns [data_grid_view resource_cards resource_table search_results]
+  status proposed
+}
+
+region region_imported_component_library_summary {
+  name "Imported Summary"
+  description "Draft reusable detail summary region inferred from imported UI evidence."
+  kind summary
+  pattern detail_panel
+  placement primary
+  states [loading error not_found]
+  style_intent [review inferred]
+  status proposed
+}
+
+region region_imported_component_library_aside {
+  name "Imported Aside"
+  description "Draft supporting detail region inferred from imported UI evidence."
+  kind activity
+  pattern inspector_pane
+  placement supporting
+  style_intent [review inferred]
+  status proposed
+}

@@ -1,0 +1,11 @@
+widget widget_command_toolbar {
+  name "Command Toolbar"
+  description "Candidate reusable widget inferred from imported UI evidence. Review props, behavior, events, and reuse before adoption."
+  category collection
+  props {
+    items array required
+  }
+  patterns [action_bar]
+  regions [content]
+  status proposed
+}

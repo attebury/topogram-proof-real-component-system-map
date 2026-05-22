@@ -1,0 +1,247 @@
+{
+  "adopt_selector": null,
+  "adopt_write_mode": false,
+  "adoption_plan_path": "candidates/reconcile/adoption-plan.json",
+  "applied_item_count": 0,
+  "approved_item_count": 0,
+  "approved_review_groups": [],
+  "blocked_item_count": 1,
+  "bootstrapped_topogram_root": false,
+  "bundle_blockers": [
+    {
+      "applied_items": [],
+      "approved_items": [],
+      "blocked_items": [
+        "component_map_acme_ops_widgets"
+      ],
+      "blocking_dependencies": [
+        "ui_review:missing_design_language:design_acme_ops"
+      ],
+      "bundle": "widget-command-toolbar",
+      "pending_items": [
+        "widget_command_toolbar"
+      ],
+      "skipped_items": []
+    }
+  ],
+  "bundle_priorities": [
+    {
+      "applied_items": 0,
+      "approved_items": 0,
+      "auth_aging_summary": {
+        "escalationLevel": "none",
+        "escalationReason": "This bundle is not currently high risk.",
+        "repeatCount": 0
+      },
+      "auth_claim_hints": [],
+      "auth_closure_summary": {
+        "adopted": 0,
+        "deferred": 0,
+        "label": "no auth hints",
+        "reason": "This bundle does not currently carry inferred permission, claim, or ownership hints.",
+        "status": "no_auth_hints",
+        "total": 0,
+        "unresolved": 0
+      },
+      "auth_ownership_hints": [],
+      "auth_permission_hints": [],
+      "auth_risk_rank": 0,
+      "auth_role_guidance": [],
+      "blocked_items": 1,
+      "bundle": "widget-command-toolbar",
+      "evidence": {
+        "actors": 0,
+        "capabilities": 0,
+        "docs": 0,
+        "entities": 0,
+        "enums": 0,
+        "roles": 0,
+        "screens": 0,
+        "shapes": 0,
+        "widgets": 1,
+        "workflows": 0
+      },
+      "evidence_score": 0,
+      "is_complete": false,
+      "next_action": {
+        "kind": "review_bundle",
+        "label": "Review this bundle next",
+        "reason": "Component mapping candidate command_toolbar_web_action_toolbar references missing design_language design_acme_ops. Author or adopt the design language before adopting the realization set.",
+        "safe_adopt_now_count": 0,
+        "selector": "bundle-review:widget-command-toolbar",
+        "unlock_review_group_id": "ui_review:missing_design_language:design_acme_ops",
+        "unlock_review_selector": "ui-review:missing_design_language:design_acme_ops"
+      },
+      "next_review_groups": [
+        {
+          "id": "ui_review:missing_design_language:design_acme_ops",
+          "item_count": 1,
+          "reason": "Component mapping candidate command_toolbar_web_action_toolbar references missing design_language design_acme_ops. Author or adopt the design language before adopting the realization set.",
+          "type": "ui"
+        }
+      ],
+      "operator_summary": {
+        "authAging": {
+          "escalationLevel": "none",
+          "escalationReason": "This bundle is not currently high risk.",
+          "repeatCount": 0
+        },
+        "authClaimHints": [],
+        "authClosureSummary": {
+          "adopted": 0,
+          "deferred": 0,
+          "label": "no auth hints",
+          "reason": "This bundle does not currently carry inferred permission, claim, or ownership hints.",
+          "status": "no_auth_hints",
+          "total": 0,
+          "unresolved": 0
+        },
+        "authOwnershipHints": [],
+        "authPermissionHints": [],
+        "authRoleGuidance": [],
+        "capabilityIds": [],
+        "cliSurfaceIds": [],
+        "participants": {
+          "actors": [],
+          "label": "_none_",
+          "roles": []
+        },
+        "primaryConcept": "entity_widget-command-toolbar",
+        "primaryEntityId": null,
+        "routePaths": [],
+        "screenIds": [],
+        "whyThisBundle": "This bundle exists because UI widget evidence converges on the same widget command toolbar concept.",
+        "widgetIds": [
+          "widget_command_toolbar"
+        ],
+        "workflowIds": []
+      },
+      "pending_items": 1,
+      "recommend_bundle_review_selector": "bundle-review:widget-command-toolbar",
+      "recommend_from_plan": false,
+      "recommended_actor_role_actions": [],
+      "recommended_doc_drift_actions": [],
+      "recommended_doc_link_actions": [],
+      "recommended_doc_metadata_patch_actions": []
+    }
+  ],
+  "next_bundle": {
+    "applied_items": 0,
+    "approved_items": 0,
+    "auth_aging_summary": {
+      "escalationLevel": "none",
+      "escalationReason": "This bundle is not currently high risk.",
+      "repeatCount": 0
+    },
+    "auth_claim_hints": [],
+    "auth_closure_summary": {
+      "adopted": 0,
+      "deferred": 0,
+      "label": "no auth hints",
+      "reason": "This bundle does not currently carry inferred permission, claim, or ownership hints.",
+      "status": "no_auth_hints",
+      "total": 0,
+      "unresolved": 0
+    },
+    "auth_ownership_hints": [],
+    "auth_permission_hints": [],
+    "auth_risk_rank": 0,
+    "auth_role_guidance": [],
+    "blocked_items": 1,
+    "bundle": "widget-command-toolbar",
+    "evidence": {
+      "actors": 0,
+      "capabilities": 0,
+      "docs": 0,
+      "entities": 0,
+      "enums": 0,
+      "roles": 0,
+      "screens": 0,
+      "shapes": 0,
+      "widgets": 1,
+      "workflows": 0
+    },
+    "evidence_score": 0,
+    "is_complete": false,
+    "next_action": {
+      "kind": "review_bundle",
+      "label": "Review this bundle next",
+      "reason": "Component mapping candidate command_toolbar_web_action_toolbar references missing design_language design_acme_ops. Author or adopt the design language before adopting the realization set.",
+      "safe_adopt_now_count": 0,
+      "selector": "bundle-review:widget-command-toolbar",
+      "unlock_review_group_id": "ui_review:missing_design_language:design_acme_ops",
+      "unlock_review_selector": "ui-review:missing_design_language:design_acme_ops"
+    },
+    "next_review_groups": [
+      {
+        "id": "ui_review:missing_design_language:design_acme_ops",
+        "item_count": 1,
+        "reason": "Component mapping candidate command_toolbar_web_action_toolbar references missing design_language design_acme_ops. Author or adopt the design language before adopting the realization set.",
+        "type": "ui"
+      }
+    ],
+    "operator_summary": {
+      "authAging": {
+        "escalationLevel": "none",
+        "escalationReason": "This bundle is not currently high risk.",
+        "repeatCount": 0
+      },
+      "authClaimHints": [],
+      "authClosureSummary": {
+        "adopted": 0,
+        "deferred": 0,
+        "label": "no auth hints",
+        "reason": "This bundle does not currently carry inferred permission, claim, or ownership hints.",
+        "status": "no_auth_hints",
+        "total": 0,
+        "unresolved": 0
+      },
+      "authOwnershipHints": [],
+      "authPermissionHints": [],
+      "authRoleGuidance": [],
+      "capabilityIds": [],
+      "cliSurfaceIds": [],
+      "participants": {
+        "actors": [],
+        "label": "_none_",
+        "roles": []
+      },
+      "primaryConcept": "entity_widget-command-toolbar",
+      "primaryEntityId": null,
+      "routePaths": [],
+      "screenIds": [],
+      "whyThisBundle": "This bundle exists because UI widget evidence converges on the same widget command toolbar concept.",
+      "widgetIds": [
+        "widget_command_toolbar"
+      ],
+      "workflowIds": []
+    },
+    "pending_items": 1,
+    "recommend_bundle_review_selector": "bundle-review:widget-command-toolbar",
+    "recommend_from_plan": false,
+    "recommended_actor_role_actions": [],
+    "recommended_doc_drift_actions": [],
+    "recommended_doc_link_actions": [],
+    "recommended_doc_metadata_patch_actions": []
+  },
+  "preview_followup_guidance": [],
+  "projection_review_groups": [],
+  "promoted_canonical_items": [],
+  "type": "adoption_status",
+  "ui_review_groups": [
+    {
+      "id": "ui_review:missing_design_language:design_acme_ops",
+      "items": [
+        {
+          "bundle": "widget-command-toolbar",
+          "item": "component_map_acme_ops_widgets",
+          "kind": "component_mapping",
+          "status": "needs_ui_review"
+        }
+      ],
+      "reason": "Component mapping candidate command_toolbar_web_action_toolbar references missing design_language design_acme_ops. Author or adopt the design language before adopting the realization set."
+    }
+  ],
+  "workflow_review_groups": [],
+  "workspace": "<repo>/proof/artifacts/step-04-extracted-topogram/topo"
+}
