@@ -1,0 +1,22 @@
+{
+  "step": "proof-01-component-system-baseline",
+  "cliVersion": "0.3.117",
+  "requiredFiles": [
+    "component-library/src/components.js",
+    "component-library/src/tokens.js",
+    "component-library/src/DataGrid.stories.js",
+    "component-library/src/CardList.stories.js",
+    "component-library/src/FilterPanel.stories.js",
+    "component-library/src/ActionToolbar.stories.js",
+    "component-library/src/AlertBanner.stories.js",
+    "component-library/src/Timeline.stories.js",
+    "proof/STEP.md"
+  ],
+  "absentFiles": ["topo"],
+  "requiredText": [
+    { "path": "component-library/src/components.js", "includes": ["acme.dataGrid", "acme.cardList", "acme.timeline"] },
+    { "path": "component-library/src/DataGrid.stories.js", "includes": ["componentRef", "acme.dataGrid", "parameters"] },
+    { "path": "proof/STEP.md", "includes": ["Step 01", "no topo/"] }
+  ],
+  "requiredJson": []
+}

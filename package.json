@@ -1,0 +1,17 @@
+{
+  "name": "topogram-proof-real-component-system-map",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Proof that a real component system can be mapped into Topogram design_language and component_map records.",
+  "scripts": {
+    "test": "node --test",
+    "build:components": "node ./scripts/build-components.mjs",
+    "proof:check-paths": "node ./scripts/proof-check-paths.mjs",
+    "proof:audit": "node ./scripts/proof-audit.mjs",
+    "verify": "node ./scripts/verify.mjs"
+  },
+  "devDependencies": {
+    "@topogram/cli": "0.3.117"
+  }
+}
